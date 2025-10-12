@@ -1,0 +1,221 @@
+\documentclass{article}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\begin{document}
+
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item 
+     We analyze that $\pi(290) = 61$, so there exist $61$ possible prime factors for $\binom{290}{145}$. We see that $290 = 17^2 + 1$ and $\pi(17) = 7$, so there are 7 primes where their square is less than 290. \\ 
+     
+     These primes are $2, 3, 5, 7, 11, 13, 17$. We evaluate their p-adic valuation for $\binom{290}{145}$ using the same technique in Example 3.7 by converting 290 and 145 to the base of each prime to easily evaluate $\% \ p^k$ for the result in Lemma 3.8 combined with Proposition 3.5 (Legendre's formula). \\
+
+     \begin{center}
+     \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|c@{\hspace{10pt}}|c@{\hspace{10pt}}|c@{\hspace{10pt}}|c|}
+
+    \hline
+    p & 290 & 145 & $\nu_p (\binom{290}{145})$\\
+    \hline
+    2 & $100100010_2$ & $10010001_2$ & 3 \\
+    3 & $101202_3$ & $12101_3$ & 2 \\
+    5 & $2130_5$ & $1040_5$ & 1 \\
+    7 & $563_7$ & $265_7$ & 2 \\
+    11 & $244_{11}$ & $122_{11}$ & 0 \\
+    13 & $194_{13}$ & $(11)2_{13}$ & 1 \\
+    17 & $101_{17}$ & $89_{17}$ & 2 \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    Among the 7, there exists 1 with $\nu_p (\binom{290}{145}) = 3$, 3 with $\nu_p (\binom{290}{145}) = 2$, and 2 with $\nu_p (\binom{290}{145}) = 1$. \\
+
+     Meanwhile, there exist $\pi(290) - \pi(145) = 27$ primes that are $> 145$. This implies there exist $61 - 27 - 7 = 27$ primes that are $ < 145$ but whose squares are larger than 290. Thus, for each of these primes p and $k \geq 2$, we get that $\lfloor 290 / p^k \rfloor = 0$ and $\lfloor 145 / p^k  \rfloor = 0$. Hence, by Proposition 3.5, $\nu_p(\binom{290}{145}) = \lfloor 290/p \rfloor - \lfloor 145/p \rfloor - \lfloor 145/p \rfloor$. This is in the form of Lemma 3.8, so $\nu_p(\binom{290}{145}) = 1$ if $290 \% p < 145 \% p $ and 0 otherwise. We evaluate the 27 primes and their p-adic values with the table as follows. \\
+
+     \begin{center}
+     \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{cc}
+    \begin{minipage}{0.45\textwidth}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $p$ & $290 \% p$ & $145 \% p$ & $\nu_p\left(\binom{290}{145}\right)$ \\
+    \hline
+    19 & 5 & 12 & 1 \\
+    23 & 14 & 7 & 0 \\
+    29 & 0 & 0 & 0 \\
+    31 & 11 & 21 & 1 \\
+    37 & 31 & 34 & 1 \\
+    41 & 3 & 22 & 1 \\
+    43 & 32 & 16 & 0 \\
+    47 & 8 & 4 & 0 \\
+    53 & 25 & 39 & 1 \\
+    59 & 54 & 27 & 0 \\
+    61 & 46 & 23 & 0 \\
+    67 & 22 & 11 & 0 \\
+    71 & 6 & 3 & 0 \\
+    73 & 71 & 72 & 1 \\
+    \hline
+    \end{tabular}
+    \end{minipage}
+    &
+    \begin{minipage}{0.45\textwidth}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    $p$ & $290 \% p$ & $145 \% p$ & $\nu_p\left(\binom{290}{145}\right)$ \\
+    \hline
+    79 & 53 & 66 & 1 \\
+    83 & 41 & 62 & 1 \\
+    89 & 23 & 56 & 1 \\
+    97 & 96 & 48 & 0 \\
+    101 & 88 & 44 & 0 \\
+    103 & 84 & 42 & 0 \\
+    107 & 76 & 38 & 0 \\
+    109 & 72 & 36 & 0 \\
+    113 & 64 & 32 & 0 \\
+    127 & 36 & 18 & 0 \\
+    131 & 28 & 14 & 0 \\
+    137 & 16 & 8 & 0 \\
+    139 & 12 & 6 & 0 \\
+     &  &  &  \\
+    \hline
+    \end{tabular}
+    \end{minipage}
+    \end{tabular}
+    \end{center} 
+
+    Among the 27, there exist 9 with $\nu_p (\binom{290}{145}) = 1$.\\
+
+     For the remaining $\pi(290) - \pi(145) = 27$ primes that are greater than 145. From Lemma 3.7, for all such primes p, we see that $\nu_p (\binom{290}{145}) = 1$. Thus, there exist an additional 27 primes with $\nu_p (\binom{290}{145}) = 1$. \\
+
+     In total, among the 61 possible prime factors for $\binom{290}{145}$, there exist 38 with $\nu_p (\binom{290}{145}) = 1$, 3 with $\nu_p (\binom{290}{145}) = 2$, and 1 with $\nu_p (\binom{290}{145}) = 3$. By Corollary 2.11, the number of positive divisors is $(1+1)^{38} \cdot (2+1)^3 \cdot (3+1)^1$. Thus, there exist $2^{40} \cdot 3^3$ positive divisors for $\binom{290}{145}$. \\
+
+    \newpage
+    
+     \item 
+     \begin{enumerate}[label=\alph*)]
+     \item 
+     Assume $o(z) \mid m$. Thus, there exists an integer $q$ where $m = q \cdot o(z)$. By definition, we see that $z^{o(z)} = 1$, thus $z^m = z^{q \cdot o(z)} = (z^{o(z)})^q = 1^q = 1$ as desired. \\
+
+    For the converse, assume $z^m = 1$. By the Division Algorithm, for some integers $q$ and $r$, we see that $m = q \cdot o(z) + r$ where $0 \leq r < o(z)$. Since $z^m = z^{o(z)q} \cdot z^r = 1$ and $z^{o(z)q} = 1^q = 1$, we see that $z^r = 1$. However, if $0 < r$ and $r < o(z)$, it contradicts the minimality of $o(z)$. Thus, $r$ must be 0, which gives us that $m = q \cdot o(z)$ or $o(z) \mid m$ as desired. \\
+
+
+     \item 
+      We denote $p$ as the $\gcd(o(a), k)$, so from Proposition 1.6, $p \mid o(a)$ and $p \mid k$. Thus for some integers $q_1, q_2$, we get that $o(a) = p q_1$ and $k = p q_2$. Thus, we see that $(a^k)^{q_1} = a^{p q_2 q_1} = a^{o(a)\cdot q_2} = 1^{q_2} = 1$. \\
+
+    Now we assume there exists a positive integer $r < q_1$ where $(a^k)^r = 1$. Since $a^{r k} = 1$, from a), we get that $o(a) \mid r k$, so there exists an integer $\hat{r}$ where $\hat{r} o(a) = r k$. By Corollary 2.1 (Bezout's Lemma), there exist integers $x, y$ where $\gcd(o(a), k) = o(a)x + k y$. If we multiply both sides by $r$, we get that: 
+    \begin{align*}
+        \gcd(o(a), k) r &= o(a) x r + k y r = o(a) x r + o(a) \hat{r} y = o(a)(x r + \hat{r} y)\\
+        \gcd(o(a), k) r &= \gcd(o(a), k) q_1 (x r + \hat{r} y)\\
+        r &= q_1 (x r + \hat{r} y)
+    \end{align*}
+    
+    Thus, $q_1 \mid r$, which implies $q_1 \leq r$, a contradiction. This proves $q_1$ is the smallest positive integer $d$ where $(a^k)^d = 1$, so $o(a^k) = q_1 = \frac{o(a)}{\gcd(o(a), k)}$ as desired. \\
+
+     \item 
+     We claim that the order for $-3 \pmod{11^k}$ for any positive integer $k$ is: 
+
+    \[
+    o_{11^k}(-3)=
+    \begin{cases}
+      10 & \text{if } k = 1 \\
+      10 \cdot 11^{k-2} & \text{if } k \geq 2 \\
+    \end{cases}
+    \]
+    
+    To start, we prove by induction for $k \geq 2$ that $3^{5 \cdot 11^{k-2}} \equiv 1 \pmod{11^k}$. For $k = 2$, $3^5 - 1 = 242 = 11^2 \cdot 2$, so $3^5 \equiv 1 \pmod{11^2}$. We then assume the induction hypothesis on $k$, and for $k + 1$, we get that:
+        
+    $$3^{5 \cdot 11^{k-1}} - 1 = (3^{5 \cdot 11^{k-2}} - 1)\big((3^{5 \cdot 11^{k-2}})^{10} + (3^{5 \cdot 11^{k-2}})^{9} + \cdots + 1 \big)$$
+        
+    Each term in the sum except $1$ can be expressed as $3^{5z}$ for some positive integer $z$, and since $3^{5} \equiv 1 \pmod{11}$, we get that $3^{5z} \equiv 1 \pmod{11}$. Meanwhile, since $1 \equiv 1 \pmod{11}$ and there are 11 terms in the sum, we know that 11 divides the sum and the sum is equal to $11q$ for some positive integer $q$. Thus, by the inductive hypothesis, $3^{5 \cdot 11^{k-2}} - 1 = 11^k \hat{q}$ for some positive integer $\hat{q}$, so we get $3^{5 \cdot 11^{k-1}} - 1 = 11^k \hat{q} \cdot 11q = 11^{k+1}\hat{q}q$ or $3^{5 \cdot 11^{k-1}} \equiv 1 \pmod{11^{k+1}}$ as desired. \\
+    
+    Now that we know for $k \geq 2$ that $3^{5 \cdot 11^{k-2}} \equiv 1 \pmod{11^k}$, we get that $(3^2)^{5 \cdot 11^{k-2}} = ((-3)^2)^{5 \cdot 11^{k-2}} = (-3)^{10\cdot 11^{k-2}} \equiv 1 \pmod{11^k}$. For $k = 1$, $(-3)^{10} - 1 = 11^2 \cdot 488$, so $(-3)^{10} \equiv 1 \pmod{11}$.\\
+        
+    We now prove its minimality. For $k = 1$ and $k = 2$, it suffices to state that for positive integers $1 \leq i < 10$, $(-3)^i \not\equiv 1 \pmod{11}$, much less $\pmod{11^2}$. For $k \geq 3$, we first demonstrate that for any positive integer $m$ and with Proposition 4.15 (LTE) that: 
+    \begin{align*}
+    \nu_{11}\big((-3)^{10\cdot 11^m} - 1\big) &= \nu_{11}\big((-3)^{10} - 1\big) + \nu_{11}(10 \cdot 11^m) \\
+    &= 2 + m.
+    \end{align*}
+    Thus, if we substitute $m = k - 3$, we get $\nu_{11}\big((-3)^{10\cdot 11^{k-3}} - 1\big) = k - 1$. This implies \\ $11^k \nmid \big((-3)^{10\cdot 11^{k-3}} - 1\big)$ or $(-3)^{10\cdot 11^{k-3}} \not\equiv 1 \pmod{11^k}$. It also implies $o_{11^k}(-3) \nmid 10\cdot 11^{k-3}$, as if not, then $10\cdot 11^{k-3} = o_{11^k}(-3)q$ for some positive integer $q$ and $(-3)^{o_{11^k}(-3)\cdot q} \equiv 1^q \pmod{11^k}$, which is a contradiction. Thus, we rule out $10\cdot 11^{k-3}$\\
+    
+    We also note that $(-3)^{5\cdot11^{k-2}} \equiv -1 \pmod {11^k}$, so $o_{11^k}(-3) \nmid 5\cdot 11^{k-2}$. Moreover, because $o_{11}(-3)=10$, by Proposition 5.7 as -3 and 11 are coprime, we see that any exponent $e$ yielding $1$ modulo $11^k$ is also modulo $11$, so $10 \mid e$, which rules out $11^{k-2}$ and $2\cdot 11^{k-2}$. \\
+    
+    Since $o_{11^k}(-3) \mid 10\cdot 11^{k-2}$ by Proposition 5.7, and we have excluded all proper divisors that could remain, it follows that $o_{11^k}(-3) = 10\cdot 11^{k-2}$ for $k \geq 3$. \\
+    
+    Combining everything that was proven, we get that: 
+    \begin{align*}
+    o_{11^k}(-3) &=
+    \begin{cases}
+      10 & \text{if } k = 1 \\
+      10 & \text{if } k = 2 \\
+      10 \cdot 11^{k-2} & \text{if } k \geq 3 \\
+    \end{cases} \\
+    &= \begin{cases}
+  10 & \text{if } k = 1 \\
+  10 \cdot 11^{k-2} & \text{if } k \geq 2 \\
+    \end{cases}
+    \end{align*}
+    
+    as desired.
+
+
+    \end{enumerate}
+\newpage
+
+\item 
+\begin{enumerate}[label=\alph*)]
+    \item 
+   We note that $2^{2^n} \equiv -1 \pmod p$, so $2^{2^{n+1}} \equiv 1 \pmod p$. However, since $2^{2^n} \not\equiv 1 \pmod p$, we note that $o_p(2) \nmid 2^n$, since if it did, then $2^n = o_p(2)q$ for some positive integer $q$, which implies $2^{2^n} = 2^{o_p(2)q} \equiv 1^q \pmod p$, a contradiction. Yet, by Proposition 5.7 and since $p$ and $2$ are coprime, we get that $o_p(2) \mid 2^{n+1}$. The only divisor of $2^{n+1}$ that doesn't divide $2^n$ is itself, so $o_p(2) = 2^{n+1}$. By Theorem 1.13 (Fermat's Little Theorem), we get that $2^{p - 1} \equiv 1 \pmod p$. By Proposition 5.7, we see that $2^{n+1} \mid p - 1$ or $p \equiv 1 \pmod{2^{n+1}}$ as desired.
+  \\
+
+    \item 
+    We note that $5\cdot 2^7 \equiv -1 \pmod{641}$, so $5^4 \cdot 2^{28} \equiv 1 \pmod{641}$, and $2^4 \equiv -5^4 \pmod{641}$. Thus, we get that $5^4\cdot2^{32} \equiv -5^4 \pmod{641}$ or $641 \mid 5^4\cdot 2^{32} + 5^4 = 5^4(2^{32} + 1)$. Since $641$ is a prime, $641 \nmid 5^4$, so by Proposition 2.1 (Euclid's Lemma), we get that $641\mid 2^{32} + 1$ as desired. \\
+
+
+    \item 
+    We note that $7 \cdot 2^{14} \equiv -1 \pmod p$, so 
+    $7^{2^{12}} \cdot 2^{14\cdot 2^{12}} \equiv (-1)^{2^{12}} = 1 \pmod p$. Then we note that $2^{2^{12}} \equiv -1 \pmod p$, so $2^{2^{12}\cdot 14} \equiv (-1)^{14} = 1 \pmod p$. This implies that $7^{2^{12}} \equiv 1 \pmod p$, since we're given 1 and 1 is the only integer $x$ where $1 \cdot x = 1$. Meanwhile, we note that $7^{2^{11}}\cdot 2^{2^{11}\cdot 14} = 2^{2^{12}\cdot 7} \equiv (-1)^{2^{11}} = 1 \pmod p$. We also note that $2^{2^{12}\cdot7}\equiv (-1)^7 = -1 \pmod p$, so it implies $7^{2^{11}} \not \equiv 1 \pmod p$, as $1 \cdot -1 \neq 1$. Thus, $o_p(7) \nmid 2^{11}$ because if it did, then $2^{11} = o_p(7)q$ for some positive integer $q$ and we get that $7^{o_p(7)q} \equiv 1^q \pmod p$, a contradiction. Yet, by Proposition 5.7, since $p$ and $7$ are coprime, we get that $o_p(7) \mid 2^{12}$, but the only divisor of $2^{12}$ that cannot divide $2^{11}$ is itself. Thus, we get that $o_p(7) = 2^{12}$.
+
+    
+\end{enumerate}
+\newpage
+
+\item 
+\begin{enumerate}[label=\alph*)]
+\item 
+For $n = 1$, the only divisor of 1 is itself, so $\sum_{d \mid n} \mu(d) = \mu(1) = 1$. \\
+
+For $n > 1$, we note that $n$ has a finite number of prime factors, so we denote $k$ as the number of unique prime factors of $n$ or all primes $p$ where $\nu_p(n) \geq 1$. Since the Mobius function converts divisors $d \mid n$ that are not squarefree into 0, they contribute nothing to the sum, so we only focus on the number of divisors that are squarefree, which implies that $\nu_p(d) < 2$ for all prime factors $p$ of $n$ (otherwise $p^2 \mid d$). \\
+
+Thus, all divisors $d$ of $n$ that are squarefree either have $\nu_p(d) = 0$ or $\nu_p(d) = 1$. We note that each divisor can have up from $0 \leq i \leq k$ distinct prime factors that are also prime factors of $n$. For each $i$, the number of divisors with $i$ prime factors is determined by the number of $\nu_p(d) = 1$ it has from $k$ prime factors. Thus, the number of divisors with $i$ unique prime factors is equal to $\binom{k}{i}$. We also note that for all divisors $d$ with $i$ unique prime factors, we get that $\mu(d) = (-1)^i$. Thus: 
+
+$$\sum_{d\mid n} \mu(d) = \sum_{i = 0}^k \binom{k}{i} \cdot  (-1)^i$$
+
+This summation looks familiar to Theorem 3.6 (Binomial Theorem), thus:
+
+$$\sum_{i = 0}^k \binom{k}{i} \cdot  (-1)^i\cdot (1)^{k-i} = (-1 + 1)^k = 0$$.
+
+Thus, we proved that for $n > 1$, $\sum_{d\mid n} \mu(d) = 0$ and for $n = 1$, $\sum_{d\mid n} \mu(d) = 1$ as desired. \\
+
+
+\item 
+We start with the expression that: 
+
+\begin{align*}
+    \sum_{d \mid n} \mu(d) f(n/d) = \sum_{d \mid n} \mu(d) \sum_{e \mid (n/d)} g(e).
+\end{align*}
+
+We note that $d \mid n$ and $e \mid (n / d)$. It follows that there exists an integer $q$ such that $n/d = eq$, or $n = (de)q$, so $de \mid n$. Thus every pair $(d, e)$ corresponds to a divisor of $n$. Instead of fixing $d$, we fix $e$ instead, and the possible $d$ for $de \mid n$ are exactly those with $d \mid n/e$. Thus, we get: 
+
+$$\sum_{d \mid n} \mu(d) \sum_{e \mid (n/d)} g(e) = \sum_{e\mid n} g(e) \sum_{d\mid n/e} \mu(d).$$
+
+From a), we know that $\sum_{d\mid n/e} \mu(d) = 0$ for all $n/e > 1$ and $\sum_{d\mid n/e} \mu(d) = 1$ for $n/e = 1$. Thus, for $n/e > 1$, they contribute nothing to the sum. Meanwhile, since $n/n = 1$, only $e = n$ matters. Thus: 
+
+$$\sum_{e\mid n} g(e) \sum_{d\mid n/e} \mu(d) = g(n)\cdot 1 = g(n).$$
+
+Thus, we got $g(n) = \sum_{d \mid n} \mu(d) f(n/d)$ as desired.
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}

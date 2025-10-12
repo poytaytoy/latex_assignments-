@@ -1,0 +1,317 @@
+\documentclass{article}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\begin{document}
+
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item 
+    \begin{enumerate}[label=\alph*)]
+
+    \item 
+    We assume $n \in \mathbb{N}$ is a perfect $k$-th power, so $n = m^k$ for some $m \in \mathbb{N}$. Thus, for all primes $p$, $\nu_p(n) = \nu_p(m^k) \iff \nu_p(n) = k \cdot \nu_p(m)$. It follows that $k \mid \nu_p(n)$ as desired. \\
+
+    For the converse, we assume for all primes $p$, $k \mid \nu_p(n)$. Then for each $p$, there exist a positive integer $q_p$ where \\ $\nu_p(n) = kq_p$, so $q_p = \frac{\nu_p(n)}{k}$. We then denote $m$ as: 
+
+    $$m =\prod_{p} p^{q_p} =\prod_{p} p^{\frac{\nu_p(n)}{k}}$$
+
+    Since all $q_p$ are positive integers and m is positive, $m \in \mathbb{N}$. Thus:
+
+    $$m^k = (\prod_p p^{\frac{\nu_p(n)}{k}})^k = \prod_p p^{\nu_p(n)}$$.
+
+    By Corollary 3.14, $n = m^k$. Since $m \in \mathbb{N}$, n is a perfect $k$-th power. 
+
+    \item 
+    We assume $x,y \in \mathbb{N}$ are coprime and $xy$ is a perfect $k$-th power. Since they are coprime, $gcd(x, y) = 1$. By Exercise 3.3, for all primes $p$, $\nu_p(\gcd(x,y)) = min\{\nu_p(x), \nu_p(y)\} \iff \nu_p(1) = 0$. This guarantees that at least one of $\nu_p(x)$ or $\nu_p(y)$ is 0. \\
+
+    Since $xy = m^k$, from a), $k \mid \nu_p(xy)$ for all primes $p$. However, since $\nu_p(xy) = \nu_p(x) + \nu_p(y)$ and at least one of them is 0, it follows that if $\nu_p(xy) \neq 0$, then either $\nu_p(x)$ or $\nu_p(y)$ is equal to $\nu_p(xy)$. Since $k|0$ and $k \mid \nu_p(xy)$, we see that $k \mid \nu_p(x)$ and $k \mid \nu_p(y)$. If $\nu_p(xy) = 0$, then both are 0, so $k \mid \nu_p(x)$ and $k \mid \nu_p(y)$. Thus, for all primes $p$, $k \mid \nu_p(x)$ and $k \mid \nu_p(y)$, so from a), both are perfect $k$-th powers.\\
+    
+    \item
+    If $n^2 \mid a^k - n$, then there exists an integer q where $n^2q = a^k - n \iff n(nq + 1) = a^k$. By Proposition 2.15, the $\gcd(n, nq + 1) = \gcd(n, (nq + 1) - nq) = 1$. This implies $n$ and $nq + 1$ are co-primes. From $n^2 \mid a^k - n$, we get that $n \mid a^k$, so $a^k / n \in \mathbb{N}$. Since $a^k = n(nq + 1)$, it follows that $nq + 1 = a^k/n$, so $nq + 1 \in \mathbb{N}$.  From b), since $a^k$ is a perfect $k$-th power, $nq + 1$ and $n$ are both co-primes while $nq + 1, n \in \mathbb{N}$, we get that both $nq + 1$ and most importantly $n$ are perfect $k$-th power as desired. 
+
+    \end{enumerate}
+    \newpage
+
+    
+    \item
+    \begin{enumerate}[label=\alph*)]
+    \item
+    From Proposition 4.3, for any prime $p$ and any positive integer n, 
+    
+    \[
+    \nu_p(n!) = \sum_{k=1}^{\infty} \left\lfloor \frac{n}{p^k} \right\rfloor
+    = \sum_{k=1}^{\lfloor \log_p n \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor
+    = \left\lfloor \frac{n}{p} \right\rfloor
+    + \left\lfloor \frac{n}{p^2} \right\rfloor
+    + \left\lfloor \frac{n}{p^3} \right\rfloor + \cdots
+    \]
+
+    Thus, considering that we see that $\lfloor \frac{n}{p} \rfloor \leq \nu_p(n!)$ and since $\frac{n}{p} - 1 < \lfloor \frac{n}{p} \rfloor \leq \frac{n}{p}$, we get that: 
+
+    $$\frac{n}{p} - 1 < \lfloor \frac{n}{p} \rfloor \leq \nu_p(n!)$$
+    $$\frac{n}{p} - 1 < \nu_p(n!)$$
+
+    Meanwhile, since for any $k \in \mathbb{N}$, we get that $\lfloor \frac{n}{p^k} \rfloor \leq \frac{n}{p^k}$ and since $k$ extends to infinity, $\lfloor \frac{n}{p^k} \rfloor = 0 < \frac{n}{p^k}$ for some large k. Thus, 
+
+    \[
+    \nu_p(n!) 
+    < \sum_{k=1}^{\infty} \frac{n}{p^k}
+    \]
+
+    For the infinite series, we apply the infinite geometric series formula to get: 
+
+    \[
+    \nu_p(n!) 
+    < \sum_{k=1}^{\infty} \frac{n}{p^k}
+    = n \sum_{k=1}^{\infty} \frac{1}{p^k}
+    = n \cdot \frac{\frac{1}{p}}{1 - \frac{1}{p}}
+    = \frac{n}{p - 1}.
+    \]
+    
+    Thus, we got the bounds for $\nu_p(n!)$ as desired: 
+    
+    \[
+    \frac{n}{p} - 1 < \nu_p(n!) < \frac{n}{p-1}.
+    \]
+
+    \item 
+    For all primes $p$, from a), we get that $\nu_p(n!) < \frac{n}{p - 1}$. Thus: 
+
+    \begin{align*}
+        n! = \prod_p p^{\nu_p(n!)} = \prod_{p \leq n} p^{\nu_p(n!)} &< \prod_{p \leq n} p^{\frac{n}{p - 1}} \\
+        \ln(n!) &< \ln\!\left( \prod_{p \leq n} p^{\frac{n}{p - 1}} \right) \\
+        \ln(n!) &< n \cdot \sum_{p \leq n} \frac{\ln(p)}{p - 1} \\
+        \frac{\ln(n!)}{n} &< \sum_{p \leq n} \frac{\ln(p)}{p - 1}
+    \end{align*}
+    
+    Among the integers $1, 2, \cdots, n$, at least half of them are $\geq n/2$. If $n$ is even, there exist $n/2$ terms that are $\geq n/2$. If $n$ is odd, there exist $\lfloor n/2 \rfloor + 1$ terms that are $\geq n/2$, which is still $\geq n/2$. Thus, in either case: 
+    
+    \begin{align*}
+        n! &> \left(\frac{n}{2}\right)^{\frac{n}{2}}\\
+        \ln(n!) &> \ln\!\left(\left(\frac{n}{2}\right)^{\frac{n}{2}}\right) \\
+        \ln(n!) &> \frac{n}{2} \cdot \bigl(\ln(n) - \ln(2)\bigr) \\
+        \frac{\ln(n!)}{n} &> \frac{1}{2} \cdot \bigl(\ln(n) - \ln(2)\bigr)
+    \end{align*}
+    
+    At last, since we know $\ln(n) \to \infty$, for any arbitrary $M \in \mathbb{R}$, we can always find $\,\ln(n) > 2M + \ln 2 \iff \frac{\ln n - \ln 2}{2} > M$. Since $\frac{\ln(n!)}{n} < \sum_{p \leq n} \frac{\ln(p)}{p - 1}$, we get: 
+    
+    \[
+    \sum_{p \leq n} \frac{\ln(p)}{p - 1} > \frac{\ln(n!)}{n} > \frac{\ln n - \ln 2}{2} > M
+    \]
+    
+    \[
+    \sum_{p \leq n} \frac{\ln(p)}{p - 1} > M
+    \]
+    
+    Since our choice of $M$ was arbitrary, $\sum_{p \leq n} \frac{\ln(p)}{p - 1}$ can get arbitrarily large thus \\ $\sum_{p \leq n} \frac{\ln(p)}{p - 1} \rightarrow \infty$ as desired.
+
+    \end{enumerate}
+    \newpage
+
+    \item
+    \begin{enumerate}[label=\alph*)]
+    \item 
+
+    Since a primorial $p_i\#$ is the product of all primes $\leq p_i$, we first take note that for any prime $p$ that for each primorial $p_i\#$ that: 
+
+    \[
+    \nu_p(p_i\#) =
+    \begin{cases}
+      1 & \text{if } p \leq p_i \\
+      0 & \text{if } p > p_i \\
+    \end{cases}
+    \]
+    
+    We assume \(N\) can be written as a product of (not necessarily distinct) primorials \(p_1\#, \cdots, p_k\#\). Thus, with what was noted: 
+
+    \[
+    \nu_p(N) = \sum_{i = 1}^k \nu_p(p_i \#)
+    = \text{\# number of } p_i \text{ such that } p_i \ge p.
+    \]
+    
+    Let \(\hat{p}, q\) be primes with \(q > \hat{p}\). Since any \(p_i\) with \(p_i \geq q\) also satisfies \(p_i \geq \hat{p}\), the number of \(p_i \geq \hat{p}\) is at least that of \(p_i \geq q\). This gives us the inequality \(\nu_{\hat{p}}(N) \geq \nu_{q}(N)\) as desired.
+    
+    \medskip
+    
+    For the converse, we assume $N$ where for any primes \(p < q\) that \(\nu_p(N) \geq \nu_q(N)\).  
+    We first note that \(N \geq 2\), as the cases \(N = 1\) and \(N = 0\) are trivial: they cannot be expressed by any products of primes, much less primorials. For every prime \(p \leq N\), and denoting the finite number of them as \(k\), we order them as \(p_1 < p_2 < p_3 < \cdots < p_k\) such that any prime $p > p_k$ will also be $p > N$. We then denote the sequence \(a_i\) for \(1 \leq i \leq k\) by
+    
+    \[
+    a_i =
+    \begin{cases}
+    \nu_{p_i}(N) - \nu_{p_{i+1}}(N), & \text{if } i < k,\\
+    \nu_{p_k}(N), & \text{if } i = k.
+    \end{cases}
+    \]
+    
+    For any \(n < k\), since \(p_{n+1} > p_n\) and \(\nu_{p_n}(N) \ge \nu_{p_{n+1}}(N)\), we have \(a_n \ge 0\). Thus, we use it to denote the product of primorials for a positive integer \(M\) as 
+    
+    \[
+    M = \prod_{i = 1}^k (p_i\#)^{a_i}.
+    \]
+    
+    For any prime number \(p\), we see that
+      
+    \[
+    \nu_p(M) = \sum_{i = 1}^k a_i \cdot \nu_p(p_i\#).
+    \]
+    
+    Since, as noted, for any \(p > p_i\), \(\nu_p(p_i\#) = 0\): if \(p > p_k\) then all \(\nu_p(p_i\#) = 0\) and consequently \(\nu_p(M) = 0\). Meanwhile, if \(p \leq p_k\) then $p \leq N$, thus \(p\) occurs among the \(p_i\) as \(p_j\), and any \(i \geq j\) has \(\nu_p(p_i\#) = 1\), therefore 
+    
+    \[
+    \nu_p(M) = \sum_{i = j}^k a_i.
+    \]
+    
+    Expanding the \(a_i\) gives:
+    
+    $$
+    \nu_p(M) = \nu_{p_k}(N) + (\nu_{p_{k-1}}(N) - \nu_{p_k}(N)) + \cdots + (\nu_{p_{j+1}}(N) - \nu_{p_{j+2}}(N)) + (\nu_{p_j}(N) - \nu_{p_{j+1}}(N)),
+    $$
+    $$
+    \nu_p(M) = (\nu_{p_k}(N) - \nu_{p_k}(N)) + (\nu_{p_{k-1}}(N) - \nu_{p_{k-1}}(N)) + \cdots + (\nu_{p_{j+1}}(N) - \nu_{p_{j+1}}(N)) + \nu_{p_j}(N),
+    $$
+    $$
+    \nu_p(M) = \nu_{p_j}(N) = \nu_{p}(N).
+    $$ 
+    
+    For all \(p \leq p_k \leq N\), we see that \(\nu_p(M) = \nu_{p}(N)\). Meanwhile, for all \(p > p_k\), \(\nu_p(M) = 0\). Since any \(p > p_k \) is also \(p > N\), we get that \(\nu_p(N) = 0 = \nu_p(M)\). Hence, for all primes \(p\), \(\nu_p(M) = \nu_p(N)\). Thus, since prime factorization is unique, and both are positive integers, we have  
+    
+    \[
+    M = \prod_p p^{\nu_p(N)} = N.
+    \]
+    
+    Since \(M = N\) and \(M\) is a product of primorials, \(N\) is also a product of primorials as desired. \\
+
+    \item 
+    By Proposition 4.3, for any prime p, $\nu_p(2025!)$ can be denoted as:
+
+    $$\nu_p(2025!) = \sum^{\infty}_{k=1} \lfloor \frac{2025}{p^k} \rfloor$$
+
+    For every k, for a prime $q$ where $q > p$, then $q^k > p^k$, so $\frac{2025}{q^k} < \frac{2025}{p^k} \iff  \lfloor \frac{2025}{q^k} \rfloor \leq \lfloor \frac{2025}{p^k} \rfloor$. Thus, also noting that $\lfloor \frac{2025}{q^k} \rfloor = 0$ and $\frac{2025}{p^k} \rfloor = 0$ for a large enough k, which makes their infinite sums finite, we see that: 
+
+    $$\sum^{\infty}_{k=1} \lfloor \frac{2025}{p^k} \rfloor \geq \sum^{\infty}_{k=1} \lfloor \frac{2025}{q^k} \rfloor $$
+    $$\nu_p(2025!) \geq \nu_q(2025!)$$
+
+    From a), since $q > p$ and $\nu_p(2025!) \geq \nu_q(2025!)$, it implies that $2025!$ can be expressed as a product of (not necessarily distinct) primorials. \\ 
+
+    \item 
+
+    We note that $2024 = 2^3 \cdot 11 \cdot 23$. Thus, since the smallest prime before 11 is 7 and the smallest prime before 23 is 19, we get that $11\# / 7\# = 11$ and $23\# / 19\# = 23$. Thus:   
+
+    $$2024 = (2\#)^3 \cdot \frac{11 \#}{7 \#} \cdot \frac{23\#}{19\#}$$
+
+    Thus, if $A = 23\# \cdot 11\# \cdot (2\#)^3$ and $B = 19\# \cdot 7\#$, we get that $2024 = A / B$ as desired. 
+    
+
+    \end{enumerate}
+    \newpage 
+    
+    \item
+    \begin{enumerate}[label=\alph*)]
+    
+    \item
+    We claim that:
+
+    $$s_2(n) = n - \nu_2(n!)$$
+
+    To start, given a positive integer $n$, if n = 0, then $s_2(0) = 0$ and $v_2(0!) = 0$, so $0 - 0 = 0$. For $n \geq 1$, it can be expressed as a sum of powers of 2 that: 
+
+    $$n = \sum_{i=0}^{\lfloor \log_2(n) \rfloor} b_i \cdot 2^i \ \ \ b_i \in \{0, 1\}$$
+
+    The sum only goes up to $\lfloor \log_2(n) \rfloor$ because $2^{\lfloor \log_2(n) \rfloor + 1} > n$. We also see that $b_k$ represents the value of $k$-th digit in base 2. Since we wish to find the sum of it, we need to find the relation for $b_k$, and we start by: 
+    
+    $$n  \ \% \ 2^{k+1} = \sum_{i=0}^{\lfloor \log_2(n) \rfloor} b_i \cdot 2^i  \ \% \ 2^{k+1}$$
+    $$n \ \% \ 2^{k+1} = \sum_{i=0}^{k} b_i \cdot 2^i $$
+
+    This result is achieved because $2^{k + 1}$ divides any terms $2^i$ where $i \geq k + 1$, so only the $i \leq k$ remains. We then isolate\ $b_k$ as follows: 
+
+    $$n \ \% \ 2^{k+1} = b_k \cdot 2^k + \sum_{i=0}^{k-1} b_i \cdot 2^i $$
+    $$\frac{n \ \% \ 2^{k+1}}{2^k} = b_k + \frac{\sum_{i=0}^{k-1} b_i \cdot 2^i}{2^k} $$
+
+    Since $\sum_{i=0}^{k-1} 2^i < 2^k$ and $b_i$ is at most 1, the fraction on the right hand side must be $< 1$. Since $b_i$ is either 0 or 1, if we apply the floor function on both sides, we get that: 
+
+    $$\lfloor \frac{n \ \% \ 2^{k+1}}{2^k} \rfloor = b_k$$
+
+    With this, since $s_2(n)$ is the sum of all such digit from 0 to $\lfloor \log_2(n) \rfloor$, we can now denote that: 
+    \begin{align*}
+    s_2(n) &= \sum_{k=0}^{\lfloor \log_2(n) \rfloor} b_k\\
+    s_2(n) &= \sum_{k=0}^{\lfloor \log_2(n) \rfloor} \lfloor \frac{n \ \% \ 2^{k+1}}{2^k} \rfloor
+    \end{align*}
+    
+    We start by manipulating the terms. By Remark 2.3, since $n \ \% \ 2^{k+1}$
+    is the remainder when n divides by $2^{k+1}$, it is equal to $n - \lfloor \frac{n}{2^{k+1}}\rfloor2^{k+1}$. Thus: 
+
+    \begin{align*}
+    \lfloor \frac{n \ \% \ 2^{k+1}}{2^k} \rfloor &= \lfloor \frac{n - \lfloor \frac{n}{2^{k+1}}\rfloor2^{k+1}}{2^k} \rfloor\\
+    &= \lfloor \frac{n}{2^k} - 2\lfloor \frac{n}{2^{k+1}} \rfloor \rfloor  
+    \end{align*}
+
+    Since $2\lfloor \frac{n}{2^{k+1}} \rfloor$ is an integer, we can take it outside of the floor function and get: 
+
+    $$\lfloor \frac{n}{2^k}\rfloor - 2\lfloor \frac{n}{2^{k+1}} \rfloor$$
+
+    Returning to the summation, we get as follows: 
+
+    \begin{align*}
+    \sum_{k=0}^{\lfloor \log_2 n \rfloor} \left\lfloor \frac{n}{2^k} \right\rfloor - 2\left\lfloor \frac{n}{2^{k+1}} \right\rfloor 
+    &= \left\lfloor \frac{n}{2^0} \right\rfloor - 2\left\lfloor \frac{n}{2^1} \right\rfloor 
+    + \left\lfloor \frac{n}{2^1} \right\rfloor - 2\left\lfloor \frac{n}{2^2} \right\rfloor 
+    + \cdots 
+    + \left\lfloor \frac{n}{2^{\lfloor \log_2 n \rfloor}} \right\rfloor 
+    - 2\left\lfloor \frac{n}{2^{\lfloor \log_2 n \rfloor + 1}} \right\rfloor \\
+    &= \left\lfloor \frac{n}{1} \right\rfloor - \sum_{k = 1}^{\lfloor \log_2 n \rfloor} \left\lfloor \frac{n}{2^k} \right\rfloor - 2\left\lfloor \frac{n}{2^{\lfloor \log_2 n \rfloor + 1}}\right\rfloor
+    \end{align*}
+    
+    Since $n < 2^{\lfloor \log_2 n \rfloor + 1}$, the last term of the subtraction is equal to $0$, which gives us the desired result as the summation is now equal to the equation of $\nu_2(n!)$ from Proposition~4.3:
+    \begin{align*}
+        s_2(n) &= n - \sum_{k = 1}^{\lfloor \log_2 n \rfloor} \left\lfloor \frac{n}{2^k} \right\rfloor \\
+               &= n - \nu_2(n!)
+    \end{align*}\\
+
+    \item 
+    We prove that $a = 1979$ and $b = 47$ satisfy the criteria. For the first criteria, $1979 + 47 = 2026 \geq 2026$. Note that for $1979! \cdot 47!$:
+    
+    $$1979! \cdot 47! = 1978! \cdot 46! \cdot 47 \cdot 1979$$
+    
+    Thus, since $1978 + 46 = 2024$, we see that:
+    
+    $$\frac{2024!}{1979! \cdot 47!} = \frac{2024!}{1978! \cdot 46!} / (1979 \cdot 47) = \frac{\binom{2024}{1978}}{47 \cdot 1979}$$
+    
+    Thus, for each prime $p$, $\nu_p(2024!/(1979! \cdot 47!)) = \nu_p(\binom{2024}{1978}) - \nu_p(1979) - \nu_p(47)$. By Corollary 4.8, we get that $\nu_p(\binom{2024}{1978}) \geq 0$. Since both $47$ and $1979$ are primes, if $p \neq 47$ \textit{and} $p \neq 1979$, then $\nu_p(1979) = 0$ and $\nu_p(47) = 0$, thus $\nu_p(\binom{2024}{1978}) - \nu_p(1979) - \nu_p(47) = \nu_p(\binom{2024}{1978}) \geq 0$. \\
+    
+    If $p = 47$, by Proposition 4.3, we get that:
+    
+    \begin{align*}
+    \nu_{47}(2024!) &= \Big\lfloor \frac{2024}{47^1} \Big\rfloor + \Big\lfloor \frac{2024}{47^2} \Big\rfloor = 43 + 0 = 43\\
+    \nu_{47}(1978!) &= \Big\lfloor \frac{1978}{47^1} \Big\rfloor + \Big\lfloor \frac{1978}{47^2} \Big\rfloor = 42 + 0 = 42\\
+    \nu_{47}(46!) &= \Big\lfloor \frac{46}{47^1} \Big\rfloor = 0
+    \end{align*}
+    
+    $$
+    \nu_{47}(\binom{2024}{1978}) = \nu_{47}(2024!) - \nu_{47}(1978!) - \nu_{47}(46!) = 43 - 42 - 0 = 1
+    $$
+    
+    Thus, we see that $\nu_p(\binom{2024}{1978}) - \nu_p(1979) - \nu_p(47) = 1 - 0 - 1 = 0 \geq 0$.\\
+    
+    If $p = 1979$, by Proposition 4.3, we get that:
+    
+    \begin{align*}
+    \nu_{1979}(2024!) &= \Big\lfloor \frac{2024}{1979} \Big\rfloor + \Big\lfloor \frac{2024}{1979^2} \Big\rfloor = 1 + 0 = 1\\
+    \nu_{1979}(1978!) &= \Big\lfloor \frac{1978}{1979} \Big\rfloor = 0\\
+    \nu_{1979}(46!) &= \Big\lfloor \frac{46}{1979} \Big\rfloor = 0
+    \end{align*}
+    
+    $$
+    \nu_{1979}(\binom{2024}{1978}) = \nu_{1979}(2024!) - \nu_{1979}(1978!) - \nu_{1979}(46!) = 1 - 0 - 0 = 1
+    $$
+    
+    Thus, we see that $\nu_p(\binom{2024}{1978}) - \nu_p(1979) - \nu_p(47) = 1 - 1 - 0 = 0 \geq 0$. Thus, for all primes $p$,  $\nu_p(\binom{2024}{1978}) - \nu_p(1979) - \nu_p(47) = \nu_p(2024!) - \nu_p(1979! \cdot 47!) \geq 0$. Hence, by Corollary 3.15, it implies that $1979! \cdot 47! \mid 2024!$, which satisfies the second criteria.
+
+
+    
+
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
