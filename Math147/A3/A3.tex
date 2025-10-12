@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}[label=(\alph*)]
+        \item 
+        Let $\epsilon > 0$ be given, there exist a $L \in \mathbb{R}$ where for $n \geq L$ that $|s_n - s| < \frac{\epsilon}{2}$. Thus for any $n \geq L$, we denote $\epsilon_n = s_n - s$ and $|\epsilon_k| < \frac{\epsilon}{2}$. We then also note that for $b_n$ that: 
+
+        \begin{align*}
+        b_n = \frac{s_1 + s_2 + s_3 + \cdots + s_n}{n} = \frac{s_1 + \cdots + s_L}{n} + \frac{s_{L + 1} + \cdots + s_n}{n}
+        \end{align*}
+
+        Since $s_1 + s_2 + \cdots + s_L$ is a constant for any $n$ since $n \geq L$, let $M$ denote the sum. We then apply our notion of $\epsilon_n$ combined with there exist $n - L$ terms from $L + 1 $ to n to get that: 
+        \begin{align*}
+        |b_n - s| &= |\frac{M}{n} + \frac{s_{L + 1} + \cdots + s_n}{n} - \frac{n}{n}s|\\
+        &= |\frac{M}{n} + \frac{(n-L)s}{n} + \frac{\epsilon_{L + 1} + \cdots + \epsilon_n}{n} - \frac{n}{n}s| \\
+        &= |\frac{M - Ls}{n} + \frac{\epsilon_{L + 1} + \cdots + \epsilon_n}{n}|
+        \end{align*}
+
+        We then apply the triangle inequality and recalling that $|\epsilon_k| < \frac{\epsilon}{2}$ to get that: 
+
+        \begin{align*}
+        |b_n - s| &\leq |\frac{M - Ls}{n}| + |\frac{\epsilon_{L + 1} + \cdots + \epsilon_n}{n}| \\
+        &\leq \frac{|M - Ls|}{n} + \frac{|\epsilon_{L + 1}| + \cdots + |\epsilon_n|}{n} \\
+        &\leq  \frac{|M - Ls|}{n} + \frac{|n - L|}{n} \cdot \frac{\epsilon}{2}
+        \end{align*}
+
+        Since $\frac{|M - Ls|}{n}$ is the constant $\frac{|M - Ls|}{n}$ multiplied by $\frac{1}{n}$ which converges to 0, by the Limit Laws, we can find an $N > L$ where for any $n \geq N$, we get that $\frac{|M - Ls|}{n} < \frac{\epsilon}{2}$. Since $\frac{|n-L|}{n} < 1$, it follows that that $|b_n - s| \leq \frac{|M - Ls|}{n} + \frac{|n - L|}{n} \cdot \frac{\epsilon}{2} < \epsilon$. Thus, we get $|b_n -s | < \epsilon$ for all $n \geq N$ as desired. \\
+        
+
+        \item 
+        We construct $a_n$ by the rational $r_n$ where $x - \frac{1}{n} < r_n < x $. By the density of $\mathbb{Q}$, $r_n$ is guaranteed, so we assign $a_n = r_n$. Thus since $a_n < x < x + \frac{1}{n}$, we get that $x - \frac{1}{n} < a_n < x + \frac{1}{n}$, so $|a_n - x| < \frac{1}{n}$. Since $\frac{1}{n} \rightarrow 0$, let $\epsilon > 0$ be given, there exist a $N \in \mathbb{R}$ where for all $n \geq N$, $|a_n - x| < \frac{1}{n} < \epsilon$ thus we get $|a_n - x|  < \epsilon$ as desired.
+        
+    \end{enumerate}
+    \newpage
+
+    
+    \item
+    \begin{enumerate}[label=(\alph*)]
+    
+    \item
+    Since $1 > L$, let $\epsilon = \frac{1 - L}{2}$, there exist a natural number $M$ where for all $n \geq M$, $|\frac{s_{n+1}}{s_n} -L| < \epsilon$. This implies that $L - \epsilon < \frac{s_{n+1}}{s_n} < L + \epsilon$, so observe that $|\frac{s_{n+1}}{s_n}| < L + \frac{1 - L}{2} < 1$. We then denote that $a = L + \frac{1 - L}{2}$ thus $0 < a < 1$. \\
+
+    We then note that for $n > M$: 
+
+    $$\prod_{i = M}^{n - 1} |\frac{s_{i+1}}{s_i}| = |\frac{s_{M+1}}{s_M}| \cdot |\frac{s_{M+2}}{s_{M+1}}|\cdots|\frac{s_{n-1}}{s_{n-2}}|\cdot|\frac{s_{n}}{s_{n-1}}| = |\frac{s_n}{s_M}|$$
+
+    Since there exist $n - M$ terms between $M \leq i \leq n - 1$ and all of them are $<a$, we get that: 
+    \begin{align*}
+        |\frac{s_n}{s_M}| &< a^{n-M}\\
+        |s_n| &< a^{n-M}|s_M|
+    \end{align*}
+
+    We now prove the convergence. Let $\epsilon > 0$ be given, select $N = \log_a(\frac{\epsilon a^M}{|s_M|}) + M$. Thus, for all $n \geq N$, we get that $n > \log_a(\frac{\epsilon a^M}{|s_M|})$. Since $0 < a < 1$, the function $\log_a$ is decreasing, so we reverse the inequalities to get that: 
+    \begin{align*}
+    n &> \log_a(\frac{\epsilon a^M}{|s_M|}) \\
+    a^{n} &< \frac{\epsilon a^M}{|s_M|} \\
+    a^{n - M}|s_M| &< \epsilon
+    \end{align*}
+
+    Since $n > M$, we can apply the inequality for $|s_n|$ for all $n \geq N$ to get that:
+
+    \begin{align*}
+     |s_n| & < a^{n - M}|s_M| < \epsilon \\
+    |s_n - 0| &< \epsilon
+    \end{align*}
+
+    Thus, $s_n \rightarrow 0$. \\
+
+
+    \textbf{Proposition} (proven in class) Let $(a_n) \subseteq (0, \infty)$, then $\frac{1}{a_n} \rightarrow 0 \iff a_n \rightarrow \infty$\\
+
+    \item
+    We denote the series $t_n = \frac{1}{|s_n|}$. Since $|\frac{s_{n+1}}{s_n}| \rightarrow L$, $|\frac{t_{n+1}}{t_n}| = |\frac{\frac{1}{s_{n + 1}}}{\frac{1}{s_{n}} }| = \frac{1}{|\frac{s_{n+1}}{s_n}|} \rightarrow \frac{1}{L}$ by the limit laws. Since $L > 1$, it follows that $\frac{1}{L} < 1$, so part a) applies to get $t_n \rightarrow 0$. Thus, by the Proposition, it implies that $\frac{1}{t_n} = |s_n| \rightarrow \infty$ as desired. 
+
+    
+
+    
+
+    
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

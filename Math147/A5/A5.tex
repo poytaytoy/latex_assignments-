@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+    \item
+    By contradiction, we assume B is not closed. Thus, there exists a sequence $(x_n) \subseteq B$ where $x_n \xrightarrow{} x \notin B$. Since $a \in B$, we get that $x \not = a$. We also note that the sequence $(x_n)$ can contain only a finite number of terms equal to $a$. If not, it would contain a subsequence of constant value $a$, which converges to $a$. Since the entire sequence $(x_n)$ converges, its limit must be $a$, which is a contradiction as $a \in B$. Thus, if there are any terms equal to $a$ in $(x_n)$, we take the largest index $\hat{N}$ such that $x_{\hat{N}} = a$ and re-index the sequence to $(x_{n+\hat{N}})$. Thus, we can further assume that $x_n \in A$ for all $n$.\\
+
+    Let $\epsilon = \frac{|x-a|}{2}$, which is positive as $x \not= a$. There exists an $N \in \mathbb{N}$ where for all $n \geq N$, $|a_n - a| < \epsilon$. Consequently, it also means $|a_n - x| \geq \epsilon$. For the finite number of terms with $n < N$, we denote $M = \min\{|a_1 - x|, |a_2 - x|, \cdots, |a_{N-1} - x|\}$. Since $x \notin A$, $M > 0$. Let $\hat{M} = \min\{M/2, \epsilon\}$. Thus, for all $a_n \in A$, $|a_n - x| \geq \hat{M}$. This is a contradiction because every term $x_n$ of the sequence $(x_n)$ is in $A$, so no term $x_n$ can satisfy $|x_n -x | < \hat{M}$. \\
+
+    \item
+    We note that $B$ is closed and contains $A$. Thus, we get that $\overline{A} \subseteq B$. Meanwhile, for every $b \in B$, if $b \in A$, then by definition of closure, $b \in \overline{A}$. If $b = a$, then it is a limit point of $A$ by its construction, so $b \in \overline{A}$. Since this holds for all $b \in B$, we have $B \subseteq \overline{A}$. Thus, we get that $B = \overline{A}$. 
+\end{enumerate}
+\newpage
+
+\item
+\begin{enumerate}
+\item
+ We first confirm that $V_x$ is non-empty. Since $U$ is open, there exists an $\epsilon > 0$ where $(x - \epsilon, x + \epsilon) \subseteq U$. Thus, since it is an open set containing $x$, we get that $(x - \epsilon, x + \epsilon) \in V_x$. \\
+
+We then select arbitrary $a, b \in J_x$ where $a < x < b$. Since $a, b \in J_x$, there exist open intervals $I_a, I_b$ respectively where $a \in I_a$ and $b \in I_b$, and $x$ is in both. For all $a < y < b$, if $y < x$, since $[a, x] \subset I_a$, we get that $y \in I_a \subseteq I_a \cup I_b$. If $y > x$, since $[x, b] \subset I_b$, we get that $y \in I_b \subseteq I_a \cup I_b$. If $y = x$, then we get that $y \in I_a \cup I_b$. Since $a,b$ and everything in-between exist in the union, we note that $[a, b] \subset I_a \cup I_b \subseteq J_x$. \\
+
+To extend this further, we denote $\hat{a}, \hat{b} \in J_x$ where $\hat{a} < x < \hat{b}$. We then denote arbitrary $c, d \in J_x$ where $c < d$. If $x < c < d$, we note that $[\hat{a}, c] \subset J_x$ and $[\hat{a}, d] \subset J_x$, so $[c, d] \subseteq [\hat{a}, c] \cup[\hat{a}, d] \subseteq J_x$. If $c < x < d$, then $[c, d] \subseteq J_x$ as proven. If $c < d < x$, we note that $[c, \hat{b}] \subseteq J_x$ and $[d, \hat{b}] \subseteq J_x$, so $[c, d] \subseteq [c, \hat{b}] \cup [d, \hat{b}] \subseteq J_x$. If either one is equal to $x$, then there exists an open interval $I$ containing $[c, d]$ thus $[c, d] \subset I \subseteq J_x$. Thus, for any $c, d \in J_x$ where $c < d$, we get that $[c, d] \subseteq J_x$, so $J_x$ is an interval. \\
+
+At last, we conclude that since the union of open sets are open, $J_x$ is open. Hence, $J_x$ is an open interval. \\
+
+\item
+If $y \in J_x$, we note that $J_x$ is an open interval as proven in part (a) that contains $y$. This means $J_x \in V_y$, so we get that $J_x \subseteq J_y$. However, since $x \in J_x$, we get that $x \in J_y$. Since it is an open interval containing $x$, we get that $J_y \in V_x$. so $J_y \subseteq J_x$. This implies $J_x = J_y$. \\
+
+Meanwhile, if $y \notin J_x$, we prove that $J_x \cap J_y  = \emptyset$. By contradiction, their intersection is non-empty, so there exists a $d \in J_x \cap J_y$. This means the open intervals $J_x$ and $J_y$ both contain $d$. We note that since all $I \in V_x$ are $I \subseteq U$, we get that $J_x \subseteq U$ and $d \in U$. Thus, we note that $J_x, J_y \in V_d$, so $J_x, J_y \subseteq J_d$. However, this implies $x, y \in J_d$ and since $J_d$ is an open interval from part (a), $J_d \in V_x$ thus $y \in J_d \subseteq J_x$, a contradiction. \\
+
+\item
+For $d \in \bigcup_{J \in V} J$, there exists a $J$ where $d \in J$. There also exists an $x \in U$ where $J_x = J$. Thus, $d \in J_x$ and since all $I \in V_x$ are $I \subseteq U$, we get that $d \in J_x \subseteq U$. \\
+
+For $d \in U$, there exists a $\hat{J} \in V$ where $\hat{J} = J_d$. Thus since $d \in J_d$, we get that $d \in \hat{J} \subseteq \bigcup_{J \in V} J$. Hence, we proved that $U = \bigcup_{J \in V} J$.  \\
+
+\item
+Let $J \in V$ be arbitrary. There exists an $x \in U$ where $J_x = J$. Since $U$ is open, there exists an $\epsilon > 0$, where $(x - \epsilon, x + \epsilon) \subseteq U$. Let $P = (x - \epsilon, x + \epsilon)$. We note $P$ is an open interval containing x, so it exists in $V_x$. By the density of $\mathbb{Q}$, we can select an arbitrary rational number $r$ where $x < r < x + \epsilon$. We get that $ r \in P \subseteq J_x = J$. We denote $r$ as $f(J)$ as desired. \\
+
+\item
+By contradiction, the function is not one-to-one. Hence, there exist $J_1, J_2 \in V$ where $J_1 \not = J_2$ and $f(J_1) = f(J_2)$. We note that there exists an $x \in U$ where $J_1 = J_x$ and a $y \in U$ where $J_2 = J_y$. By part (b), we note that it is either $J_x = J_y$ or $J_y \cap J_x = \emptyset$. Based on our assumptions, $J_1 \not= J_2$, so it leaves $J_y \cap J_x = \emptyset$. However, this is a contradiction because there cannot exist a rational that exists in both $J_1$ and $J_2$ because their intersection is empty, so $f(J_1) = f(J_2)$ is impossible.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
