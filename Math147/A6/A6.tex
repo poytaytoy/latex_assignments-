@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+
+\begin{enumerate}
+
+\item
+\begin{enumerate}
+\item
+Assume $f$ is continuous, and by contradiction, there exist an $x \in f^{-1}(\text{Int(A)})$, where $x \notin \text{Int}(f^{-1}(A))$. Thus, there exists an $(a_n) \notin f^{-1}(A)$, where $a_n \in (x - \frac{1}{n}, x + \frac{1}{n})$. This implies $(a_n) \rightarrow x$, but for each $a_n$, $f(a_n) \notin A$ and $f(a_n) \rightarrow f(x)$ due to the continuity of $f$. Meanwhile, $\text{Int(A)}$ is open, so there exists $\epsilon > 0$ where $(f(x) - \epsilon, f(x) + \epsilon) \subseteq Int(A)$. This is a contradiction because there exists an $N \in \mathbb{N}$ where $|f(a_n) - f(x)| < \epsilon$ for $n \geq N$ while $f(a_n) \notin A \supseteq \text{Int(A)}$. Thus, $(f(x) - \epsilon, f(x) + \epsilon) \not \subseteq \text{Int}(A)$. \\ 
+
+For the converse, assume for all $A \subseteq \mathbb{R}$ that $f^{-1}(\text{Int(A)}) \subseteq \text{Int}(f^{-1}(A))$. This also implies that for all open sets $U \subseteq \mathbb{R}$ that $f^{-1}(U) \subseteq \text{Int}(f^{-1}(U))$, as $\text{Int}(U) = U$. We prove $f^{-1}(U)$ is relatively open in $\mathbb{R}$. By contradiction, it is not relatively open, so there exists an $x \in f^{-1}(U)$ s.t. for all $n \in \mathbb{N}$, there exists an $a_n \in \mathbb{R}$ with $|a_n - x| < \frac{1}{n}$ and $a_n \notin f^{-1}(U)$. We then note that since $x \in \text{Int}(f^{-1}(U))$, so there exists a $\delta > 0$ where $(x - \delta, x + \delta) \subseteq f^{-1}(U)$. However, there exists an $N \in \mathbb{N}$, for $n \geq N$ where $|a_n - x| < \delta$, so there exists an $a_n \in (x- \delta, x + \delta)$, which implies $(x - \delta, x + \delta) \not \subseteq f^{-1}(U)$. This is a contradiction. Thus, $f^{-1}(U)$ is relatively open in $\mathbb{R}$. Since all open sets $U \subseteq \mathbb{R}$ have their pre-image being relatively open in $\mathbb{R}$, it implies $f$ must be continuous from a proposition proven in class. \\
+
+\item 
+Let $f(x) = x^2$, and $A = [0, 1]$. We then denote $x = 0$, so $f(x) = 0$. We note that $x \in \text{Int}(f^{-1}(A))$ since $(-\frac{1}{2}, \frac{1}{2}) \subseteq f^{-1}(A)$. However, $x \notin f^{-1}(\text{Int}(A))$ because $\text{Int}(A) = (0, 1)$ and $0 \notin (0, 1)$. Hence, we proved that $f^{-1}(\text{Int}(A)) \not = \text{Int}(f^{-1}(A))$. 
+\end{enumerate}
+
+\newpage
+
+\item
+\begin{enumerate}
+    \item 
+    Note that $f(x) = f(x + d) = f(x + d + d)$ and $f(x - d - d) = f(x - d) = f(x)$. We can repeat either of them indefinitely to get that $f(x) = f(x + kd)$ for $k \in \mathbb{Z}$. For any $x \in \mathbb{R}$, we note that $x = \lfloor x / d \rfloor d + r$ where $0 \leq r < d$, so $f(x) = f(r)$. Thus, we get that $f(\mathbb{R}) = f([0, d])$. Let $R := f([0, d])$, we note that $[0, d]$ is a closed and bounded, hence compact. By EVT, we get that there exist $x_{\text{min}}, x_{\text{max}} \in [0, d]$ s.t. $f(x_{\text{min}}) = \min(R)$ and $f(x_{\text{max}}) = \max(R)$. Thus, $f$ attains its maximum and minimum values. 
+
+    \item 
+    Let $a, b \in [0, 1]$ where $a < b$ and $a, b \not = 0, 1$. \\
+
+    \textbf{Case 1:} If $f(0) = f(1)$, we note this is impossible because $f$ is one-to-one. \\
+
+    \textbf{Case 2:} If $f(0) < f(1)$, we get that by IVT that $f([0, a]) = A = [a_1, a_2]$ and $f([b, 1]) = B = [b_1, b_2]$. Since $f$ is one-to-one and $[0, a] \cap [b, 1] = \emptyset$, $A \cap B = \emptyset$. Thus, either $a_2 < b_1$ or $b_2 < a_1$. Since $f(0) \in A$ and $f(1) \in B$, we get that:
+
+    $$a_1 \leq f(0) \leq a_2 < b_1 \leq f(1) \leq b_2$$
+
+    Thus, since $f(a) \in A$ and $f(b) \in B$, $f(a) < f(b)$. \\
+
+    \textbf{Case 3:} If $f(0) > f(1)$, denote the same $A$ and $B$ and we get that: 
+
+    $$b_1 \leq f(1) \leq b_2 < a_1 \leq f(0) \leq a_2$$
+
+    Thus, since $f(a) \in A$ and $f(b) \in B$ and $b_2 < a_1$, $f(a) > f(b)$ \\
+
+    Since $0 < 1$, we can extend this to all $a, b \in [0, 1]$ where $a < b$. Thus, $f$ is strictly monotone on $[0, 1]$. 
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
