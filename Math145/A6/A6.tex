@@ -38,11 +38,11 @@
     \item 
     We first note that $S \subseteq S + I$. Thus, the natural projection map $\pi: S \rightarrow (S+ I)/I$ where $s \mapsto [s]$ is a ring homomorphism. \\
     
-    We then note that for all $x \in (S + I)/I$, there exists a $s + a$ for $s \in S$ and $a \in I$ where $x = [s + a] = [s] + [a] = [s]$ because $I \mid a$, which implies $[a] = [0]$. Thus, $x = \pi (s)$. Hence, $\pi$ is surjective, so it impies $\text{im}(\pi) = (S + I)/(I)$. \\
+    We then note that for all $x \in (S + I)/I$, there exists a $s + a$ such that $s \in S$ and $a \in I$ where $x = [s + a] = [s] + [a] = [s]$ because $I \mid a$, which implies $[a] = [0]$. Thus, $x = \pi (s)$. Hence, $\pi$ is surjective, so it implies $\text{im}(\pi) = (S + I)/(I)$. \\
     
     For $x \in S \cap I$, $\pi(x) = [x] = [0]$ as $I \mid x$, so $x \in \text{ker}(\pi)$. Meanwhile, for $x \in \text{ker}(\pi)$, we note that $[x] = [0]$, which implies $I \mid x$ or $x \in I$. Thus, we get $x \in S \cap I$ and that $\text{ker}(\pi) = S \cap I$. \\
     
-    By First Isomorphism Theorem, we get that $S / (S \cap I) \cong (S + I)/I$. 
+    By the First Isomorphism Theorem, we get that $S / (S \cap I) \cong (S + I)/I$. 
 
 \end{enumerate}
 
@@ -57,11 +57,11 @@
     We note that $0 \in J$, so $[0] \in J/I$. For $[a], [b] \in J/I$, we note that $a + b \in J$, so $[a + b] = [a] + [b] \in J/I$. For $[r] \in R/I$, we note that $ra \in J$, so $[ra] = [r] \cdot [a] \in J/I$. This proves $J/I$ is an ideal of $R/I$. \\
 
     \item
-    We note that the the natural projection map of $\pi: R \mapsto R/I$ where $r \mapsto [r]_I$ is a ring homomorphism. Meanwhile, the natural projection map of $\hat{\pi}: R/I \rightarrow (R/I)/(J/I)$ where $[r]_I \mapsto [[r]_I]_{J/I}$ is a ring homomorphism. Hence, if we denote $\varphi = \hat{\pi} \circ \pi$, we get that $\varphi: R \mapsto (R/I)/(J/I)$ where $r \mapsto [[r]]$ is a ring homomorphism. \\
+    We note that the natural projection map of $\pi: R \mapsto R/I$ where $r \mapsto [r]_I$ is a ring homomorphism. Meanwhile, the natural projection map of $\hat{\pi}: R/I \rightarrow (R/I)/(J/I)$ where $[r]_I \mapsto [[r]_I]_{J/I}$ is a ring homomorphism. Hence, if we denote $\varphi = \hat{\pi} \circ \pi$, we get that $\varphi: R \mapsto (R/I)/(J/I)$ where $r \mapsto [[r]]$ is a ring homomorphism. \\
 
     For all $x \in (R/I)/(J/I)$, there exists an $[r] \in R/I$ where $x = [[r]]$ and consequently, an $r \in R$ where $[[r]] = \varphi(r)$. This proves $varphi$ is surjective, so $\text{im}{(\varphi)} = (R/I)/(J/I)$. \\
 
-    For $x \in J$, $\varphi(x) = [[x]]$. We also note that $[x] \in J/I$, and $[x] = [0]$ so $[[x]] = [[0]]$ thus $x \in \text{ker}(\varphi)$. Meanwhile, for $x \in \text{ker}(\varphi)$, $\varphi(x) = [[0]]$, so $J/I \mid [x]$, which further implies $J \mid x$ or $x \in J$. Thus, $\text{ker}(\varphi) = J$. \\
+    For $x \in J$, $\varphi(x) = [[x]]$. We also note that $[x] \in J/I$, so $[[x]] = [[0]]$ thus $x \in \text{ker}(\varphi)$. Meanwhile, for $x \in \text{ker}(\varphi)$, $\varphi(x) = [[0]]$, so $[x] \in J/I$, which further implies $x \in J$. Thus, $\text{ker}(\varphi) = J$. \\
 
     By the First Isomorphism Theorem, $R/J \cong (R/I) / (J/I)$. 
 
@@ -72,10 +72,10 @@
 \item
 \begin{enumerate}
     \item 
-    I is a prime ideal if and only if $ab \in I$ then $a \in I$ or $b \in I$\\
+    A proper ideal $I$ is prime ideal if and only if $ab \in I$ then $a \in I$ or $b \in I$\\
 
     \item
-    Assume $(r)$ is a prime ideal. By contradiction, we assume $r$ is not prime. Then there exists $a, b \in R$ where $r \mid ab$ but $r \mid a$ and $r \mid b$. We note that $ab \in (r)$. This implies either $a \in (r)$ or $b \in (r)$. If we assume $a \in (r)$, then there exists a $q \in R$ where $rq = a$, but that would mean $r \mid a$, a contradiction. Thus, if $(r)$ is a prime ideal, then $r$ is prime. \\
+    Assume $(r)$ is a prime ideal. By contradiction, we assume $r$ is not prime. Then there exists $a, b \in R$ where $r \mid ab$ but $r \nmid a$ and $r \nmid b$. We note that $ab \in (r)$. This implies either $a \in (r)$ or $b \in (r)$. If we assume $a \in (r)$, then there exists a $q \in R$ where $rq = a$, but that would mean $r \mid a$, a contradiction. Thus, if $(r)$ is a prime ideal, then $r$ is prime. \\
 
     Assume r is prime. By contradiction, we assume $(r)$ is not a prime ideal, so there exists an $ab \in (r)$ where $a,b \notin (r)$. Since $ab \in (r)$, there exists a $q \in R$ where $ab = rq$, so $r \mid ab$. This implies either $r \mid a$ or $r \mid b$. We assume $r \mid a$, so there exists a $q' \in R$ where $q'r = a$. However, this implies $a \in (r)$, a contradiction. Thus, if $r$ is prime, then $(r)$ is a prime ideal. \\
 
@@ -85,7 +85,7 @@
     Assume $R/I$ is an integral domain. By contradiction, $I$ is not a prime ideal of $R$. Thus, there exists $a,b \notin I$ but $I \mid ab$. This implies $[ab] = [0]$. However, $R/I$ is an integral domain, so either $[a] = [0]$ or $[b] = [0]$. But that implies either $I \mid a$ or $I \mid b$, a contradiction. Thus, if $R/I$ is an integral domain, then $I$ is a prime ideal of $R$.\\
 
     \item
-    We note that $\mathbb{Z}$ is a PID. Thus, for all prime ideals $I$ of $\mathbb{Z}$, there exists an $x \in \mathbb{Z}$ where $I$ = (x). From b), x must be a prime number. Thus, all prime ideals of $\mathbb{Z}$ are principle ideals of prime numbers. \\
+    We note that $\mathbb{Z}$ is a PID. Thus, for all prime ideals $I$ of $\mathbb{Z}$, there exists an $x \in \mathbb{Z}$ where $I$ = (x). From b), x must be prime. By Euclid's Lemma, all prime numbers are prime, so their principal ideals are also prime ideals. However, 0 satisfies the definition of prime because $\mathbb{Z}$ is an integral domain, so if $0 \mid ab$ then either $a$ or $b$ must be zero, so (0) is also a prime ideal. Thus, all prime ideals of $\mathbb{Z}$ are principal ideals of prime numbers and 0. \\
 
     \item
     From 1b), we note that $S \cap I$ is an ideal. For $a, b \in S$, if $ab \in S \cap I$, then $ab \in I$, which implies either $a \in I$ or $b \in I$. In other words, we get that either $a \in S \cap I$ or $b \in S \cap I$. Thus, $S \cap I$ is a prime ideal.
@@ -102,7 +102,7 @@
         [0] &\mapsto [0]_{81} \times [0]_{25}
     \end{align*}
 
-    We also note that this map is a ring homomorphism, so since $[x^2 - x] = [0]$, it implies that $[x(x-1)] = [0]_{81}$ and $[x(x-1)] = [0]_{25}$. In other words, we get that $81 \mid x(x-1)$ and $25 \mid x(x-1)$. We then note that 25 is a prime a power of $5^2$. By Euclid's Lemma, either $5 \mid x$ or $5 \mid x - 1$. Since $\gcd(x - 1, x) = 1$, only one of the factors could be divisible by 5 and will be the one also divisible by 25. A similar argument can be applied that only one of the factors is divisible by 81. Thus, we get that either and $25 \mid x$ or $25 \mid x - 1$ and $81 \mid x$ or $81 \mid x - 1$. This gives us 4 possible combinations. \\
+    We also note that this map is a ring homomorphism, so since $[x^2 - x] = [0]$, it implies that $[x(x-1)] = [0]_{81}$ and $[x(x-1)] = [0]_{25}$. In other words, we get that $81 \mid x(x-1)$ and $25 \mid x(x-1)$. We then note that 25 is a prime power of $5^2$. By Euclid's Lemma, either $5 \mid x$ or $5 \mid x - 1$. Since $\gcd(x - 1, x) = 1$, only one of the factors could be divisible by 5 and will be the one also divisible by 25. A similar argument can be applied that only one of the factors is divisible by 81. Thus, we get that either and $25 \mid x$ or $25 \mid x - 1$ and $81 \mid x$ or $81 \mid x - 1$. This gives us 4 possible combinations. \\
 
     \textbf{Case 1} If $25 \mid x$ and $81 \mid x$, since 81 and 25 are co-prime, we get that $2025 \mid x$. The only x that satisfies this is if $x = 0$. \\
 
@@ -114,7 +114,7 @@
         1 &= 81b + 25(-a)
     \end{align*}
 
-    We apply the Division Algorithmn strategy back in Claim 2.7 to compute that $b = 21$, so $x = 21 \cdot 81 = 1701$. \\ 
+    We apply the Division Algorithm strategy back in Claim 2.7 to compute that $b = 21$, so $x = 21 \cdot 81 = 1701$. \\ 
 
     \textbf{Case 4} If $25 \mid x$ and $81 \mid x-1$, it implies there exist $a, b \in \mathbb{Z}$ where $25a = x$ and $81b = x - 1$. Thus: 
     \begin{align*}
@@ -124,7 +124,7 @@
 
     We apply the same strategy to compute that $a = 13$ thus $x = 13 \cdot 25 = 325$ \\ 
 
-    Hence, there exists 4 idempotent elements in $\mathbb{Z} / 2025 \mathbb{Z}$. \\
+    Hence, there are 4 idempotent elements in $\mathbb{Z} / 2025 \mathbb{Z}$. \\
 
     \item 
     We note that $0^2 = 0$ and $1^2 = 1$, so $0, 1 \in S$. For $a,b \in S$, we note that: 
@@ -151,16 +151,17 @@
     Thus, we note that $-a = a$ and since $a \in S$, we get that $-a \in S$. We proved $S$ is a subring of $R$. \\
 
     \item 
-    We first note that $(0) = \{r0 : r \in R\} = \{0\}$. Meanwhile, we note that the map of $\varphi: R \rightarrow R$ where $r \mapsto r$ is a ring homomorphism. Meanwhile, the $\text{im}(\varphi) = R$ and that $\text{ker}(\varphi) = \{0\} = (0)$. By the First Isomorphism Theoreom, we get that $R/(0) \cong R$. \\
+    We first note that $(0) = \{r0 : r \in R\} = \{0\}$. Meanwhile, we note that the map $\varphi: R \rightarrow R$ where $r \mapsto r$ is a ring homomorphism. Meanwhile, the $\text{im}(\varphi) = R$ and that $\text{ker}(\varphi) = \{0\} = (0)$. By the First Isomorphism Theorem, we get that $R/(0) \cong R$. \\
 
-    We then apply Theorem 8.24 to get that $R/((e)(1-e)) \cong R/(e) \times R/(1-e)$. We then note that: 
-    \begin{align*}
-        (e)(1-e) &= e^2 - e \\
-        &= e - e \\
-        &= 0
-    \end{align*}
+   For $(e) + (1-e)$, we note that for all $r \in R$ that 
+   
+   $$er + (1-e)r = 1r = r$$
+   
+   Hence, $r \in (e) + (1 -e)$ and $(e) + (1 - e) = R$. This allows us to apply Theorem 8.24 to get that $R/((e)(1-e)) \cong R/(e) \times R/(1-e)$. We then note that for any $a, b \in R$, we get that 
+   
+   $$(1-e)a\cdot(e)b = (e-e^2)ab = 0ab = 0$$
 
-    Thus, we get that $R \cong R/(0) \cong R/(e) \times R/(1-e)$ or $R \cong R/(e) \times R/(1-e)$ as desired. \\
+   This implies that any finite sum in the form of $\sum (e)a_i(1-e)b_i$ is a sum of finitely many zeros, which sums to zero. Hence, $(1-e)(e) = \{0\} = (0)$ and we get that $R \cong R/(0) \cong R/(e) \times R/(1-e)$ or $R \cong R/(e) \times R/(1-e)$ as desired. \\
 
     \item 
     e
