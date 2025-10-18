@@ -164,8 +164,59 @@
    This implies that any finite sum in the form of $\sum (e)a_i(1-e)b_i$ is a sum of finitely many zeros, which sums to zero. Hence, $(1-e)(e) = \{0\} = (0)$ and we get that $R \cong R/(0) \cong R/(e) \times R/(1-e)$ or $R \cong R/(e) \times R/(1-e)$ as desired. \\
 
     \item 
-    e
+    Let $|R| = 2$ where $R = \{0, 1\}$. By Theorem 7.16, $|R| \cdot 1 = 0$. Thus, $\text{char}(R) = 2$ (we note that $\text{char}(R) = 1$ is impossible because it implies $0 = 1$). By Exercise 7.5 (I proved it in HW5 1c), since $\text{char}(R) = |R|$, we get that $R \cong \mathbb{F}_2$. By induction, we assume all finite commutative ring $R$ where every element is idempotent with $2 \leq |R| \leq k$ for $k \in \mathbb{N}$ is isomorphic to a product of $\mathbb{F}_2$. We now assume such ring $R$ where $|R| = k + 1$. \\
+
+    If there exists an $e \in R$ where it is non-zero and non-unit, by c), we get that \\
+    $R \cong R/(e) \times R/(1-e)$. For all $r \in R$, we note that:
+    \begin{align*}
+        [r]_e^2 &= [r^2]_e = [r]_e \\
+        [r]_{1-e}^2 &= [r^2]_{1-e} = [r]_{1-e}
+    \end{align*}
+    Since the natural projections $R \rightarrow R/(e)$ and $R \rightarrow R/(1-e)$ are surjective, we note that all elements in both rings are idempotent. Since both $(e)$ and $(1-e)$ are the kernels of their respective natural projections, by the pigeonhole principle, a non-injective but surjective map implies $|R/(e)|, |R/(1-e)| < |R|$. Hence, by the induction hypothesis, both are isomorphic to a product of $\mathbb{F}_2$. Hence, we get that: 
+
+    $$R \cong (\mathbb{F}_2 \times \cdots \times \mathbb{F}_2 ) \times (\mathbb{F}_2 \times \cdots \times \mathbb{F}_2 ) $$
+    $$R \cong \mathbb{F}_2 \times \cdots \times \mathbb{F}_2  $$
+
+    Meanwhile, if there is no non-zero and non-unit element in $R$, then $R$ must be a field because every non-zero element is a unit. For all $a \in R^{\times}$, there exists a $b \in R^{\times}$ where $ab = 1$. This implies $a(ab) = a$, but $a^2b = ab$, so $1 = ab = a$. Thus, $R^{\times} = \{1\}$. Since $R$ is a field, we get that $R = \{0, 1\}$, which contradicts our assumption of $|R| = k + 1$, making it impossible. \\
+
+    We proved that all finite commutative rings $R$ where every element is idempotent is isomorphic to a product of $\mathbb{F}_2$.
+
     
+\end{enumerate}
+
+\newpage
+
+\item
+\begin{enumerate}
+    \item 
+    We first prove that $\text{im}(ev_a)$ is a subring of $\mathbb{C}$. We note that $1, 0 \in \mathbb{Z}[x]$, so $0, 1 \in \text{im}(ev_a)$. For all $d,e \in \text{im}(ev_a)$, there exists a $f, g \in \mathbb{Z}[x]$ where $f(a) = d$ and $g(a) = e$. We note that $-f \in Z[x]$, so $-f(a) = -d \in \text{im}(ev_a)$. Meanwhile, $f + g, fg \in \mathbb{Z}[x]$, so $f(a) + g(a) = d + e, f(a)g(a) = de \in \text{im}(ev_a)$. This proves $\text{im}(ev_a)$ is a subring of $\mathbb{C}$. We also note $x \in \mathbb{Z}[x]$, so $a \in \text{im}(ev_a)$.\\
+
+    We now prove it is the smallest subring containing $a$. For any subring $S$ containing $a$, for all $x \in \text{im}(ev_a)$, there also exists an $f \in \mathbb{Z}[x]$ where $f(a) = x$. $f$ is a polynomial and $S$ is closed under addition and multiplication for all of its elements. We also note $\mathbb{Z} \subseteq S$ because we can add $1, -1 \in S$ and we can add them indefinitely. This implies $f(a) = x \in S$, so $\text{im}(ev_a) \subseteq S$. Since all subrings $S$ containing $a$ contains $\text{im}(ev_a)$, it is the smallest subring containing $a$, which implies $\text{im}(ev_a) = \mathbb{Z}[a]$. \\
+
+    \item 
+    For each $\beta_k$, there exists a $f_k \in \mathbb{Z}[x]$ where $f_k(a) = \beta_k$ from our result in (a). We then denote $d = \max\{ \deg(f_1), \cdots , \deg(f_k) \} + 1$. Since $-a^d \in \mathbb{Z}[a]$, there exists, $c_1, \cdots, c_n$ where $c_1f_1(a) + \cdots + c_n f_n(a) = -a^d $. We construct the polynomial: 
+
+    $$f(x) = x^d + c_1f_1(x) + \cdots + c_n f_n(x)$$ 
+
+    We note that $f(a) = 0$. Since $\deg(x^d) \geq \deg(f_k)$ for all $1 \leq k \leq n$, the leading coefficient of $f$ is 1. Thus, we constructed a monic polynomial where $f(a) = 0$. \\
+
+    \item
+
+    We denote $C=\{c_0+c_1a+\cdots+c_{d-1}a^{d-1}:c_0,c_1,\dots,c_{d-1}\in\mathbb{Z}\}$.\\
+
+    For all $c\in\mathbb{Z}[a]$, there exists $f\in\mathbb{Z}[x]$ with $f(a)=c$ as proven in (a). By Proposition 9.4, $f(x)=q(x)g(x)+r(x)$ for $q,r\in\mathbb{Z}[x]$ since $g(x)$ is monic, so its leading coefficient is a unit and $\deg r<\deg g$. Since $g(a)=0$, we get $f(a)=r(a)$. Since $\deg r\le d-1$, we get that $r(a)$ is a sum of integer coefficients up to $a^{d-1}$, so $r(a)=c\in C$.\\
+
+    For all $c\in C$, we have $c=c_0+c_1a+\cdots+c_{d-1}a^{d-1}$. The polynomial $f(x)=c_0+c_1x+\cdots+c_{d-1}x^{d-1}\in\mathbb{Z}[x]$, so $f(a)=c\in\mathbb{Z}[a]$. Hence, $\mathbb{Z}[a]=C$.
+
+
+\end{enumerate}
+
+\newpage 
+
+\item 
+\begin{enumerate}
+    \item 
+
 \end{enumerate}
 
 \end{enumerate}
