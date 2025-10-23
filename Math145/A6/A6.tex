@@ -224,9 +224,9 @@
     $m \not \equiv 0 \pmod {p^k}$. This is a contradiction, so the characteristic of $\text{char}(\mathbb{Z}_p)$ must be 0.  \\
 
     \item 
-    We prove that $\varphi$ is injective. We assume $\varphi((a_n)_{n=1}^{\infty}) = \varphi((b_n)_{n=1}^{\infty}) = (r_n)^{\infty}_{n=1}$ for $(r_n)^{\infty}_{n=1} \in \mathbb{Z}_p$ and $(a_n)_{n=1}^{\infty}, ((b_n)_{n=1}^{\infty}) \in S^{\mathbb{N}}$. \\
+    We prove that $\varphi$ is injective. We assume $\varphi((a_n)_{n=1}^{\infty}) = \varphi((b_n)_{n=1}^{\infty}) = (r_n)^{\infty}_{n=1}$ for $(r_n)^{\infty}_{n=1} \in \mathbb{Z}_p$ and $(a_n)_{n=1}^{\infty}, (b_n)_{n=1}^{\infty} \in S^{\mathbb{N}}$. \\
 
-    We prove by induction that $a_n = b_n$ for all $n \in \mathbb{N}$. For $n = 1$, we note that $[a_1]_p = [b_1]_p$, so $a_1 - b_1 \equiv 0 \pmod {p^n}$. However, $a_1, b_1 \in S$, so $-(p-1) \leq a_1 - b_1 \leq p-1$. This only option for $p \mid a_1 - a_2$ is that $a_1 - b_1 = 0$ or $a_1 = b_1$. Let $k \in \mathbb{N}$. We assume that the induction hypothesis holds true for all $1 \leq m \leq k$. For $n = k + 1$, we get that: 
+    We prove by induction that $a_n = b_n$ for all $n \in \mathbb{N}$. For $n = 1$, we note that $[a_1]_p = [b_1]_p$, so $a_1 - b_1 \equiv 0 \pmod {p}$. However, $a_1, b_1 \in S$, so $-(p-1) \leq a_1 - b_1 \leq p-1$. The only option for $p \mid (a_1 - b_1)$ is that $a_1 - b_1 = 0$ or $a_1 = b_1$. Let $k \in \mathbb{N}$. We assume that the induction hypothesis holds true for all $1 \leq m \leq k$. For $n = k + 1$, we get that: 
 
     $$[a_1 + \cdots + a_{k+1}p^{k}]_{p^{k+1}} = [b_1 + \cdots + b_{k+1}p^{k}]_{p^{k+1}}$$ 
 
@@ -238,19 +238,21 @@
 
     $$(a_{k+1} - b_{k+1})p^{k} \equiv 0 \pmod {p^{k+1}}$$
 
-    This implies that $p \mid a_{k+1} - b_{k+1}$. It follows from the same reasoning from $n=1$ that $a_{k+1} - b_{k+1}$ must be equal to 0, thus $a_{k+1} = b_{k+1}$. This proves that $(a_n)^{\infty}_{n=1} = (b_n)^{\infty}_{n=1}$ and that $\varphi$ is injective. \\
+    This implies that $p \mid (a_{k+1} - b_{k+1})$. It follows from the same reasoning from $n=1$ that $a_{k+1} - b_{k+1}$ must be equal to $0$, thus $a_{k+1} = b_{k+1}$. This proves that $(a_n)^{\infty}_{n=1} = (b_n)^{\infty}_{n=1}$ and that $\varphi$ is injective. \\
 
     We now prove that $\text{im}(\varphi) = \mathbb{Z}_p$. Let $(r_n)_{n=1}^{\infty} \in \text{im}(\varphi)$. We get that $r_{n+1} = [a_1 + \cdots + a_{n+1}p^n]_{p^{n+1}}$. We then note that: 
+    
     
     $$f_n(r_{n+1}) = [a_1 + \cdots + a_{n}p^{n-1} + a_{n+1}p^n]_{p^{n}} = [a_1 + \cdots + a_{n}p^{n-1}]_{p^{n}} = r_n$$
 
     Thus, we proved that $(r_n)_{n=1}^{\infty} \in \mathbb{Z}_p$, so $\text{im}(\varphi) \subseteq \mathbb{Z}_p$. Meanwhile for $(r_n)_{n=1}^{\infty} \in \mathbb{Z}_p$, we note that for all $n \in \mathbb{N}$, we get that $r_n = [x_n]_{p^n}$ where $0 \leq x_n \leq p^n - 1$. We then denote $a_n = \lfloor x_n / p^{n-1} \rfloor$ and note that $0 \leq a_n \leq p - 1$, so $a_n \in S$. We note that 
 
-    $$r_n = a_np^{n-1} + x_n \% p^{n-1}$$ 
+    $$r_n = a_n p^{n-1} + x_n \% p^{n-1}$$ 
     
-    Observe that $f_{n-1}(r_{n}) = [x \% p^{n-1}]_{p^{n-1}} = r_{n-1}$, so we get that $x \% p^{n-1} = x_{n-1}$. We repeat the same procedure for $r_{n-1}$ and get that $x_{n-1} = a_{n-1} + x_{n-1}$. We can repeat this until we reach $x_1$ where $x_1 = a_1 \cdot p^0 = a_1 = x_2 \% p$. Hence we get that: 
+    Observe that $f_{n-1}(r_{n}) = [x_n \% p^{n-1}]_{p^{n-1}} = r_{n-1}$, so we get that $x_n \% p^{n-1} = x_{n-1}$. We repeat the same procedure for $r_{n-1}$ and get that $x_{n-1} = a_{n-1}p^{n-2} + x_{n-2}$. We can repeat this until we reach $x_1$ where $x_1 = a_1 \cdot p^0 = a_1 = x_2 \% p$. Hence we get that: 
     
-    $$r_n = [a_np^n-1 + a_{n-1}p^{n-2}+ \cdots + a_1]_{p^{n}}$$
+    
+    $$r_n = [a_n p^{n-1} + a_{n-1}p^{n-2}+ \cdots + a_1]_{p^{n}}$$
 
     Note that for all $1 \leq k \leq n$, $a_k \in S$ by our construction. Hence, there exists a \\
     $(a_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ where $\varphi((a_n)^{\infty}_{n=1}) = (r_n)^{\infty}_{n=1}$. Hence, $(r_n)^{\infty}_{n=1} \in \text{im}(\varphi)$, so $\text{im}(\varphi) \supseteq \mathbb{Z}_p$ and we conclude that $\text{im}(\varphi) = \mathbb{Z}_p$.\\
@@ -260,7 +262,7 @@
 
     We assume $r_1 = 0$, so there does not exist an element $a$ in $\mathbb{Z}/p\mathbb{Z}$ where $a \cdot r_1 = 1$ because $a \cdot r_1 = 0$. We note that $1 = (1)^{\infty}_{n=1}\in \mathbb{Z}_p$. Since there does not exist a $(\hat{r}_n)^{\infty}_{n=1} \in \mathbb{Z}_p$ where $r_1 \cdot \hat{r}_1 = 1$, the inverse of $(r_n)^{\infty}_{n=1}$ does not exist, so it is not a unit. Hence, we get that if $(r_n)^{\infty}_{n=1}$ is a unit, then $r_1 \neq 0$. \\
 
-    For the converse, we assume $r_1 \neq 1$. We will construct a $(b_n)^{\infty}_{n=1} \in \mathbb{Z}_p$ where \\ $(r_n)^{\infty}_{n=1} \cdot (b_n)^{\infty}_{n=1} = (1)^{\infty}_{n=1}$ to show that the inverse exists. For $b_1$, we note that $r_1$ is non-zero and since $\mathbb{Z}/p\mathbb{Z}$ is a field, we can denote $b_1 = r_1^{-1}$.  We then assume for $b_n$ that $b_n \cdot r_n = 1$. For $b_{n+1}$, we first note that $f_n(r_{n+1}) = r_n$ and $f_n(b_{n+1}) = b_n$. We then note that there exists $r, b \in \mathbb{Z}_p$ where $0 < r, b < p^n$ and $r_n = [r]_{p^n}$ and $b_n = [b]_{p^n}$. This implies non-negative integers $c, d$ that: 
+    For the converse, we assume $r_1 \neq 0$. We will construct a $(b_n)^{\infty}_{n=1} \in \mathbb{Z}_p$ where \\ $(r_n)^{\infty}_{n=1} \cdot (b_n)^{\infty}_{n=1} = (1)^{\infty}_{n=1}$ to show that the inverse exists. For $b_1$, we note that $r_1$ is non-zero and since $\mathbb{Z}/p\mathbb{Z}$ is a field, we can denote $b_1 = r_1^{-1}$. We then assume for $b_n$ that $b_n \cdot r_n = 1$. For $b_{n+1}$, we first note that $f_n(r_{n+1}) = r_n$ and $f_n(b_{n+1}) = b_n$. We then note that there exist $r, b \in \mathbb{Z}$ where $0 < r, b < p^n$ and $r_n = [r]_{p^n}$ and $b_n = [b]_{p^n}$. This implies non-negative integers $c, d$ that: 
 
     $$r_{n+1} = [cp^n + r]_{p^{n+1}}$$
     $$b_{n+1} = [dp^n + b]_{p^{n+1}}$$
@@ -271,61 +273,53 @@
         &=  [drp^n + cbp^n + rb]_{p^{n+1}} 
     \end{align*}
 
-    Since $rb \equiv 1 \pmod {p^n}$ There exists a non-negative integer e where $rb = ep^n + 1$. Hence we now get that: 
+    Since $rb \equiv 1 \pmod {p^n}$, there exists a non-negative integer $e$ where $rb = ep^n + 1$. Hence we now get that: 
     \begin{align*}
         r_{n+1} \cdot b_{n+1} &= [drp^n + cbp^n + ep^n + 1]_{p^{n+1}} \\
         &= [p^n(dr + cb + e) + 1]_{p^{n+1}}
     \end{align*}
 
-    To achieve the desired $p^n(dr + cb + e) + 1 \equiv 1 \pmod {p^{n+1}}$, we need to make $p \mid dr + cd + e$. In other words, we can express this as $[dr + cb + e]_p = [0]_p$ in $\mathbb{Z}/\mathbb{Z}_p$. We first note that $[r]_p$ is non-zero because $r_1$ is non-zero and $r_1 = f_1 \cdots \circ f_{n-1} \circ f_n (r) = [r]_p$, so $[r]_p^{-1}$ exists. Hence, if we denote $d$ as the positive integer where $[d]_p = [r]_p^{-1} \cdot (-[cb + e])$. We get that $([r]_p^{-1} \cdot (-[cb + e]))[r]_p + [cb + e]_p = [0]_p$ as desired. Hence, by denoting $b_{n+1} = [dp^n + b]_{p^{n+1}}$, we get that $b_{n+1} \cdot r_{n+1} = [(dp^n + b)(cp^n + r)]_{p^{n+1}} = [1]_{p^{n+1}}$. We have inductively created $(b_n)^{\infty}_{n=1}$ that serves as the inverse of $(r_n)^{\infty}_{n=1}$, so we proved $(r_n)^{\infty}_{n=1}$ is a unit. \\
+    To achieve the desired $p^n(dr + cb + e) + 1 \equiv 1 \pmod {p^{n+1}}$, we need to make $p \mid dr + cb + e$. In other words, we can express this as $[dr + cb + e]_p = [0]_p$ in $\mathbb{Z}/p\mathbb{Z}$. We first note that $[r]_p$ is non-zero because $r_1$ is non-zero and $r_1 = f_1 \cdots \circ f_{n-1} \circ f_n (r) = [r]_p$, so $[r]_p^{-1}$ exists. Hence, if we denote $d$ as the positive integer where $[d]_p = [r]_p^{-1} \cdot (-[cb + e])$. We get that $([r]_p^{-1} \cdot (-[cb + e]))[r]_p + [cb + e]_p = [0]_p$ as desired. Hence, by denoting $b_{n+1} = [dp^n + b]_{p^{n+1}}$, we get that $b_{n+1} \cdot r_{n+1} = [(dp^n + b)(cp^n + r)]_{p^{n+1}} = [1]_{p^{n+1}}$. We have inductively created $(b_n)^{\infty}_{n=1}$ that serves as the inverse of $(r_n)^{\infty}_{n=1}$, so we proved $(r_n)^{\infty}_{n=1}$ is a unit. \\
 
-    \textbf{Remark} For $(a_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ where $\varphi((a_n)^{\infty}_{n=1})$ is equal to $(u_n)^{\infty}_{n=1} \in \mathbb{Z}_p$, we note that $[a_1] = u_1$. The Lemma implies that $(u_n)^{\infty}_{n=1}$ is a unit iff $a_1$ is non-zero. \\
+    \textbf{Remark} For $(a_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ where $\varphi((a_n)^{\infty}_{n=1})$ is equal to $(u_n)^{\infty}_{n=1} \in \mathbb{Z}_p$, we note that $[a_1]_p = u_1$. The Lemma implies that $(u_n)^{\infty}_{n=1}$ is a unit iff $a_1$ is non-zero. \\
 
-    We assume $\nu_p(a) = m$. Let $(a_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ and $\varphi((a_n)^{\infty}_{n=1}) = a$. By the definition of $\nu_p$, we note that $a_1, \cdots, a_{m}$ are all equal to 0. Hence, we note that:
+    We assume $\nu_p(a) = m$. Let $(a_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ and $\varphi((a_n)^{\infty}_{n=1}) = a$. By the definition of $\nu_p$, we note that $a_1, \cdots, a_{m}$ are all equal to $0$. Hence, we note that:
 
     $$\sum^{\infty}_{n= 1} a_n p^{n-1} = p^m \cdot \sum^{\infty}_{n= m + 1} a_n p^{n-m-1}$$ 
-    
-    Hence, we denote the series $(a_{n+m})^{\infty}_{n=1}$. Since $a_{m+1}$ is non-zero, we note that $\varphi((a_{n+m})^{\infty}_{n=1})$ is a unit from the Lemma. We now show that $p^m \cdot \varphi((a_{n+m})^{\infty}_{n=1}) = a$. For all $n \in \mathbb{N}$, if $n \leq m$, then it implies $p^n \mid p^m$, so we get that: 
 
+    Hence, we denote the series $(a_{n+m})^{\infty}_{n=1}$. Since $a_{m+1}$ is non-zero, which is the first term of the series, we note that $\sum^{\infty}_{n= m + 1} a_n p^{n-m-1}$ is a unit from the Remark. Thus, $a = p^m u$ for some unit $u \in \mathbb{Z}_p$. \\ 
 
-    $$[p^m \sum^{n+m}_{k = m+1}a_kp^{k-m}]_{p^n} = [0]_{p^n} = [a_np^{n-1} + \cdots + a_1]_{p^n}$$
+    For the converse, we assume $a = p^m u$ where $u$ is a unit in $\mathbb{Z}_p$. We note that we can express $u$ as
 
-    Since $a_n, \cdots, a_1$ are all zeros. Meanwhile, for $n > m$, we get that 
+    $$u = \sum^{\infty}_{n=1}a_n p^{n-1}$$
 
-    $$[p^m \sum^{n+m}_{k = m+1}a_kp^{k-m}]_{p^n} = [\sum^{n}_{k = 1}a_kp^{k-1}]_{p^n}$$
+    where $a_1$ is non-zero from the Remark since $u$ is a unit. If we multiply $p^m$, we note that it is equivalent to: 
 
-    This shows that $p^m \cdot \varphi((a_{n+m})^{\infty}_{n=1}) = \varphi((a_n)^{\infty}_{n=1}) = a$.\\
+    $$p^m u = p^m \cdot \sum^{\infty}_{n=1}a_n p^{n-1} = \sum^{\infty}_{n=1}a_n p^{n + m-1} $$
 
-    For the converse, we assume $a = p^mu$ where $u$ is a unit in $\mathbb{Z}_p$. We note that we can express $u$ as
+    Hence, we denote a $(b_n)^{\infty}_{n=1} \in S^{\mathbb{N}}$ where for $n \leq m$, we get that $b_n = 0$ and for $n > m$, we get that $b_n = a_{n - m}$. Hence, 
 
-    $$u \mapsto \sum^{\infty}_{n=1}a_n p^{n-1}$$
-
-    where $a_1$ is non-zero from the Lemma since $u$ is a unit. If we multiply $p^m$, we note that it is equivalent to: 
-
-    $$p^mu \mapsto p^m \cdot \sum^{\infty}_{n=1}a_n p^{n-1} = \sum^{\infty}_{n=1}a_n p^{n + m-1} $$
-
-    Hence, we denote a $(b_n)^{\infty}_{n=1} \in S^\mathbb{N}$ where for $n \leq m$, we get that $b_n = 0$ and for $n > m$, we get that $b_n = a_{n - m}$. Hence, 
-
-    $$\sum^{\infty}_{n = 1}b_np^{n-1} = \sum^{m}_{n = 1}0p^{n-1} + \sum^{\infty}_{n=1}a_n p^{n + m-1} \mapsto p^mu$$
+    $$\sum^{\infty}_{n = 1}b_n p^{n-1} = \sum^{m}_{n = 1}0 p^{n-1} + \sum^{\infty}_{n=1}a_n p^{n + m-1} = p^m u$$
 
     Hence, we get that $\nu_p(a) = \nu(p^mu) = \nu_p(\sum^{\infty}_{n = 1}b_np^{n-1}) = m+1 - 1 = m$ as desired as the first non-zero term is $b_{m+1}$. 
     \\ 
     \item 
-    We first prove that $\mathbb{Z}_p$ is an integral domain. Let $a, b \in \mathbb{Z}_p$ and both are non-zero. We denote $m = \nu_p(a)$ and $n = \nu_p(b)$. We also get that there exist units $u, v$ where $a = p^mu$ and $b = p^nv$. We then express $u = (u_n)_{n=1}^{\infty}$ and $v = (v_n)_{n=1}^{\infty}$. Since $u_1, v_1 \in \mathbb{Z}/p\mathbb{Z}$. From the Lemma, since $u$ and $v$ are units, $u_1$ and $v_1$ are non-zeros, which implies $u_1 \cdot v_1$ is non-zero because all fields are integral domains. By the Lemma again, this further implies that $uv$ is a unit. Thus, we have that $ab = p^{m+n}(uv)$, and it follows that $\nu_p(ab) = m + n$. We then denote $(d_n)_{n=1}^{\infty} \in S^{\mathbb{N}}$ where $\varphi((d_n)_{n=1}^{\infty}) = ab$ and we get that $d_{m+n}$ is non-zero. Hence, $(d_n)_{n=1}^{\infty} \neq (0)_{n=1}^{\infty}$, so $ab \neq 0$. This proves that $\mathbb{Z}_p$ is an integral domain.\\
+    We first prove that $\mathbb{Z}_p$ is an integral domain. Let $a, b \in \mathbb{Z}_p$ and both are non-zero. We denote $m = \nu_p(a)$ and $n = \nu_p(b)$. We also get that there exist units $u, v$ where $a = p^m u$ and $b = p^n v$. We then express $u = (u_n)_{n=1}^{\infty}$ and $v = (v_n)_{n=1}^{\infty}$. Since $u_1, v_1 \in \mathbb{Z}/p\mathbb{Z}$, from the Lemma, since $u$ and $v$ are units, $u_1$ and $v_1$ are non-zero, which implies $u_1 \cdot v_1$ is non-zero because $\mathbb{Z}/p\mathbb{Z}$ is a field (thus an integral domain). By the Lemma again, this further implies that $uv$ is a unit. Thus, we have that $ab = p^{m+n}(uv)$, and it follows that $\nu_p(ab) = m + n$. We then denote $(d_n)_{n=1}^{\infty} \in S^{\mathbb{N}}$ where $\varphi((d_n)_{n=1}^{\infty}) = ab$ and we get that $d_{m+n + 1}$ is non-zero. Hence, $(d_n)_{n=1}^{\infty} \neq (0)_{n=1}^{\infty}$, so $ab \neq 0$. This proves that $\mathbb{Z}_p$ is an integral domain.\\
 
-    We can now prove that it is a Euclidean domain. We first denote $\nu_p$ as the function tied to $\mathbb{Z}_p$. Let $a, b \in \mathbb{Z}$ where $a \neq 0$. We consider the cases as follow with $q, r \in \mathbb{Z}_p$ for the form $b = aq + r$:\\
+    We can now prove that it is a Euclidean domain. We first denote $\nu_p$ as the $N(x)$ tied to $\mathbb{Z}_p$. Let $a, b \in \mathbb{Z}_p$ where $a \neq 0$. We consider the cases as follows with $q, r \in \mathbb{Z}_p$ for the form $b = aq + r$:\\
 
     \textbf{Case 1}: If $b = 0$, then it follows that $q = 0$ and $r = 0$ where $0 = a0 + 0 = 0$. \\
 
-    For the remaining cases, we assume $b \neq 0$. Thus, we can denote $\nu_p(b) = m$ and $\nu_p(a) = n$ and that $b = p^mu$ and $a = p^nv$ with $u, v$ being units in $\mathbb{Z}_p$.\\
+    For the remaining cases, we assume $b \neq 0$. Thus, we can denote $\nu_p(b) = m$ and $\nu_p(a) = n$ and that $b = p^m u$ and $a = p^n v$ with $u, v$ being units in $\mathbb{Z}_p$.\\
 
-    \textbf{Case 2}: If $m > n$, then it follows that and $r = 0$ and $q = p^{m-n}(v^{-1}u)$. Thus, $b = (p^nv)(p^{m-n}(v^{-1}u)) = p^mu = b$. (Take notice that we had earlier shown with the integral domain proof that the multiplication between 2 arbitrary unit in $\mathbb{Z}_p$ is still a unit, so $v^{-1}u$ is a unit.) \\
+    \textbf{Case 2}: If $m > n$, then it follows that $r = 0$ and $q = p^{m-n}(v^{-1}u)$. Thus, $b = (p^n v)(p^{m-n}(v^{-1}u)) = p^m u = b$. (Take notice that we had earlier shown with the integral domain proof that the multiplication between two arbitrary units in $\mathbb{Z}_p$ is still a unit, so $v^{-1}u$ is a unit.) \\
 
-    \textbf{Case 3}: If $m = n$, then it follows that and $r = 0$ and $q = (v^{-1}u)$. Thus, $b = (p^nv)((v^{-1}u)) = p^mu = b$. \\
+    \textbf{Case 3}: If $m = n$, then it follows that $r = 0$ and $q = (v^{-1}u)$. Thus, $b = (p^n v)((v^{-1}u)) = p^m u = b$. \\
 
-    \textbf{Case 4}: If $m < n$, then it follows that and $r = p^mu$ and $q = 0$. Thus, $b = (p^nv)0 + p^mu = p^mu = b$. Since $\nu_p(r) = m$, we get that $\nu_p(r) < \nu_p(a)$. \\
+    \textbf{Case 4}: If $m < n$, then it follows that $r = p^m u$ and $q = 0$. Thus, $b = (p^n v)0 + p^m u = p^m u = b$. Since $\nu_p(r) = m$, we get that $\nu_p(r) < \nu_p(a)$. \\
 
-    We showed that in all cases, it is either $r = 0$ or $\nu_p(r) < \nu_p(a)$. This proves that $\mathbb{Z}_p$ is a Euclidean domain. 
+    We showed that in all cases, it is either $r = 0$ or $\nu_p(r) < \nu_p(a)$. This proves that $\mathbb{Z}_p$ is a Euclidean domain.
+
 
 \end{enumerate}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  23 OCT 2025 17:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  23 OCT 2025 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,12 +458,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--242
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--257
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 257--259
 
  []
 
@@ -473,74 +468,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 261--262
  []
 
 
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
 
+
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
 
-Overfull \hbox (4.23508pt too wide) in paragraph at lines 288--289
-[]\OT1/cmr/m/n/10 Hence, we de-note the se-ries $(\OML/cmm/m/it/10 a[]\OT1/cmr/m/n/10 )[]$. Since $\OML/cmm/m/it/10 a[]$ \OT1/cmr/m/n/10 is non-zero, we note that $\OML/cmm/m/it/10 '\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 a[]\OT1/cmr/m/n/10 )[])$
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--298
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 311--314
+Underfull \hbox (badness 10000) in paragraph at lines 304--307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 307--308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--317
+Underfull \hbox (badness 10000) in paragraph at lines 309--310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--319
+Underfull \hbox (badness 10000) in paragraph at lines 311--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--321
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 322--323
+Underfull \hbox (badness 10000) in paragraph at lines 315--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 324--325
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 319--320
 
  []
 
 
 
-[9]
-
-[10] (A6.aux)
+[9] (A6.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -549,15 +542,15 @@ L3 programming layer <2025-09-02>
 Here is how much of TeX's memory you used:
  4126 strings out of 468130
  64178 string characters out of 5430632
- 488310 words of memory out of 5000000
+ 488308 words of memory out of 5000000
  32723 multiletter control sequences out of 15000+600000
  628832 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,9n,79p,1040b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 70i,9n,79p,1075b,368s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on A6.pdf (10 pages, 171260 bytes).
+Output written on A6.pdf (9 pages, 170593 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
