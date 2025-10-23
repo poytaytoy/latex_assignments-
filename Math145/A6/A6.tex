@@ -164,22 +164,23 @@
    This implies that any finite sum in the form of $\sum (e)a_i(1-e)b_i$ is a sum of finitely many zeros, which sums to zero. Hence, $(1-e)(e) = \{0\} = (0)$ and we get that $R \cong R/(0) \cong R/(e) \times R/(1-e)$ or $R \cong R/(e) \times R/(1-e)$ as desired. \\
 
     \item 
-    Let $|R| = 2$ where $R = \{0, 1\}$. By Theorem 7.16, $|R| \cdot 1 = 0$. Thus, $\text{char}(R) = 2$ (we note that $\text{char}(R) = 1$ is impossible because it implies $0 = 1$). By Exercise 7.5 (I proved it in HW5 1c), since $\text{char}(R) = |R|$, we get that $R \cong \mathbb{F}_2$. By induction, we assume all finite commutative ring $R$ where every element is idempotent with $2 \leq |R| \leq k$ for $k \in \mathbb{N}$ is isomorphic to a product of $\mathbb{F}_2$. We now assume such ring $R$ where $|R| = k + 1$. \\
+    Let $|R| = 2$ where $R = \{0, 1\}$. By Theorem 7.16, $|R| \cdot 1 = 0$. Thus, $\text{char}(R) = 2$ (we note that $\text{char}(R) = 1$ is impossible because it implies $0 = 1$). By Exercise 7.5 (I proved it in HW5 1c), since $\text{char}(R) = |R|$, we get that $R \cong \mathbb{F}_2$. By induction, we assume all finite commutative rings $R$ where every element is idempotent with $2 \leq |R| \leq k$ for $k \in \mathbb{N}$ are isomorphic to a product of $\mathbb{F}_2$. We now assume such a ring $R$ where $|R| = k + 1$. \\
 
-    If there exists an $e \in R$ where it is non-zero and non-unit, by c), we get that \\
-    $R \cong R/(e) \times R/(1-e)$. For all $r \in R$, we note that:
+    If there exists an $e \in R$ where it is non-zero and non-unit, by c), we get that $R \cong R/(e) \times R/(1-e)$. For all $r \in R$, we note that:
     \begin{align*}
         [r]_e^2 &= [r^2]_e = [r]_e \\
         [r]_{1-e}^2 &= [r^2]_{1-e} = [r]_{1-e}
     \end{align*}
-    Since the natural projections $R \rightarrow R/(e)$ and $R \rightarrow R/(1-e)$ are surjective, we note that all elements in both rings are idempotent. Since both $(e)$ and $(1-e)$ are the kernels of their respective natural projections, by the pigeonhole principle, a non-injective but surjective map implies $|R/(e)|, |R/(1-e)| < |R|$. Hence, by the induction hypothesis, both are isomorphic to a product of $\mathbb{F}_2$. Hence, we get that: 
+    Since the natural projections $R \rightarrow R/(e)$ and $R \rightarrow R/(1-e)$ are surjective, we note that all elements in both rings are idempotent. Moreover, these maps have nonzero kernels $(e)\neq(0)$ and $(1-e)\neq(0)$, so it must be that $|R/(1-e)| < |R|$ and $|R/(e)| < |R|$. \\
+  
+    Hence, by the induction hypothesis, both are isomorphic to a product of $\mathbb{F}_2$. Hence, we get that: 
 
     $$R \cong (\mathbb{F}_2 \times \cdots \times \mathbb{F}_2 ) \times (\mathbb{F}_2 \times \cdots \times \mathbb{F}_2 ) $$
     $$R \cong \mathbb{F}_2 \times \cdots \times \mathbb{F}_2  $$
 
-    Meanwhile, if there is no non-zero and non-unit element in $R$, then $R$ must be a field because every non-zero element is a unit. For all $a \in R^{\times}$, there exists a $b \in R^{\times}$ where $ab = 1$. This implies $a(ab) = a$, but $a^2b = ab$, so $1 = ab = a$. Thus, $R^{\times} = \{1\}$. Since $R$ is a field, we get that $R = \{0, 1\}$, which contradicts our assumption of $|R| = k + 1$, making it impossible. \\
+    Meanwhile, if there is no non-zero and non-unit element in $R$, then $R$ must be a field because every non-zero element is a unit. For any $a \in R^{\times}$, since $a^2=a$, multiplying by $a^{-1}$ gives $a=1$. Thus, $R^{\times}=\{1\}$ and $R=\{0,1\}\cong\mathbb{F}_2$, which contradicts our assumption of $|R| = k + 1$, making it impossible. \\
 
-    We proved that all finite commutative rings $R$ where every element is idempotent is isomorphic to a product of $\mathbb{F}_2$.
+    We proved that all finite commutative rings $R$ where every element is idempotent are isomorphic to a product of $\mathbb{F}_2$.
 
     
 \end{enumerate}
