@@ -12,19 +12,19 @@
 \item 
 \begin{enumerate}
     \item 
-    \textbf{Claim:} $I[x]$ is a proper ideal of $R[x]$. \\
+    \textbf{Claim: } $I[x]$ is a proper ideal of $R[x]$. \\
 
-    We note that $0 \in I$ and since $I \subset I[x]$, we get that $0 \in I[x]$. \\
-    
-    Meanwhile, for $a_nx^n + \cdots + a_0, b_mx^m + \cdots + b_0 \in I[x]$. Assuming $n \geq m$, for each $k > m$, $a_k \in I$. For each $k \leq m$ that $a_k + b_k \in I$. Hence, we get that $a_n + \cdots + a_{m+1} + (a_m + b_m)x^n + \cdots + (a_0 + b_0) \in I[x]$. We note that $I[x]$ is closed under addition.\\
+    We note that $0 \in I$ and since $I \subseteq I[x]$, we get that $0 \in I[x]$. \\
+
+    Meanwhile, for $a_nx^n + \cdots + a_0, b_mx^m + \cdots + b_0 \in I[x]$. Assuming $n \geq m$, for each $k > m$, $a_k \in I$. For each $k \leq m$ that $a_k + b_k \in I$. Hence, we get that $a_nx^n + \cdots + a_{m+1}x^{m+1} + (a_m + b_m)x^m + \cdots + (a_0 + b_0) \in I[x]$. We note that $I[x]$ is closed under addition.\\
 
     Lastly, for $a_nx^n + \cdots + a_0 \in I[x]$ and $b_mx^m + \cdots + b_0 \in R[x]$, we note that $(a_nx^n + \cdots + a_0) (b_mx^m + \cdots + b_0)$ can be expressed as: 
 
     $$\sum^n_{k=0}a_kx^k(b_mx^m + \cdots + b_0)$$
 
-    For $0 \leq i \leq m$, $a_kb_i \in I$, so $a_kb_ix^{i+k} \in I[x]$. This implies that $a_kb_mx^{m+k} + \cdots a_kb_0x^k \in I[x]$ as each term is in $I[x]$ and $I[x]$ is closed under addition. Since each item in the sum is in $I[x]$, it furthers implies that the sum is in $I[x]$. \\
+    For $0 \leq i \leq m$, $a_kb_i \in I$, so $a_kb_ix^{i+k} \in I[x]$. This implies that $a_kb_mx^{m+k} + \cdots a_kb_0x^k \in I[x]$ as each term is in $I[x]$ and $I[x]$ is closed under addition. Since each item in the sum is in $I[x]$, it further implies that the sum is in $I[x]$. \\
 
-    We proved that $I[x]$ is an ideal of $R[x]$, so we now prove properness. Clearly, $I[x] \subset R[x]$. Since $I$ is a proper ideal, $1 \not \in I$, so $1 \cdot x = x \notin I[x]$. However, $x \in R[x]$, so we get that $I[x] \neq R[x]$, so it is a proper ideal. \hfill $\square$  \\
+    We proved that $I[x]$ is an ideal of $R[x]$, so we now prove properness. Clearly, $I[x] \subseteq R[x]$. Since $I$ is a proper ideal, $1 \not \in I$, so $1 \cdot x = x \notin I[x]$. However, $x \in R[x]$, so we get that $I[x] \neq R[x]$, so it is a proper ideal. \hfill $\square$  \\
 
     \textbf{Claim:} $R[x]/I[x] \cong (R/I)[x]$ \\
 
@@ -32,7 +32,7 @@
 
     By Proposition 9.5, a homomorphism $\psi: R[x] \rightarrow (R/I)[x]$ is the same as defining a homomorphism $\varphi: R \rightarrow (R/I)[x]$ along with an element $\alpha \in (R/I)[x]$. We define $\varphi$ to be the natural projection map of $r \mapsto [r]_I \in R/I$ for $r \in R$, which exists in $(R/I)[x]$ due to the inclusion of constants. Meanwhile, we choose $\alpha = x \in (R/I)[x]$, so $\psi(x) = \alpha$. \\
 
-    We now prove that $im(\psi)$ is surjective. Let $a_nx^n + \cdot + a_0 \in R/I[x]$. For each $0 \leq k \leq n$, $a_k = [r_k]_I$ for some $r_k \in I$. In other words, $\psi(r_k) = a_k$. Hence, considering that $x = \psi(x)$, we note that: 
+    We now prove that $im(\psi)$ is surjective. Let $a_nx^n + \cdots + a_0 \in (R/I)[x]$. For each $0 \leq k \leq n$, $a_k = [r_k]_I$ for some $r_k \in R$. In other words, $\psi(r_k) = a_k$. Hence, considering that $x = \psi(x)$, we note that: 
 
     \begin{align*}
         a_nx^n + \cdots + a_0 &= \psi(r_n)x^n + \cdots + \psi(r_0) \\
@@ -47,21 +47,21 @@
     We satisfied all the conditions for the First Isomorphism Theorem, so $R[x]/I[x] \cong (R/I)[x]$. \hfill $\square$  \\
 
     \item 
-    Since the polynomial $f(x)$ is a unit, there exists a $g(x) \in R[x]^{\times}$ where $f(x)g(x) = 1$. Since a prime ideal is also defined to be a proper ideal, we can apply the homomorphism $\psi:R[x] \rightarrow (R/I)[x]$ from $(a)$. We note that $\psi(f(x))$ is a unit in $(R/I)[x]$ because $\psi(f(x))\cdot \psi(g(x)) = \psi(f(x)g(x0)) = \psi(1) = 1$. We then note that from HW6 3(c), since $I$ is a prime ideal, $R/I$ is an integral domain. From Lemma 9.3, this implies $\psi(f(x))$ is a constant. Since $\psi(f(x)) = [a_n]_Ix^n + \cdots + [a_0]_I$ and its degree is 0 from being a constant, this implies that for $i \geq 1$ that $[a_i]_I = 0$. In other words, it implies $a_i \in I$ as desierd. \hfill $\square$  \\
+    Since the polynomial $f(x)$ is a unit, there exists a $g(x) \in R[x]^{\times}$ where $f(x)g(x) = 1$. Since a prime ideal is also defined to be a proper ideal, we can apply the homomorphism $\psi:R[x] \rightarrow (R/I)[x]$ from $(a)$. We note that $\psi(f(x))$ is a unit in $(R/I)[x]$ because $\psi(f(x))\cdot \psi(g(x)) = \psi(f(x)g(x)) = \psi(1) = 1$. We then note that from HW6 3(c), since $I$ is a prime ideal, $R/I$ is an integral domain. From Lemma 9.3, this implies $\psi(f(x))$ is a constant. Since $\psi(f(x)) = [a_n]_Ix^n + \cdots + [a_0]_I$ and its degree is $0$ from being a constant, this implies that for $i \geq 1$ that $[a_i]_I = 0$. In other words, it implies $a_i \in I$ as desired. \hfill $\square$ \\
 
     \item 
     We note that for $0 \leq r \leq 2024$, $[r]$ represents each element in $\mathbb{Z}/2025\mathbb{Z}$ bijectively. \\
     
     \textbf{Claim:} $[r]$ is nilpotent iff $15 \mid r$. \\
 
-    Let $r$ be arbitrary and assume that for some positive integer $n$ that $[r]^n = [r^n] = 0$. This implies that $2025 \mid r^n$. Since $3 \mid 2025$ and $5 \mid 2025$, we get that $3 \mid r^n$ and $5 \mid r^n$. By Euclid's Lemma, since 3 is prime, either $3 \mid r$ or $3 \mid r^{n-1}$. If $3 \mid r$, we are done. If not, then $3 \mid r^{n-1}$, so we can repeat the process with $3 \mid r$ or $3 \mid r^{n-2}$. Since $3 \nmid r$, it must be that $3 \mid r^{n-2}$. We can repeat this process until we reach $3 \mid r$ or $3 \mid r^0 = 1$. Since $3 \nmid 1$, we reached a contradiction, so it must be that $3 \mid r$. Since 5 is also a prime, we can apply the same process to get $5 \mid r$. We note that $\gcd(3,5) = 1$, so $3\cdot 5 \mid r$ as desired. \\
+    Let $r$ be arbitrary and assume that for some positive integer $n$ that $[r]^n = [r^n] = 0$. This implies that $2025 \mid r^n$. Since $3 \mid 2025$ and $5 \mid 2025$, we get that $3 \mid r^n$ and $5 \mid r^n$. By Euclid's Lemma, since $3$ is prime, either $3 \mid r$ or $3 \mid r^{n-1}$. If $3 \mid r$, we are done. If not, then $3 \mid r^{n-1}$, so we can repeat the process with $3 \mid r$ or $3 \mid r^{n-2}$. Since $3 \nmid r$, it must be that $3 \mid r^{n-2}$. We can repeat this process until we reach $3 \mid r$ or $3 \mid r^0 = 1$. Since $3 \nmid 1$, we reach a contradiction, so it must be that $3 \mid r$. Since $5$ is also a prime, we can apply the same process to get $5 \mid r$. We note that $\gcd(3,5) = 1$, so $3\cdot 5 \mid r$ as desired. \\
 
-    For the converse, assume $15 \mid r$, so there exist some integer $q$ where $r = 15q$. If we set $n = 4$, we notice that $[(15q)^4] = [3^4 \cdot 5^4 \cdot q^4] = [25 \cdot 2025 \cdot q^4] = 0$. Thus, $[r]$ is a nilpotent element. \hfill $\square$ \\
+    For the converse, assume $15 \mid r$, so there exists some integer $q$ such that $r = 15q$. If we set $n = 4$, we notice that $[(15q)^4] = [3^4 \cdot 5^4 \cdot q^4] = [25 \cdot 2025 \cdot q^4] = 0$. Thus, $[r]$ is a nilpotent element. \hfill $\square$ \\
 
-    The claim implies that we only need to look for multiplies of 15 within the range of $r$ to search for all nilpotent elements. Hence, there exist $\lfloor 2025/15 \rfloor = 134$ non-zero r's that are multiples of 15. Since $15 \mid 0$, we include it to get that there exists $134 + 1 = 135$ nilpotent elements in $\mathbb{Z} / 2025\mathbb{Z}$. \hfill $\square$ \\
+    The claim implies that we only need to look for multiples of $15$ within the range of $r$ to search for all nilpotent elements. Hence, there exist $\lfloor 2025/15 \rfloor = 134$ nonzero $r$'s that are multiples of $15$. Since $15 \mid 0$, we include it to get that there exist $134 + 1 = 135$ nilpotent elements in $\mathbb{Z} / 2025\mathbb{Z}$. \hfill $\square$ \\
 
-    \item 
-    Let $I$ be a prime ideal of $R$ and $r$ be a nilpotent elemnt in $R$ where $r^n = 0$ for some positive integer $n$. Since $I$ is an ideal, $0 = r^n \in I$. Since $I$ is a prime ideal, either $I \mid r$ or $I \mid r^{n-1}$. If $I \mid r$, we are done. If not, then $I \mid r^{n-1}$, so we can repeat the process with $I \mid r$ or $I \mid r^{n-2}$. Since $I \nmid r$, it must be that $I \mid r^{n-2}$. We can repeat this process until we reach $I \mid r^1$, a contradiction. Hence, it must be that $I \mid r$. This implies that all nilpotent elements in $R$ belong to every prime ideals of $R$. \hfill $\square$ \\
+   \item 
+    Let $I$ be a prime ideal of $R$ and $r$ be a nilpotent element in $R$ where $r^n = 0$ for some positive integer $n$. Since $I$ is an ideal, $r^n \in I$. Since $I$ is a prime ideal, either $r \in I$ or $r^{\,n-1} \in I$. If $r \in I$, we are done. If not, then $r^{\,n-1} \in I$, so we can repeat the process with $r \in I$ or $r^{\,n-2} \in I$. Since $r \notin I$, it must be that $r^{\,n-2} \in I$. We can repeat this process until we would reach $r^1 = r\in I$, a contradiction. Hence, it must be that $r \in I$. This implies that all nilpotent elements in $R$ belong to every prime ideal of $R$. \hfill $\square$ \\
 
     \item 
     Let $r$ be a nilpotent elemnt in $R$ where $r^n = 0$ for some positive integer $n$. We note that $n \geq 2$ because $r$ is a non-zero element. \\
@@ -92,18 +92,18 @@
         &= 0
     \end{align*}
 
-    Thus, we get that $\alpha^m = 1$. This implies the existence of $o(\alpha)$ and that $o(\alpha) \mid m$. This also implies that $o(a) \leq m$. Let us denote $b = o(a)$ and assume that $b < m$. Since $b \mid m$, any divisor of $b$ is also a divisor of $m$, which allows us to obtain this expression: 
+    Thus, we get that $\alpha^m = 1$. This implies the existence of $o(\alpha)$ and that $o(\alpha) \mid m$. This also implies that $o(\alpha) \leq m$. Let us denote $b = o(\alpha)$ and assume that $b < m$. Since $b \mid m$, any divisor of $b$ is also a divisor of $m$, which allows us to obtain this expression: 
     \begin{align*}
-        \alpha^m - 1 &= \Phi_m(\alpha) \cdot \prod_{d \mid b} \Phi_d(\alpha) \cdot \prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(\alpha)\\
-        &= \Phi_m(\alpha) \cdot(\alpha^b - 1) \cdot \prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(\alpha)
+        x^m - 1 &= \Phi_m(x) \cdot \prod_{d \mid b} \Phi_d(x) \cdot \prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(x)\\
+        &= \Phi_m(x) \cdot(x^b - 1) \cdot \prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(x)
     \end{align*}
 
     By its definition, $\alpha^b = 1$, so $\alpha^b - 1 = 0$. This implies that $\alpha$ is a root for both $\Phi_m(x)$ and $(x^b - 1)$. By Corollary 9.7, since $F$ is an integral domain from being a field, there exist polynomials $h(x), g(x) \in F[x]$ where $\Phi_m(x) = (x - \alpha)h(x)$ and $(x^b - 1) = (x - \alpha)g(x)$. This allows us to obtain the expression that:
     
-    $$x^m - 1  = (x - \alpha)(x - \alpha)h(x)g(x)\prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(\alpha) $$
+    $$x^m - 1  = (x - \alpha)(x - \alpha)h(x)g(x)\prod_{\substack{d \mid m \\ d \nmid b \\ d \neq m}} \Phi_d(x) $$
 
-    This implies that $\alpha$ is a repeated root of $x^m - 1$. However, we note that $(\alpha^m - 1)' = m\alpha^{m-1}$. Notice that $m\alpha^{m-1} = m\alpha^{m}\alpha^{-1}$. We note that $m\alpha^m = m(1)$ and since $m \nmid p$, $m(1)$ must be non-zero. Since $\alpha^{-1}$ is also a non-zero from being a unit and that $F$ is an integral domain from being a field, this implies that $m\alpha^{m-1}$ is a non-zero element. By Proposition 9.12, this implies that $\alpha$ is not a repeated root for $x^m - 1$, which is a contradiction. Thus, it must be that $b = m$, so we get that $o(\alpha) = m$ as desired.  \hfill $\square$ \\ 
-
+    This implies that $\alpha$ is a repeated root of $x^m - 1$. However, we note that $(\alpha^m - 1)' = m\alpha^{m-1}$. Notice that $m\alpha^{m-1} = m\alpha^{m}\alpha^{-1}$. We note that $m\alpha^m = m(1)$ and since $p \nmid m$, $m(1)$ must be non-zero. Since $\alpha^{-1}$ is also a non-zero from being a unit and that $F$ is an integral domain from being a field, this implies that $m\alpha^{m-1}$ is a non-zero element. By Proposition 9.12, this implies that $\alpha$ is not a repeated root for $x^m - 1$, which is a contradiction. Thus, it must be that $b = m$, so we get that $o(\alpha) = m$ as desired.  \hfill $\square$ \\
+ 
     \item 
     \textbf{Claim:} $\Phi_m(\alpha) = 0$\\
 
@@ -114,15 +114,16 @@
         &= \prod_{\substack{d \mid m \\ d \neq m}} \Phi_d(\alpha) \cdot \Phi_m(\alpha)
     \end{align*}
 
-    We then note that for every divisor of $m$ that is not equal to $m$, we get that $d < m$, so $\alpha^d - 1 \neq 0$ because of $o(\alpha)$'s minimality. Since $\Phi_d(\alpha)$ is a factor of $x^d - 1$ as $d \mid d$. We get that $\Phi_d(\alpha)$ must be a non-zero. Since $F$ is an integral domain from being a field we note that: 
+    We then note that for every divisor of $m$ that is not equal to $m$, we get that $d < m$, so $\alpha^d - 1 \neq 0$ because of $o(\alpha)$'s minimality. Since $\Phi_d(x)$ is a factor of $x^d - 1$, we get that $\Phi_d(\alpha)$ must be non-zero. Since $F$ is an integral domain from being a field we note that: 
     
     $$\prod_{\substack{d \mid m \\ d \neq m}} \Phi_d(\alpha) \neq 0$$
 
     Thus, since $\alpha^m - 1 = 0$, with all other factors being non-zero, this implies that $\Phi_m(\alpha) = 0$. \hfill $\square$ \\ 
 
-    \textbf{Claim:} $\Phi_m(\alpha)' \neq 0$ \\
+    \textbf{Claim:} $\Phi_m'(\alpha) \neq 0$ \\
 
-    By contradiction, $\Phi_m(\alpha)' = 0$. By Proposition 9.12, this implies that $\alpha$ is a repeated root for $\Phi_m(x)$ as $\Phi(\alpha) = 0$. Since $\Phi_m(x)$ is a factor of $x^m - 1$, $\alpha$ is also a repeated root of $x^m - 1$. By Proposition 9.12 again, this implies that $(\alpha^m - 1)' = 0$. However, since $\alpha^m = 1$, we can apply the same reasoning from (a) to deduce that $m\alpha^{m-1} \neq 0$, which is a contradiction. Hence, it must be that $\Phi_m(\alpha)' \neq 0$.  \hfill $\square$
+    By contradiction, $\Phi_m'(\alpha) = 0$. By Proposition 9.12, this implies that $\alpha$ is a repeated root for $\Phi_m(x)$ as $\Phi_m(\alpha) = 0$. Since $\Phi_m(x)$ is a factor of $x^m - 1$, $\alpha$ is also a repeated root of $x^m - 1$. By Proposition 9.12 again, this implies that $(\alpha^m - 1)' = 0$. However, since $\alpha^m = 1$, we can apply the same reasoning from (a) to deduce that $m\alpha^{m-1} \neq 0$, which is a contradiction. Hence, it must be that $\Phi_m'(\alpha) \neq 0$.  \hfill $\square$
+
 
 
 \end{enumerate}
