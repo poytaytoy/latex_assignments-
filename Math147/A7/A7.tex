@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+    \item 
+    To prove that $f$ is differentiable on $\mathbb{R}$, we consider the two cases. \\
+
+    \textbf{Case 1: } For $x \neq 0$, we note that it is differentiable over $x^2$, $\sin(x)$, and $\frac{1}{x}$. Since $f(x) = x^2 sin (\frac{1}{x})$, we can compute the $f'(x)$ with the product rule and chain rule to get as follows: 
+
+    \begin{align*}
+        f'(x) &= 2x\sin(\frac{1}{x}) + x^2\cos(\frac{1}{x})(-\frac{1}{x^2})\\
+        &= 2x \sin(\frac{1}{x}) - \cos(\frac{1}{x})
+    \end{align*}
+
+    For $x \neq 0$, $f'(x)$ produces a real value, so $f$ is differentiable at $x$. \\
+
+    \textbf{Case 2: } For $x = 0$, we note that $f(0) = 0$. Thus: 
+
+    $$\lim_{x \to 0} \frac{f(x) - f(0)}{x-0} = \lim_{x \to 0} \frac{f(x)}{x} = \lim_{x \to 0} x \sin(\frac{1}{x})$$
+
+    We note that the range of $\sin(x)$ is $[-1, 1]$, so if we consider $\lim_{x\to0^-} x$ and $\lim_{x\to0^-} -x$, for any $x \to 0^-$, we get that $x \leq x \sin(1/x) \leq -x$. Hence, by Squeeze Theorem, since both $\lim_{x\to0^-} x = 0$ and $\lim_{x\to0^-} -x = 0$, we get that $\lim_{x\to0^-} x \sin(1/x) = 0$. For $x \to 0^+$, we get that $-x \leq x\sin(1/x) \leq x$. We can apply a similar argument to get that $\lim_{x\to0+} x \sin(1/x) = 0$. Thus, $f'(0) = 0$ and $f$ is differentiable at $x = 0$. \\
+
+    Since we proved $f$ is different on any $x \in \mathbb{R}$, $f$ is diffenetiable on $\mathbb{R}$. We also note that for $x \in \mathbb{R}$: 
+
+    $$
+    f'(x)=
+    \begin{cases}
+    2x \sin(\frac{1}{x}) - \cos(\frac{1}{x}), & \text{if } x \neq 0,\\
+    0, & \text{if } x = 0.
+    \end{cases}
+    $$\\
+
+    \item
+    By contradiction, $f'(x)$ is continuous. Thus, at $x = 0$, for $\epsilon = 0.5$, there exists a $\delta > 0$ where for $x \in \mathbb{R}$ that is $|x| < \delta$, we get that $|f'(x)| < \epsilon$. Select an $N \in \mathbb{N}$ where $N2\pi > 1/\delta$ then denote $x = 1/ N2\pi$. Note that $|1 / N2\pi| < \delta$ and that:
+
+    \begin{align*}
+        |f'(1/ N2\pi)| &= |2(1/ N2\pi) \sin(N2\pi) - \cos(N2\pi)| \\
+        &= |0 - 1|\\
+        &= 1
+    \end{align*}
+
+    Clearly, $1 > \epsilon$, so we arrived at a contradiction. Thus, $f'$ is not continuous at $x = 0$, so $f'$ is not continuous.
+
+
+\end{enumerate}
+
+\newpage 
+
+\item 
+\begin{enumerate}
+    \item 
+    Note that since $|f(0)| \leq |0|^{\alpha} = 0$, we get that $f(0) = 0$. Thus:
+
+    $$\lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0} \frac{f(x)}{x}$$
+
+    For $x \to 0$, we note that: 
+    
+    $$|\frac{f(x)}{x}| \leq |\frac{x^\alpha}{x}| \implies -\frac{x^\alpha}{x} \leq \frac{f(x)}{x} \leq \frac{x^\alpha}{x} $$
+
+    Since $\alpha > 1$, we get that $\alpha - 1 > 0$, so $\lim_{x \to 0} x^{\alpha - 1} = 0$ and $\lim_{x \to 0} -x^{\alpha - 1} = 0$. Hence, by Squeeze Theorem, we get that $\lim_{x \to 0} f(x)/{x} = 0$, so $f'(0) = 0$. Since $f'(0)$ exists, $f$ is differentiable at $0$. \\
+
+    \item 
+    We first note that: 
+
+    $$\lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} = \lim_{x \to 0} \frac{f(x)}{x}$$
+
+    For $x \to 0$, we also get that: 
+
+    $$|\frac{f(x)}{x}| \geq \frac{|x|^{\beta} }{|x|} = |x|^{\beta - 1}$$
+
+    Since $0 < \beta < 1$, we note that $-1 < \beta - 1 < 0$. Thus, $|x|^{\beta - 1}$ is the same as $1/|x|^{-(\beta - 1)}$. For $x \to 0$, $|x|^{-(\beta - 1)}$ can get arbitrarily small, so $1/|x|^{-(\beta - 1)} \to \infty$. However, this implies that for $x \to 0$, $|f(x) / x| \to \infty$. The values $f(x) / x$ near 0 are unbounded, so there does not exist a finite value for $\lim_{x \to 0}f(x) / x$. Thus, $f'(0)$ cannot exist, so $f$ is not differentiable at $x = 0$. 
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+\end{document}
