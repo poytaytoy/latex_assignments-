@@ -29,9 +29,9 @@
     Since we have found $d$ distinct roots for a monic polynomial $f(x)$, by Corollary 9.7, it follows that $\prod^{d-1}_{i=0} (x - \alpha^{p^i}) \mid f(x)$. Since $f(x)$ is monic and the product has degree $d$, we get that $\prod^{d-1}_{i=0} (x - \alpha^{p^i}) = f(x)$ as desired. \hfill $\square$  \\
 
     \item 
-    By Proposition 9.21, defining a homomorphism of $\varphi:F \rightarrow E$ is the same as giving a root $\beta$ of $f(x)$ in $E$, which exists as defined. By the First Isomorphism Theorem, the natural map of $\phi: F / ker(\varphi) \rightarrow im(\varphi)$ is an isomorphism. Note that $F$ is a field, so any homomorphism is injective, which implies that only $\varphi(0) = 0$. Thus, the $ker(\varphi) = \{0\}$, which further implies that $F / ker(\varphi) = F$. Since $im(\varphi)$ is a subring of a field $E$, it is also a subfield of $E$. Since $\phi$ is an isomorphism, note that $\{\phi(\alpha), \phi(\alpha^p), \cdots, \phi(\alpha^{p^{d-1}}) \} \subset E$ must also be all distinct. \\
+    By Proposition 9.21, defining a homomorphism of $\varphi:F \rightarrow E$ is the same as giving a root $\beta$ of $f(x)$ in $E$, which exists as defined. By the First Isomorphism Theorem, the natural map of $\phi: F / ker(\varphi) \rightarrow im(\varphi)$ is an isomorphism. Note that $F$ is a field, so any homomorphism is injective, which implies that only $\varphi(0) = 0$. Thus, the $ker(\varphi) = \{0\}$, which further implies that $F / ker(\varphi) = F$. We note $im(\varphi)$ is finite from being isomorphic to a finite field and also a subring of a field $E$, so it is a finite integral domain thus a subfield of $E$. Since $\phi$ is an isomorphism, note that $\{\phi(\alpha), \phi(\alpha^p), \cdots, \phi(\alpha^{p^{d-1}}) \} \subset E$ must also be all distinct. \\
     
-    We then note that since $char(E) = p$, $\mathbb{F}_p$ is a subring of E. Since all of $f(x)$'s coefficients lie in $\mathbb{F}_p$ and that $\phi(1) = 1$, for any $a \in \mathbb{F}_p$, $\phi(a) = a$. Hence, $\phi(f(x)) = \phi(a_0 + a_1x + \cdots + a_dx^d) = a_0 + a_1\phi(x) + \cdots + a_d\phi(x)^d = f(\phi(x))$. For any root $\alpha^{p^i} \in F$, we note that $\phi(f(\alpha^{p^i})) = \phi(0) = 0 = f(\phi(\alpha^{p^i}))$. Hence, $\{\phi(\alpha), \phi(\alpha^p), \cdots, \phi(\alpha^{p^{d-1}}) \}$ are all roots of $f(x) \in E$. Since $f(x)$ has $d$ distinct roots, by Corollary 9.7, it must be in the form $c(x - \phi(\alpha))\cdots(x - \phi(\alpha^{p^{d-1}})) $, so it splits completely. \hfill $\square$  \\
+    We then note that since $char(E) = p$, $\mathbb{F}_p$ is a subfield of E. Since all of $f(x)$'s coefficients lie in $\mathbb{F}_p$ and that $\phi(1) = 1$, for any $a \in \mathbb{F}_p$, $\phi(a) = a$. Hence, $\phi(f(x)) = \phi(a_0 + a_1x + \cdots + a_dx^d) = a_0 + a_1\phi(x) + \cdots + a_d\phi(x)^d = f(\phi(x))$. For any root $\alpha^{p^i} \in F$, we note that $\phi(f(\alpha^{p^i})) = \phi(0) = 0 = f(\phi(\alpha^{p^i}))$. Hence, $\{\phi(\alpha), \phi(\alpha^p), \cdots, \phi(\alpha^{p^{d-1}}) \}$ are all roots of $f(x) \in E$. Since $f(x)$ has $d$ distinct roots, by Corollary 9.7, it must be in the form $c(x - \phi(\alpha))\cdots(x - \phi(\alpha^{p^{d-1}})) $, so it splits completely. \hfill $\square$  \\
 
 
 \end{enumerate}
@@ -63,7 +63,7 @@
     \item 
     We assume $p$ is not a square mod q. We first note that by Euler Criterion, we get that $\phi(m) = q - 1$. Meanwhile, $(\frac{p}{q}) = -1 \equiv p^{(q-1)/2} \pmod{q}$. This implies $d \nmid (q-1)/2$. We also note that $1 \equiv p^{q-1} \pmod{q}$, so $d \mid q-1$. Since $dr = q-1$, it follows that $d(r/2) = (q-1)/2$. $(r/2) \notin \mathbb{Z}$ or else $d \mid (q-1)/2$. This implies that $r$ is odd. Since $q-1$ is even from $q$ being an odd prime, it follows that $d$ must be even. \\
 
-    We assume $d$ is even and $r$ is odd. Since $rd = q - 1$, we note that $r/2 \notin \mathbb{Z}$ and that $d \nmid (q-1)/2$. This implies that $p^{(q-1)/2} \not \equiv 1 \pmod{q}$. However, $p^{q-1} \equiv 1 \pmod{q}$ by Fermat's Last Theorem, so $p^{(q-1)/2} \equiv -1 \pmod{q}$. By Corollary 11.3, $p$ is a quadratic non-residue mod $q$, so $p$ is not a square mod $q$. \hfill $\square$ 
+    We assume $d$ is even and $r$ is odd. Since $rd = q - 1$, we note that $r/2 \notin \mathbb{Z}$ and that $d \nmid (q-1)/2$. This implies that $p^{(q-1)/2} \not \equiv 1 \pmod{q}$. However, $p^{q-1} \equiv 1 \pmod{q}$ by Fermat's Little Theorem, so $p^{(q-1)/2} \equiv -1 \pmod{q}$. By Corollary 11.3, $p$ is a quadratic non-residue mod $q$, so $p$ is not a square mod $q$. \hfill $\square$ 
 
 \end{enumerate}
 
@@ -76,14 +76,14 @@
     
     $$f'(x) = (x-a_i)(\prod^n_{\substack{k = 1 \\ k \neq i}}(x-a_k))' + 1 \cdot \prod^n_{\substack{k = 1 \\ k \neq i}}(x-a_k) = \prod^n_{\substack{k = 1 \\ k \neq i}}(x-a_k)$$
 
-    Within the product of $f(a_i)$, there exists $i$ instances where $i > k$. We correct this by applying $(-1)^if'(a_i)$ to get that: 
+    Within the product of $f(a_i)$, there exists $i-1$ instances where $i > k$. We correct this by applying $(-1)^{i-1}f'(a_i)$ to get that: 
 
-    $$(-1)^if'(a_i) = \prod^{i-1}_{k = 1}(a_k - a_i) \cdot \prod^n_{k = i + 1}(a_i - a_k)$$
+    $$(-1)^{i-1}f'(a_i) = \prod^{i-1}_{k = 1}(a_k - a_i) \cdot \prod^n_{k = i + 1}(a_i - a_k)$$
 
-    We then note that for any $1 \leq i < j \leq n$, $(a_i - a_j)$ is a factor in the products of $(-1)^if'(a_i)$ and $(-1)^jf'(a_j)$. Hence, we note that the product of all such $(-1)^if'(a_i)$ is equal to:
+    We then note that for any $1 \leq i < j \leq n$, $(a_i - a_j)$ is a factor in the products of $(-1)^{i-1}f'(a_i)$ and $(-1)^{j-1}f'(a_j)$. Hence, we note that the product of all such $(-1)^{i-1}f'(a_i)$ is equal to:
 
     \begin{align*}
-        \prod^n_{i=1}(-1)^if'(a_i) &= (-1)^{1 + \cdots + n}\prod^n_{i=1}f'(a_i) \\
+        \prod^n_{i=1}(-1)^{i-1}f'(a_i) &= (-1)^{0 + \cdots + n - 1}\prod^n_{i=1}f'(a_i) \\
         &= (-1)^{n(n-1)/2}\prod_{1 \leq i < j \leq n}(a_i - a_j)^2\\
         &= \triangle f
     \end{align*}
@@ -135,7 +135,9 @@
     And we are done. \hfill $\square$ \\
 
     \item 
-    By contradiction, $f(x) = x^8 + x^2 + 1$ is irreducible in $\mathbb{F}_p[x]$ for some prime $p$. Let $p$ be one such prime. Since $f(x)$ is a monic irreducible polynomial in $\mathbb{F}_p[x]$, by Q1(b), we can factor $f(x)$ in $\mathbb{F}_p[x]/(f(x))$ as: 
+    To start, we prove the $f(x) = x^8 + x^2 + 1$ is reducible in $\mathbb{F}_p[x]$ for any prime $p \neq 3$. 
+    
+    By contradiction, $f(x)$ is irreducible in $\mathbb{F}_p[x]$ for some prime $p \neq 3$. Let $p$ be one such prime. Since $f(x)$ is a monic irreducible polynomial in $\mathbb{F}_p[x]$, by Q1(b), we can factor $f(x)$ in $\mathbb{F}_p[x]/(f(x))$ as: 
     
     $$f(x) = \prod_{i = 0}^{8-1} (x- \alpha^{p^i})$$
 
@@ -143,11 +145,20 @@
 
     $$\triangle f = \prod_{0 \leq i < j \leq 7}(\alpha^{p^i} - \alpha^{p^j})^2$$
     
-    From (b), $\triangle f = 2^8 \cdot 229^2$. However, this looks very similar to the $\beta$ defined in HW1(d) where: 
+    From (b), since $char(\mathbb{F}_p) \neq 3$, $\triangle f = 2^8 \cdot 229^2$. However, this looks very similar to the $\beta$ defined in HW1(d) where: 
 
     $$\beta = \prod_{0 \leq i < j \leq 7}(\alpha^{p^i} - \alpha^{p^j})$$
 
-    Hence, $\beta = 2^4 \cdot 229$. Since $2^4 \cdot 229 = 2^4 \cdot 229 \cdot 1$, $\beta \in \mathbb{F}_p$. However, from HW1(d), $\beta \in \mathbb{F}_p$ if and only if $\deg f$ is odd. Clearly, $\deg f$ is not odd, so we reached a contradiction. Thus, $f(x)$ is reducible in $\mathbb{F}_p[x]$ for any prime $p$. \hfill $\square$ 
+    Hence, $\beta = 2^4 \cdot 229$. Since $2^4 \cdot 229 = 2^4 \cdot 229 \cdot 1$, $\beta \in \mathbb{F}_p$. However, from HW1(d), $\beta \in \mathbb{F}_p$ if and only if $\deg f$ is odd. Clearly, $\deg f$ is not odd, so we reached a contradiction. Thus, $f(x)$ is reducible in $\mathbb{F}_p[x]$ for any prime $p \neq 3$. 
+    
+    We now consider the case $p = 3$. We note that:
+    \begin{align*}
+        (x^2-1)(x^6 + x^4 + x^2 + 2) &= (x^8 + x^6 + x^2 + 2x^2) - (x^6 + x^4 + x^2 + 2) \\
+        &= x^8 + x^2 - 2\\
+        &= x^8 + x^2 + 1
+    \end{align*}
+
+    Hence, if $p = 3$, $f(x)$ is reducible in $\mathbb{F}_3[x]$. \hfill $\square$ 
 
 \end{enumerate}
 
