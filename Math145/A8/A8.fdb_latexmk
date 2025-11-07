@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1762548809.61372 "/home/poytaytoy/Documents/latex_assignments-/Math145/A8/A8.tex" "A8.pdf" "A8" 1762548810.04755 0
-  "/home/poytaytoy/Documents/latex_assignments-/Math145/A8/A8.tex" 1762548809.31207 13365 a979f003b4a953d9fd843b00cb705309 ""
+["pdflatex"] 1762551940.89462 "/home/poytaytoy/Documents/latex_assignments-/Math145/A8/A8.tex" "A8.pdf" "A8" 1762551941.29882 0
+  "/home/poytaytoy/Documents/latex_assignments-/Math145/A8/A8.tex" 1762551940.55048 13431 4630f2765c120ce818302cd1d358e921 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -22,8 +22,6 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb" 1248133631 35457 884c5a936fbb3fae6a4c18058662d654 ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1754438400 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -56,8 +54,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1754438400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762475399.80331 293079 eb34fef57086acb79b142616bb11dc70 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762475397 6447588 157dee9ec5ee7cb8d2586bf10e541c88 ""
-  "A8.aux" 1762548809.94006 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
-  "A8.tex" 1762548809.31207 13365 a979f003b4a953d9fd843b00cb705309 ""
+  "A8.aux" 1762551941.19778 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
+  "A8.tex" 1762551940.55048 13431 4630f2765c120ce818302cd1d358e921 ""
   (generated)
   "A8.aux"
   "A8.log"
