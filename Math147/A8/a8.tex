@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item 
+We define the function 
+
+$$h(x) = (f(b) -f(a))g(x) - (g(b) - g(a))f(x)$$
+
+Since $f, g$ are continuous and differentiable on $[a, b]$, we not that $h$ must be continuous and differentiable on $[a, b]$ too. We then note that:
+\begin{align*}x
+    h(a) &= (f(b) -f(a))g(a) - (g(b) - g(a))f(a) \\
+    &= f(b)g(a) -f(a)g(a) - g(b)f(a) + g(a)f(a) \\
+    &= g(a)f(b) - g(b)f(a) 
+\end{align*}
+\begin{align*}
+    h(b) &= (f(b) -f(a))g(b) - (g(b) - g(a))f(b) \\
+    &= f(b)g(b) -f(a)g(b) - g(b)f(b) + g(a)f(b) \\
+    &= g(a)f(b) - g(b)f(a)
+\end{align*}
+
+It should be clear that $h(a) = h(b)$. We then take note that 
+$$h'(x) = (f(b) -f(a))g'(x) - (g(b) - g(a))f'(x)$$ 
+
+Since $h(a) = h(b)$, by Rolle's Theorem, there exist a $c \in (a, b)$ where $h'(c) = 0$, which gives $0= (f(b) -f(a))g'(c) - (g(b) - g(a))f'(c)$ or $(f(b) -f(a))g'(c) = (g(b) - g(a))f'(c)$ as desired.
+\end{enumerate}
+
+\end{document}
