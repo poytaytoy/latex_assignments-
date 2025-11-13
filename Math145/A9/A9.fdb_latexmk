@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1763062379.71657 "/home/poytaytoy/Documents/latex_assignments-/Math145/A9/A9.tex" "A9.pdf" "A9" 1763062380.0335 0
-  "/home/poytaytoy/Documents/latex_assignments-/Math145/A9/A9.tex" 1763062379.46994 13050 2cc591ea969b25607a31b5f4e3b89e5f ""
+["pdflatex"] 1763062556.5447 "/home/poytaytoy/Documents/latex_assignments-/Math145/A9/A9.tex" "A9.pdf" "A9" 1763062556.87962 0
+  "/home/poytaytoy/Documents/latex_assignments-/Math145/A9/A9.tex" 1763062556.27284 13584 0a51a2e21cbbc951a8debcd185149d55 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -52,8 +52,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1754438400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762475399.80331 293079 eb34fef57086acb79b142616bb11dc70 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762475397 6447588 157dee9ec5ee7cb8d2586bf10e541c88 ""
-  "A9.aux" 1763062379.96385 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
-  "A9.tex" 1763062379.46994 13050 2cc591ea969b25607a31b5f4e3b89e5f ""
+  "A9.aux" 1763062556.80883 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
+  "A9.tex" 1763062556.27284 13584 0a51a2e21cbbc951a8debcd185149d55 ""
   (generated)
   "A9.aux"
   "A9.log"
