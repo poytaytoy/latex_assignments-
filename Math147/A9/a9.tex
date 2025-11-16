@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item 
+
+Since $f(X)$ is countable, we can denote $f(X) = \{r_1, r_2, \cdots\}$ with every $r_n \in \mathbb{R}$. We then denote $A_n = f^{-1}(\{r_n\}) = \{x \in X : f(x) = r_n\}$. We note that $\cup^{\infty}_{n=1} A_n = X$. Since $(X, d)$ is complete, by Baire Category Theorem 2, X is of second category. In other words, it is not of first category, which implies that there must exist an $A_k$ that is not no-where dense. \\
+
+\textbf{Claim}: If $f: X \rightarrow Y$ is cts then for a closed set $C \subseteq Y$, $f^{-1}(C)$ is closed. \\
+
+By contradiction, $f^{-1}(C)$ is not closed. Then, there exist an $(x_n) \subseteq  f^{-1}(C)$ where $x_n \rightarrow x \notin f^{-1}(C)$. However, $f$ is continuous, so $f(x_n) \rightarrow f(x)$. Thus, $f(x) \in C$ since $(f(x_n)) \subseteq C$ and $C$ is closed. This implies that $x \in f^{-1}(C)$, a contradiction. \hfill $\square$   \\
+
+We note that $\{r_k\}$ is a closed set in $\mathbb{R}$. From the claim, it implies that $A_k$ is closed as well. Hence, $Int(\overline{A_k}) = Int(A_k)$ is non-empty. Since $Int(A_k) \subseteq A_k$ and is open, we get that $f(Int(A_k)) = \{r_k\}$, so $f$ is constant on $Int(A_k)$. \hfill $\square$ 
+
+\newpage 
+
+\item
+\begin{enumerate}
+    \item 
+    For $d(v, B)$, let us denote $i = \inf\{||v-b||: b \in B\}$. For every $n \in \mathbb{N}$, we note that there exist a $b_1 \in B$ where $i + 1/n < ||v-b_n||$. Hence, we note that $| ||v-b_n|| - i | < 1/n$. Thus, since $1/n \rightarrow 0$, we get that $||v-b_n|| \rightarrow i$. Since $(b_n) \subseteq B$ and $B$ is compact, we note that $(b_n)$ has a converging subsequence $b_{n_k} \rightarrow b \in B$ and that $||v - b|| \geq i$. We note that $||v - b|| \leq ||v - b_n|| + ||b_n - b||$. Since our choice of $n$ is arbitrary, $||v-b|| \leq i + 0$. Hence, we get that $||v-b|| = i$, so $i$ is a minimum in $\{||v-b||: b \in B\}$. \\
+    
+    For $d(A, B)$, let us denote $s = \sup\{d(a, B): a \in A \}$. We select a $a_n \in A$ where $s - 1/n < d(a_n, B)$. Since, $1/n \rightarrow 0$, we note that $s - d(a_n, B) < 1/n$ and $d(a_n, B) \rightarrow s$. Note that $(a_n) \subseteq A$ and $A$ is compact. This implies that there exists a $(a_{n_k})$ where $a_{n_k} \rightarrow a \in A$. We now consider the following for any given $b \in B$:
+
+    $$||a-b|| \leq ||a-a_{n_k}|| + ||a_{n_k}-b||$$
+
+    We note since $d(a, B)$ is the minimum, we get that $d(a, B) \leq ||a-b||$. Since this holds true for any $b \in B$, we can select $b'$ where $||a_{n_k} - b'|| = d(a_{n_k}, B)$. Hence: 
+
+    \begin{align*}
+        d(a, B) &\leq ||a-a_{n_k}|| + d(a_{n_k}, B)\\
+        d(a, B) - d(a_{n_k}, B) &\leq ||a-a_{n_k}||
+    \end{align*}
+
+    We then consider: 
+
+    $$||a_{n_k}-b|| \leq ||a_{n_k}-a|| + ||a-b||$$
+
+    We can apply a similar logic where $d(a_{n_k}, B) \leq ||a_{n_k} - b||$ and select the $b' \in B$ where $d(a, B) = ||a - b'||$. This gets us: 
+
+    $$d(a_{n_k}, B)  - d(a, B) \leq ||{a_{n_k}} - a||$$
+
+    This implies that $| d(a_{n_k}, B) - d(a, B)| \leq ||a_{n_k} - a||$. Note that $||a_{n_k} - a|| \rightarrow 0$, so it follows that $ d(a_{n_k}, B) \rightarrow d(a, B)$. We then note that $(d(a_{n_k}, B))$ is a subsequence of $(d(a_n, B))$, so $(d(a_{n_k}, B)) \rightarrow s$. Limits are unique, so $s = d(a, B)$. Since $s \in \{d(a, B): a \in A \}$, it is a maximum. \hfill $\square$  \\
+
+    \item 
+    Consider the sets $A = \{(0,1), (5, 1) \}$ and $B = \{(3,1), (4, 1) \}$. (Note that on the midterm, we proved that any finite site is compact because any sequence with it must have a constant subsequence). We note that $d(A, B) = ||(0,1) - (3,1)|| = 3$ and $d(B, A) = ||(3,1) - (5,1)|| = 2$. Hence, $d(A,  B) \neq d(B, A)$.\hfill $\square$ \\
+
+    \item 
+
+    \textbf{Property 1:} $D(A, B) = 0$ iff $A = B$. \\ 
+
+    We assume $A = B$, then $D(A, B) = 0$ because for any $a \in A$, $d(a, B) = 0$ because the minimum value is when we select $b \in B$ where $a = b$. Since $\{d(a,B): a \in A \} = \{0\}$, the suprenum is $0$, so $d(A, B) = 0$. We can follow the same train of logic to get that $d(B, A) = 0$. Thus, $D(A, B) =  \max\{0\} = 0$. \\
+    
+    For the converse, if $D(A, B) = 0$, then $\max{d(A, B), d(B,A)} = 0$. Note that the $||x - y|| \geq 0$, so it suffices to state that $d(A, B) \geq 0$. Since 0 is the minimum, $d(A, B) = d(B,A) = 0$. For $d(A, B)$, it implies that for every $a \in A$, the minimum of $\{||a-b||: b \in B\}$ is 0. This implies that there is a point $b \in B$ where $a = b$. Hence, $A \subseteq B$. Applying the vice-versa gives us $B \subseteq A$ thus $A = B$.  \hfill $\square$  \\
+   
+
+    \textbf{Property 2:} $D(A, B) = D(B, A)$ \\
+
+    For the second property, it suffices to note that $D(A, B) = \max\{d(A, B), d(B, A)\}$ and  $D(A, B) = \max\{d(B, A), d(A, B)\}$. We note that $\max\{d(A, B), d(B, A)\} = \max\{d(B, A), d(A, B)\}$, so $D(A, B) = D(B, A)$. \hfill $\square$ \\ 
+
+    \textbf{Property 3:} $D(A, C) \leq D(A, B) + D(B, C)$ for any arbitrary $A, B, C \in X$.\\
+    
+We first prove the following: \\
+
+\textbf{Claim: } $d(A, C) \leq d(A, B) + d(B, C)$. \\
+
+From $(a)$, we note that $d(A, C) = d(a', C)$ for some $a' \in A$ and $d(a', C) = \|a' - c'\|$ for some $c' \in C$. Since $\|a'-c'\|$ is the minimum, for any $c \in C$ we have $\|a'-c'\| \leq \|a'-c\|$. By the same reasoning from $(a)$, we also have $d(a', B) = \|a' - b'\|$ for some $b' \in B$, and $d(b', C) = \|b' - \hat{c}\|$ for some $\hat{c} \in C$. We now put these together with the following inequality:
+\begin{align*}
+    d(A, C) &= \|a'-c'\|\\
+    &\leq \|a' - \hat{c}\|\\
+    &\leq \|a' - b'\| + \|b' - \hat{c}\| \\ 
+    &\leq d(a', B) + d(b', C).
+\end{align*}
+
+Lastly, since $d(A, B)$ and $d(B, C)$ are maxima from $(a)$, we have $d(A, B) \geq d(a', B)$ and $d(B, C) \geq d(b' , C)$. Substituting these gives the desired inequality
+$$d(A, C)  \leq d(A, B) + d(B, C).$$  \hfill $\square$ 
+
+Since our selection of $A, C$ is arbitrary, we can apply the claim to also get
+$$d(C, A) \leq d(C, B) + d(B, A) = d(B, A) + d(C, B).$$
+We then note that since $D(A, B)$ is the maximum, $D(A, B) \geq d(A, B)$ and $D(A, B) \geq d(B, A)$. The same holds true for $D(B, C)$. Hence:
+$$d(A, C) \leq d(A, B) + d(B, C) \leq D(A, B) + D(B, C),$$
+$$d(C, A) \leq d(B, A) + d(C, B) \leq D(A, B) + D(B, C).$$
+
+Since $D(A, C)$ is either $d(A, C)$ or $d(C, A)$, we get that $D(A, C) \leq D(A, B) + D(B, C)$ as desired. \hfill $\square$
+ 
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document}
