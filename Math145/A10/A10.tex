@@ -131,10 +131,42 @@
     \item 
     \begin{enumerate}
         \item 
-        
+        Let us assume $n$ is a Carmichael Number. Let $p_i^{k_i}$ be one of its prime power factor. Since $p_i$ is an odd prime, by Corollary 12.10, $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ is cyclic. Hence there exist a generator element $g_i$ where $\langle g_i \rangle = (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ and its order is $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i}) = p^{k_i - 1}(p_i - 1)$. By the Chinese Remainder Theorem, there exist an element $a$ where: 
+        \begin{align*}
+            a &\equiv g_i \pmod {p_i^{k_i}} \\
+            a &\equiv 1 \pmod {p_j^{k_j}} \text{ \ for $j \neq i$}
+        \end{align*}
+
+        Because all the differnet prime power factors of $n$ are co-prime to each other. Since $g_i$ is co-prime to $p_i^{k_i}$, $a$ is co-prime to $p_i^{k_i}$ and all such $p_j^{k_j}$. Hence, $a$ must also be co-prime to $n$. This implies that $a \in  (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$, so $a^{n-1} \equiv g_i^{n-1} \equiv 1 \pmod {p_i^{k_i}}$. By Claim 1 of 1 (a), this implies that $o(g_i) = p^{k_i - 1}(p_i - 1) \mid n - 1$ as desired. \hfill $\square$  \\
+
+        For the converse, let us assume that $p^{k_i - 1}(p_i - 1) \mid n - 1$ for all $i$. Note that $p^{k_i - 1}(p_i - 1) = \phi(p_i^{k_i})$. Let $a \in (\mathbb{Z}/n\mathbb{Z})^{\times}$. This implies that $a$ is co-prime to $n$ thus $a$ is co-prime to any $p_i^{k_i}$. Hence, $a \in (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$. $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ forms a finite group, so by Corollary 12.4, since $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i})$, $a^{\phi(p_i^{k_i})} = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. Note that there exist exist an integer $m$ where $\phi(p_i^{k_i}) \cdot m = n - 1$, so $a^{\phi(p_i^{k_i}) \cdot m} \equiv 1^m = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. This implies that $a^{n-1} \equiv 1 \pmod {p_i^{k_i}}$ for all $i$. By Exercise 4.1, since all $p_i^{k_i}$ are all co-prime to one another, we get that the $lcm(p_1^{k_1}\cdots p_r^{k_r}) = n$. Hence, we get that $a^{n-1} \equiv 1 \pmod n$ as desired. \hfill $\square$  \\
+
+        \item 
+         We first note that the $pqr - 1$ expanded is $1296k^3 + 396k^2 + 36k$, which could be factorized into. $36k(36k^2 + 11k + 1)$. Notice that $6k + 1$, $12k + 1$, and $18k + 1$ are all distinct thus all the prime factors of $pqr$ have powers of 1. This meant that $pqr$ is in the form $p_1^{k_1}p_2^{k_2}p_3^{k_3}$ with $k_i = 1$ for all $i = 1,2,3$. For each $p_i$, $p_i^{k_i - 1}{p_i - 1} = p_i - 1$. We now note that $6k, 12k, 18k \mid 36k(36k^2 + 11k + 1)$. By (a), $pqr$ is a Carmichael number. \hfill $\square$  \\
+
+        \item 
+         Since $p ,q$ are distinct, let us assume $p > q$. We express $pq = p_1^{k_1}p_2^{k_2}$ where $k_i = 1$ for all $i = 1,2$. Let $p_1 = p$, so $p_1^{k_1 - 1}(p_1 - 1) = p-1$. We now show that $p-1 \nmid pq -1$. By contradiciton, we assume that $p - 1 \mid pq - 1$. Note that $pq - 1 = q(p - 1) + q - 1$. Since $p - 1 \mid q(p - 1)$, it implies that $p - 1 \mid q - 1$. However, $p - 1 > q - 1$, a contradiction. By (a), $pq$ is not a Carmichael number. \hfill $\square$ 
+     \end{enumerate}
+
+    \newpage 
+
+    \item 
+    By contradiction, we assume $n$ is a composite number. Let $q$ be a prime factor of $n$. \\
+
+    \textbf{Claim: } Let $n$ be a composite number. There exist prime factors $p$ where $p \leq \sqrt{n}$. \\
+
+    By contradiction, there only exist prime factors where $p > \sqrt{n}$. Since $p \mid n$, there exist integer $q$ where $pq = n$. This implies that $n/q > \sqrt{n} \implies q/n < \sqrt{n}/n \implies q < \sqrt{n}$. Since $p \neq n$ as $n$ is not prime, $q \neq 1$. Let $\hat{p}$ be a prime factor of $q$, then $\hat{p} \mid q$ and $\hat{p} < \sqrt{n}$, a contradiction. \hfill $\square$  \\
+
+    By the Claim, we may assume the existence of a $q$ where $q < \sqrt{n}$. Since $q \mid n$, we note that $a^{n-1} \equiv 1 \pmod q$. By Fermat's Little Theorem, we also get that $a^{q-1} \equiv 1 \pmod q$. We then note that $\gcd(a^{(n-1)/p}-1, q) = 1$, so $a^{(n-1)/p} \not \equiv 1 \pmod q$. This implies that $o_q(a) \nmid (n-1)/p$, but $o_q(a) \mid (n-1)$. This implies that $\gcd(o_q(a), p) > 1$. However, $p$ is prime, so this implies that $\gcd(o_q(a), p) = p$ thus $p \mid o_q(a)$. Since $o_q(a) \mid q - 1$, $p \mid q - 1$ and $p \leq q - 1 < q$. Thus, $q > p > \sqrt{n} - 1$ and $q \geq p + 1 > \sqrt{n}$, so $q > \sqrt{n}$. This is a contradiction to our earlier assumption. Hence, $n$ must be prime. \hfill $\square$ \\
+
+    \newpage
+
+    \item 
+    \begin{enumerate}
+        \item 
+
     \end{enumerate}
 
-    
 
 \end{enumerate}
 \end{document}

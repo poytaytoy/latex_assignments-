@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1763771360.46393 "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" "A10.pdf" "A10" 1763771360.67134 0
-  "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" 1763771360.16457 9654 672b2c73f243e3cdd8ffc38cf432c340 ""
+["pdflatex"] 1763844795.03237 "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" "A10.pdf" "A10" 1763844795.48036 0
+  "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" 1763844794.43572 14248 e346bb094be78448d4a5a24e9613c985 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -15,6 +15,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
@@ -52,8 +53,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1754438400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762475399.80331 293079 eb34fef57086acb79b142616bb11dc70 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762475397 6447588 157dee9ec5ee7cb8d2586bf10e541c88 ""
-  "A10.aux" 1763771360.64051 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
-  "A10.tex" 1763771360.16457 9654 672b2c73f243e3cdd8ffc38cf432c340 ""
+  "A10.aux" 1763844795.39566 32 4d1825978335c8847f72f7c473f9edc8 "pdflatex"
+  "A10.tex" 1763844794.43572 14248 e346bb094be78448d4a5a24e9613c985 ""
   (generated)
   "A10.aux"
   "A10.log"
