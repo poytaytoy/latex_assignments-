@@ -36,7 +36,105 @@
         Let $a \in G$ where $o(a) = d$ and $a = g^{m/d}$, which exits by Claim 3. We then denote the set $H = \{a, a^2, \cdots a^d\}$. For any $1 \leq i, j \leq d$, $a^i \cdot a^j = a^{i + j}$. If $i + j \leq d$, then $a^{i + j} \in H$. Otherwise, we note that $a^{i + j} = a^{i + j - d} \cdot a^d = a^{i + j - d}$. Since $i + j \leq 2j$ so $i + j - d \leq d$, $a^{i + j} \in H$. By $(a)$, $H$ is a subgroup of $G$. Note that all elements in $H$ are unique by our proof of Claim 3, so it is also order $d$. \\
 
         It remains to prove $H$ is the only subgroup of order $d$ in $G$. Suppose there exist a subgroup $E \leq G$ with order $d$. Let $b \in E$, then $b^{d} = e$ by Corollary 12.4. We note that $b = g^r$ for some $r \in \mathbb{N}$ and $g^{rd} = e$. By Claim 1, $m \mid rd$, which implies that $m/d \mid r$. Hence, there exist some integer $k$ where $1 \leq k \leq d$ and $b = g^r = (g^{m/d})^k = a^k$. Hence, $b \in H$ and $E \subseteq H$. Since they have the same order, by the pigeonhole principle, $E = H$.  \hfill $\square$ \\
+
+        \item 
+        We note that from Claim 1 of $(a)$ that since all elements $\alpha$ in $G$ are $\alpha^{|G|} = e$, we have $o(\alpha) \mid m$. Let $N_d$ denote the number of elements in $G$ with exactly order $G$. We have: 
+
+        $$\sum_{d \mid m} N_d = m$$
+
+        From the degree of the factorization of cyclotomic polynomial for $x^m - 1$, we have: 
+        
+        $$\sum_{d \mid m} \phi(d) = m$$
+
+        We first prove that either $N_d = 0$ or $N_d = \phi(d)$. We assume $N_d > 0$, so there exist an element $a \in G$ where $o(a) = d$. We note that $\langle a \rangle$ is a subgroup of $G$ with order $o(a) = d$. We note that if there exist another $b \in G$ with order $d$, $\langle b \rangle = \langle a \rangle$ due to the uniqueness of subgroup with order $d$. Hence, $b \in \langle a \rangle$ and exists in the form $a^k$ for $1 \leq k \leq d$. We apply Claim 2 from $(a)$ to get that $o(a^k) = d / \gcd(d, k)$. Hence, $o(a^k) = o(a)$ iff $\gcd(d, k) = 1$. This proves that $N_d = \phi(d)$. This gives: 
+
+        $$\sum_{d \mid m} (N_d - \phi(d)) = 0$$
+
+        Since $N_d \leq \phi(d)$, if there exists a $N_d < \phi(d)$, the sum will be negative. Hence, we get that $N_d = \phi(d)$. Since $m \mid m$ and $\phi(m) \leq 1$, there exist an element $\beta$ where $o(\beta) = m$. We note that $\langle \beta \rangle$ has order $m$ and $G$ also has order $m$. Thus, $G = \langle \beta \rangle$. \hfill $\square$ 
     \end{enumerate}
+
+    \newpage 
+
+    \item 
+    \begin{enumerate}
+        \item 
+        Yes because $2^5 = 32 = -1$ in $\mathbb{Z}/11\mathbb{Z}$, so $-1 \in \langle 2 \rangle$. \\
+
+        \item 
+        We assume that $-1 \in \langle 2 \rangle$. This implies that there exist a positive integer $k$ where $2^k \equiv -1 \pmod{23}$. Since $-1$ is not a square in $\mathbb{Z}/23\mathbb{Z}$, $(\frac{2^k}{23})$. However, $(\frac{2^k}{23}) = (\frac{2}{23}) \cdots (\frac{2}{23})$. By Theorem 11.4 (b), since $23 \equiv -1 \pmod 8$, $(\frac{2}{23}) = 1$, so $(\frac{2^k}{23}) = 1$, a contradiction. Hence, $-1 \not \in \langle 2 \rangle$.  \hfill $\square$  \\
+
+        \item 
+        We note that $2^m + 2^n =  2^{m - n}(2^n + 1)$. Since $23\mid 2024$, $23 \mid 2^{m - n}(2^n + 1)$. By Euclid's Lemma, since $23 \nmid 2^{m - n}$, $23 \mid 2^n + 1$. This implies that $2^n \equiv -1 \pmod {23}$. However, this implies that $-1 \in \langle 2 \rangle$ in $(\mathbb{Z}/23\mathbb{Z})^{\times}$. This contradicts $(b)$, so there does not exist such $m$ and $n$.  \hfill $\square$ \\
+
+        \item 
+        We first note that for any $2^m + 2^n + 2^r$, we can factor it into $2^r(2^{m-r} + 2^{n-r}+1)$. $2024$'s prime factorization is $2^3 \cdot 11 \cdot 23$. Hence, if we wish to make it divisible, we need to find $m$, $n$, $r$ where $2^r(2^{m-r} + 2^{n-r}+1)$ is divisible by $8, 11, 23$. The case for 8 is trivial as we simply set $r = 3$. For $11, 23$, $11, 23 \nmid 2^r$, so it must be that $11,23 \mid 2^{m-r} + 2^{n-r}+1$. Let $x = m-r$ and $y = n-r$. Finding a solution is equivalent to solving this congruence: 
+
+        $$2^x + 2^y \equiv -1 \pmod {11}$$
+        $$2^x + 2^y \equiv -1 \pmod {23}$$
+
+        We first consider the congruences for $\pmod {11}$.
+
+        \begin{center}
+            % Modulo 11 Table
+            $\begin{array}{c|l}
+            k & 2^k \pmod{11} \\ \hline
+            1 & 2 \\
+            2 & 4 \\
+            3 & 8 \\
+            4 & 5 \\
+            5 & 10\\
+            6 & 9 \\
+            7 & 7 \\
+            8 & 3 \\
+            9 & 6 \\
+            10 & 1 
+            \end{array}$
+        \end{center}
+        
+
+        For $2^x + 2^y \equiv -1$, the sum of their congruence must be equal to 10. Hence, the solutions $(x, y)$ are $(3, 1), (4,4), (6, 0), (7, 8), (9, 2)$. We now consider the congruences for$\pmod {23}$.
+
+        \begin{center}
+            $\begin{array}{c|l}
+            k & 2^k \pmod{23} \\ \hline
+            1 & 2 \\
+            2 & 4 \\
+            3 & 8 \\
+            4 & 16 \\
+            5 & 9 \\
+            6 & 18 \\
+            7 & 13 \\
+            8 & 3 \\
+            9 & 6 \\
+            10 & 12 \\
+            11 & 1
+            \end{array}$
+        \end{center}
+        
+        For $2^x + 2^y \equiv -1$, the sum of their congruence must be equal to 23. Hence, the solutions $(x, y)$ are $(6,2), (7,5), (9, 4)$. We take interest in the solution $(3,1)$ from mod $11$ and $(7,5)$ from mod $23$ as their differneces are both 2. From the table, we also learned that $o(2) = 10$ mod $11$ and $o(2) = 11$ mod $23$. Hence, we note that: 
+
+
+        $$2^{10a}(2^3 + 2^1) \equiv -1 \pmod {11}$$
+        $$2^{11b}(2^7 + 2^5) \equiv -1 \pmod {23}$$
+
+        We wish to make $2^{10a}(2^3 + 2^1) = 2^{11b}(2^7 + 2^5)$. We examine this equality to only its degree where $10a + 3 = 11b + 7$, which we can re-arrange to $10a - 11b = 4$. We need to find positive integer solution to $a, b$. Fortunately, $70 - 66 = 4$, so $a = 7$ and $b = 6$. Hence, $2^{10\cdot7}(2^3 + 2^1) = 2^{11\cdot6}(2^7 + 2^5) = 2^{73} + 2^{71}$. This implies that 
+
+        $$2^{73} + 2^{71} + 1 \equiv 0 \pmod {11}$$
+        $$2^{73} + 2^{71} + 1 \equiv 0 \pmod {23}$$
+
+        Thus, $x = 73$ and $y = 71$. Lastly, recall that we set $r = 3$. Hence, $m = 73 + 3 = 76$ and $n = 71 + 3 = 74$. Thus, we get that $2024 \mid 2^{76} + 2^{74} + 2^3$.  \hfill $\square$ 
+
+    \end{enumerate}
+    
+    \newpage
+
+    \item 
+    \begin{enumerate}
+        \item 
+        
+    \end{enumerate}
+
+    
 
 \end{enumerate}
 \end{document}
