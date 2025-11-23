@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item 
+
+\begin{enumerate}
+    \item 
+    Let $A_{n_1} = A_1$ and select an arbitrary $y_1 \in A_{n_1}$. For $y_{k}$, select $A_{n_{k+1}}$ where $n_{k+1} > n_{k}$ and for all $m, n \geq n_{k+1}$, $D(A_m, A_n) < \frac{1}{2^{k+1}}$ and select $y_{k+1}$ where $||y_{k+1} - y_k|| = d(y_k, A_{n_{k+1}})$. We constructed a series $(y_k)$ where $||y_{k+1} - y_k|| \leq D(A_{n_k}, A_{n_{k+1}}) < \frac{1}{2^{k+1}}$. From class, $\frac{1}{2^{k}}$ converges sufficiently that $(y_k)$ is Cauchy. $\mathbb{R}^2$ is complete, so $y_k \rightarrow x \in \mathbb{R}^2$. \\
+
+    We now construct a series $(x_n)$ where we select $x_n \in A_n$ where $||x - x_n|| = d(x, A_n)$, which exists because $d(x, A_n)$ is a minimum. (*) We now note that for every $x_n$, considering an arbitrary $y_k$ and a point $z \in A_n$ where $||y_k - z|| = d(y_k, A_n)$:
+    \begin{align*}
+        ||x - x_n|| &\leq ||x - z||\\
+        &\leq ||x- y_k|| + ||y_k - z|| \\
+        &\leq ||x - y_k|| + d(y_k , A_n)\\
+        &\leq ||x - y_k|| + D(A_{n_k}, A_n)
+    \end{align*}
+
+    Let $\epsilon$ be given. Select an $N$ where for all $m, n \geq N$, $D(A_{m}, A_n) < \epsilon/2$. Meanwhile, select a $k$ where $n_k \geq N$ and $||y_k - x|| < \epsilon/2$. This gives us that: 
+
+    $$||x - x_n|| < \epsilon/2 + \epsilon/2 = \epsilon$$
+
+    Hence, $x_n \rightarrow x$ and $x \in A$. This proves that $A$ is non-empty. \hfill $\square$ \\ 
+
+    \item 
+    Got skill issued :( \\
+
+    \item 
+    Let $\epsilon > 0$ be given. Select a $N$ where $\forall n,m \geq N$, $D(A_n, A_m) < \epsilon/2$.  For all $n \geq N$, let $x_n$ be where $d(x_n , A) = d(A_n, A)$ since it is a maxmimum. Let $y_1 = x_n$. For $y_{k}$, select $A_{n_{k+1}}$ where $n_{k+1} > n_{k}$ and for all $m, n \geq n_{k+1}$, $D(A_m, A_n) < \frac{\epsilon}{2^{k+1}}$ and select $y_{k+1}$ where $||y_{k+1} - y_k|| = d(y_k, A_{n_{k+1}})$. We constructed a series $(y_k)$ where $||y_{k+1} - y_k|| \leq D(A_{n_k}, A_{n_{k+1}}) < \frac{\epsilon}{2^{k+1}}$. From class, $\frac{1}{2^{k}}$ converges sufficiently that $(y_k)$ is Cauchy. $\mathbb{R}^2$ is complete, so $y_k \rightarrow x \in \mathbb{R}^2$. From our proof of (a), $x \in A$. We then consider that: 
+    \begin{align*}
+        ||y_1 - x|| &\leq ||y_1 - y_2|| + ||y_2 - y_3|| + \cdots\\
+        &< \sum^{\infty}_{k = 1} \frac{\epsilon}{2^k}= \epsilon
+    \end{align*}
+
+    We showed there exist a $x \in A$ where $||y_1 - x|| = ||x_n - x|| < \epsilon$ Since $d(A_n, A) = d(x_n, A) \leq ||x_n - x|| < \epsilon$, we proved that $d(A_n, A) \rightarrow 0$. \hfill $\square$  \\
+
+    \item 
+    Let $\epsilon > 0$ be given. Select a large enough $N$ where $\forall n,m \geq N$, $D(A_n, A_m) < \epsilon/2$. Now, fix any $n \geq N$ and let $a \in A$ where $d(a, A_n) = d(A, A_n)$. Since $a \in A$, there exist a series $(x_n) \rightarrow a$ and choose $m \geq N$ where $||x_m - a|| < \epsilon/2$. We now consider that for any $n \geq N$ that 
+    \begin{align*}
+        d(a, A_n) &\leq ||a - x_m|| + d(x_m, A_n) \\
+        &\leq  ||a - x_m|| + D(A_m, A_n)  \\
+        &< \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+    \end{align*}
+
+    Refer to (a) with the part marked with (*) for the justification of the initial inequality. We now note that $d(a, A_n) = d(A, A_n) < \epsilon$. Hence, we proved that $d(A, A_n) \rightarrow 0$. \hfill $\square$ \\
+
+    \item 
+    Let $\epsilon > 0$ be given. Select a large enough $N$ where for all $n \geq N$, both $d(A_n, A) < \epsilon$ and $d(A, A_n) < \epsilon$. This is possible due to our result in (c) and (d). Since $D(A_n, A)$ is either $d(A_n, A)$ or $d(A, A_n)$, this implies that $D(A_n, A) < \epsilon$. By definition of limits, $A_n \rightarrow A$. \hfill $\square$
+
+    
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
