@@ -153,11 +153,17 @@
     \item 
     By contradiction, we assume $n$ is a composite number. Let $q$ be a prime factor of $n$. \\
 
-    \textbf{Claim: } Let $n$ be a composite number. There exist prime factors $p$ where $p \leq \sqrt{n}$. \\
+    \textbf{Claim 1: } Let $n$ be a composite number. There exist prime factors $p$ where $p \leq \sqrt{n}$. \\
 
     By contradiction, there only exist prime factors where $p > \sqrt{n}$. Since $p \mid n$, there exist integer $q$ where $pq = n$. This implies that $n/q > \sqrt{n} \implies q/n < \sqrt{n}/n \implies q < \sqrt{n}$. Since $p \neq n$ as $n$ is not prime, $q \neq 1$. Let $\hat{p}$ be a prime factor of $q$, then $\hat{p} \mid q$ and $\hat{p} < \sqrt{n}$, a contradiction. \hfill $\square$  \\
 
-    By the Claim, we may assume the existence of a $q$ where $q < \sqrt{n}$. Since $q \mid n$, we note that $a^{n-1} \equiv 1 \pmod q$. By Fermat's Little Theorem, we also get that $a^{q-1} \equiv 1 \pmod q$. We then note that $\gcd(a^{(n-1)/p}-1, q) = 1$, so $a^{(n-1)/p} \not \equiv 1 \pmod q$. This implies that $o_q(a) \nmid (n-1)/p$, but $o_q(a) \mid (n-1)$. This implies that $\gcd(o_q(a), p) > 1$. However, $p$ is prime, so this implies that $\gcd(o_q(a), p) = p$ thus $p \mid o_q(a)$. Since $o_q(a) \mid q - 1$, $p \mid q - 1$ and $p \leq q - 1 < q$. Thus, $q > p > \sqrt{n} - 1$ and $q \geq p + 1 > \sqrt{n}$, so $q > \sqrt{n}$. This is a contradiction to our earlier assumption. Hence, $n$ must be prime. \hfill $\square$ \\
+    By Claim 1, we may assume the existence of a $q$ where $q < \sqrt{n}$. Since $q \mid n$, we note that $a^{n-1} \equiv 1 \pmod q$. By Fermat's Little Theorem, we also get that $a^{q-1} \equiv 1 \pmod q$. We then note that $\gcd(a^{(n-1)/p}-1, q) = 1$, so $a^{(n-1)/p} \not \equiv 1 \pmod q$. This implies that $o_q(a) \nmid (n-1)/p$, but $o_q(a) \mid (n-1)$. \\
+    
+    \textbf{Claim 2: } Let $a, b, c$ be non-zero integers. If $a \mid bc$ but $a \nmid c$, then $\gcd(a, b) > 1$. \\
+
+     By contradiction, we assume $\gcd(a, b) = 1$. By Corollary 2.20, $a \mid c$, a contradiction. \hfill $\square$ \\
+    
+    By Claim 2, this implies that $\gcd(o_q(a), p) > 1$. However, $p$ is prime, so this implies that $\gcd(o_q(a), p) = p$ thus $p \mid o_q(a)$. Since $o_q(a) \mid q - 1$, $p \mid q - 1$ and $p \leq q - 1 < q$. Thus, $q > p > \sqrt{n} - 1$ and $q \geq p + 1 > \sqrt{n}$, so $q > \sqrt{n}$. This is a contradiction to our earlier assumption. Hence, $n$ must be prime. \hfill $\square$ \\
 
     \newpage
 
@@ -165,8 +171,37 @@
     \begin{enumerate}
         \item 
 
+        \textbf{Claim: } $\theta_1 + \theta_2 = \zeta^1 + \zeta^2 + \cdots + \zeta^{22} = -1$\\
+
+        We note that $1 + \theta_1 + \theta_2 = 1 + \zeta^1 + \zeta^2 + \cdots + \zeta^{22}$ forms a geometric sum and hence, it is equal to $\frac{\zeta^{23} - 1}{\zeta - 1} = \frac{0}{\zeta - 1} = 0$. Thus, $\theta_1 + \theta_2 = -1$. \hfill $\square$ \\ 
+
+        \textbf{Claim: } $\theta_1 \cdot \theta_2 = 6$ \\
+
+        We first note that $S = \{2^0, 2^1, 2^8, 2^2, 2^9, 2^3, 2^5, 2^{10}, 2^7, 2^4, 2^6 \} = \langle 2 \rangle$ in $(\mathbb{F}_{23})^{\times}$. We then note that for any quadratic residue $s \in S$, $-s \in T$ because $(\frac{-s}{23}) = (\frac{-1}{23})(\frac{s}{23}) = -1$. Hence, $-s$ is a quadratic non-residue and we also note that each $-s$ is unique by Lemma 7.14 and $\mathbb{F}_{23}$ is a field. Hence, we get that $-S = {-s : s \in S}$ contains $11$ unqiue quadratic non-residue, so $-S = T$. Thus, all quadratic residue can be expressed as $2^k$ and non-residue can be expressed as $-2^k$ for $0 \leq k \leq 10$ in $\mathbb{F}_{23}$. \\
+
+        We now return to product and we note that: 
+
+        $$\theta_1 \cdot \theta_2 = \sum_{t \in T} (\zeta^t \cdot \sum_{s \in S} \zeta^s) = \sum_{s \in S \ t \in T} \zeta^{s + t}$$  
+
+        We now observe that addition of the powers of $\zeta$ behaves similarly to addition in $\mathbb{F}_{23}$ as $\zeta^{s + t} = \zeta^{(s + t) \% 23}$. Hence, we then note that for $11$ of the terms in the sum $-s = t$, so $s + t = 0$. Hence, $\zeta^{s + t} = \zeta^0 = 1$, and the sum of the 11 terms is equal to $11$. For the remaining $110$ terms, we first consider the number of possible pairs where $\zeta^{s + t} = \zeta^{1}$. We note that: 
+        \begin{align*}
+            1 &= 13 + 11 = 2^7 - 2^{10}\\ 
+            &= 9 + 15 = 2^5 - 2^3\\
+            &= 4 + 20 = 2^2 - 2^8\\
+            &= 3 + 21 = 2^8 - 2^1\\
+            &= 2 + 22 = 2^1 - 2^0
+        \end{align*}
+
+        There exist exactly $5$ pairs where $s + t = 1$. We then note that for any $s + t$, it can be translated into $2^d - 2^r$ where $0 \leq d, r \leq 10$. We then note that for any $\hat{s} \in S$, $\hat{s} = 2^k = 2^k (1)$. For each $2^d - 2^r = 1$, $\hat{s} = 2^{d + k} - 2^{r + k}$. Hence, there exist $5$ different $s + t = \hat{s}$. For each, $\hat{t} \in T$, $ = -2^k = -2^k \cdot 1$ and applying the same logic, there also exist $5$ different $s + t = \hat{t}$. Hence, for each $a \in S \cup T$, there exists $\zeta^a$ repeats itself $5$ times in the 110 terms. Hence, the sum of the 110 terms is equal to $5 \cdot (\zeta^1 + \zeta^2 + \cdots + \zeta^{22} ) = -5$. Thus, we sum it with the sum of the other $11$ terms to get that $\theta_1 \cdot \theta_2 = 11 - 5 = 6$.\hfill $\square$ \\
+
+        \item 
+        By the Division Algorithmn for polynomails, since $\Phi_{23}(x)$ is a monic polynomial, $F(x) = \Phi_{23}(x)q(x) + r(x)$ for some polynomial $q(x), r(x) \in \mathbb{Z}[x]$. We then note that $F(\zeta) = \Phi_{23}(\zeta)q(\zeta) + r(\zeta) = r(\zeta)$. We reframe our focus to $r(x)$ and note that $\deg(r) \leq 21$. We now consider the polynomial of $g(x) = r(x) - r(\zeta)$. We note that $F(\zeta^n) = F(\zeta)\Phi_{23}(\zeta^n) + r(\zeta^n) = r(\zeta^n)$, so $\zeta^1 ,\cdots ,\zeta^{22}$ are zeroes of $g(x)$, so by Corollary 9.7, $(x - \zeta)\cdots(x - \zeta^{22}) \mid g(x)$. However, we note that $\deg(g) = \deg(r)$ and $22 > \deg(g)$. This leaves that $g(x) = 0$. In other words, $r(x) = r(\zeta)$, so it is a constant function. Since $r(x) \in \mathbb{Z}[x]$, it implies $r(\zeta) = F(\zeta) \in \mathbb{Z}$. \hfill $\square$ 
+
+
+
+
     \end{enumerate}
 
 
 \end{enumerate}
-\end{document}
+\end{document}$
