@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage{enumitem}
 \usepackage{mathtools,amssymb,amsthm} % imports amsmath
-\usepackage{enumitem}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \newtheorem{remark}{Remark}
 
@@ -10,35 +9,35 @@
 \item 
     \begin{enumerate}
         \item 
-        Let $a$ be an arbitrary element in $H$ since it is non-empty. We note that $a^{|G|} = e$ by Corollary 12.4, so $e \in H$. This implies that $a^{|G| - 1} = a^{-1}$, so $a^{-1} \in H$. Lastly, for any $a, b \in H$, we get that $ab \in H$. Thus, we proved that $H$ is a subgroup of $G$. \hfill $\square$  \\
+        Let $a$ be an arbitrary element in $H$ since it is non-empty. Since $H$ is closed under multiplication, $a^k \in H$ for all $k \in \mathbb{N}$. We note that $a^{|G|} = e$ by Corollary 12.4, so $e \in H$. This implies that $a^{|G| - 1} = a^{-1}$, so $a^{-1} \in H$. Lastly, for any $a, b \in H$, we have $ab \in H$. Thus, we proved that $H$ is a subgroup of $G$. \hfill $\square$  \\
 
         \item 
         \textbf{Claim 1: } Let $a \in G$. If $o(a) = d$, then if there exist a $k \in \mathbb{N}$ where $a^k = e$ then $d \mid k$. \\
 
         By contradiction, $d \nmid k$, then by the Division Algorithm, there exist $q, r \in \mathbb{Z}$ where $a^k = a^{qd} \cdot a^r = e$ where $0 < r < d$. However, $a^{qd} = e^q = e$, so $a^r = e$. This contradicts the minimality of $o(a)$. Hence, $r$ must be 0 and $d \mid k$. \\
 
-        \textbf{Claim 2: } Let $a \in G$. For any $k \in \mathbb{N}$, we have $o(a^k ) = \frac{o(a)}{\gcd(o(a), k)}$. \hfill $\square$  \\
+        \textbf{Claim 2: } Let $a \in G$. For any $k \in \mathbb{N}$, we have $o(a^k ) = \frac{o(a)}{\gcd(o(a), k)}$. \\
 
         Let $d = o(a)$ and $w = d/\gcd(d, k)$. Then $wk = d(k/ \gcd(d,k))$ is divisible by $d$ and so $a^{kw} = e$. Furthermore, suppose we have a $n \in \mathbb{N}$ where $a^{kn} = e$. By Claim 1, we get that $d \mid kn$, so:
 
         $$\frac{d}{\gcd(k, d)} \mid \frac{k}{\gcd(k, d)}n$$
 
-        We note that $\gcd(d / \gcd(k, d), k / \gcd(l, d)) = 1$. By Corollary 2.20, $w \mid n$. This implies the smallest value for $n$ is $w$. (Yes, this is just a re-write of the solution for HW3 2(b)) \hfill $\square$  \\
+        We note that $\gcd(d / \gcd(k, d), k / \gcd(k, d)) = 1$. By Corollary 2.20, $w \mid n$. This implies the smallest value for $n$ is $w$. \hfill $\square$  \\
 
         \textbf{Claim 3: } For any positive integer $d \mid m$, there are exactly $\phi(d)$ elements of $G$ with order $d$ \\
 
-        Since $G$ is cyclic, there exist some $g \in G$ with $o(g) = m$ where $G = \{g, g^2, \cdots, g^m \}$. For any $d \mid m$, there exist an integer $q$ where $dq = m$. Let $a = g^q \in G$ thus $a^d = g^{dq} = e$ and $o(a) = d$. Otherwise, $o(a) < d$ implies $q \cdot o(a) < qd = m$, contradicting the minimality of $m$. Since $o(a) = d$, we note that $a, a^2, \cdots, a^d$ are all unique because if there exist $a^j = a^k$ for $1 \leq j < k \leq d$, then $e = a^{k - j}$, contradicting $d$'s minimality. We apply Claim 2 to get that for $1 \leq k \leq d$ that $o(a^k) = d / \gcd(d, k)$. It is clear that if $o(a^k) = q$, then $\gcd(d, k) = 1$. We showed all of the $a^k$ are unique, so there exist at least $\phi(d)$ elements with order $d$. \\
+        Since $G$ is cyclic, there exist some $g \in G$ with $o(g) = m$ where $G = \{g, g^2, \cdots, g^m \}$. For any $d \mid m$, there exist an integer $q$ where $dq = m$. Let $a = g^q \in G$ thus $a^d = g^{dq} = e$ and $o(a) = d$. Otherwise, $o(a) < d$ implies $q \cdot o(a) < qd = m$, contradicting that $o(g)=m$. Since $o(a) = d$, we note that $a, a^2, \cdots, a^d$ are all unique. We apply Claim 2 to get that for $1 \leq k \leq d$ that $o(a^k) = d / \gcd(d, k)$. It is clear that if $o(a^k) = d$, then $\gcd(d, k) = 1$. We showed all of the $a^k$ are unique, so there exist at least $\phi(d)$ elements with order $d$. \\
 
-        We now prove all orders $b \in G$ with order $d$ must be in the form $a^k$. Let $b = g^r$ for $1 \leq r \leq m$. We apply Claim 2 again to get that $o(g^r) = m / \gcd(m, r)$ thus $\gcd(m, r) = d / m = q$. This further implies that $q \mid r$, so there exist an integer $k$ where $1 \leq k \leq d$ that $qk = r$. Thus, $g^{r} = (g^q)^k = a^k$. This proves that there exist exactly $\phi(d)$ elements with order $d$. \hfill $\square$ \\
+        We now prove all elements $b \in G$ with order $d$ must be in the form $a^k$. Let $b = g^r$ for $1 \leq r \leq m$. We apply Claim 2 again to get that $o(g^r) = m / \gcd(m, r) = d$. This implies $\gcd(m, r) = m / d = q$. This further implies that $q \mid r$, so there exist an integer $k$ where $1 \leq k \leq d$ that $qk = r$. Thus, $g^{r} = (g^q)^k = a^k$. This proves that there exist exactly $\phi(d)$ elements with order $d$. \hfill $\square$ \\
 
         \textbf{Claim 4: }For any positive integer $d \mid m$, there is a unique subgroup of G of order $d$. \\
 
-        Let $a \in G$ where $o(a) = d$ and $a = g^{m/d}$, which exits by Claim 3. We then denote the set $H = \{a, a^2, \cdots a^d\}$. For any $1 \leq i, j \leq d$, $a^i \cdot a^j = a^{i + j}$. If $i + j \leq d$, then $a^{i + j} \in H$. Otherwise, we note that $a^{i + j} = a^{i + j - d} \cdot a^d = a^{i + j - d}$. Since $i + j \leq 2j$ so $i + j - d \leq d$, $a^{i + j} \in H$. By $(a)$, $H$ is a subgroup of $G$. Note that all elements in $H$ are unique by our proof of Claim 3, so it is also order $d$. \\
+        Let $a \in G$ where $o(a) = d$ and $a = g^{m/d}$, which exists by Claim 3. We then denote the set $H = \{a, a^2, \cdots a^d\}$. For any $1 \leq i, j \leq d$, $a^i \cdot a^j = a^{i + j}$. If $i + j \leq d$, then $a^{i + j} \in H$. Otherwise, we note that $a^{i + j} = a^{i + j - d} \cdot a^d = a^{i + j - d}$. Since $i + j \leq 2d$ so $i + j - d \leq d$, $a^{i + j} \in H$. By $(a)$, $H$ is a subgroup of $G$. Note that all elements in $H$ are unique by our proof of Claim 3, so it is also order $d$. \\
 
-        It remains to prove $H$ is the only subgroup of order $d$ in $G$. Suppose there exist a subgroup $E \leq G$ with order $d$. Let $b \in E$, then $b^{d} = e$ by Corollary 12.4. We note that $b = g^r$ for some $r \in \mathbb{N}$ and $g^{rd} = e$. By Claim 1, $m \mid rd$, which implies that $m/d \mid r$. Hence, there exist some integer $k$ where $1 \leq k \leq d$ and $b = g^r = (g^{m/d})^k = a^k$. Hence, $b \in H$ and $E \subseteq H$. Since they have the same order, by the pigeonhole principle, $E = H$.  \hfill $\square$ \\
+        It remains to prove $H$ is the only subgroup of order $d$ in $G$. Suppose there exist a subgroup $E \leq G$ with order $d$. Let $b \in E$, then $b^{d} = e$ by Corollary 12.4. We note that $b = g^r$ for some $r \in \mathbb{N}$ and $g^{rd} = e$. By Claim 1, $m \mid rd$, which implies that $m/d \mid r$. Hence, there exist some integer $k$ where $1 \leq k \leq d$ and $b = g^r = (g^{m/d})^k = a^k$. Hence, $b \in H$ and $E \subseteq H$. Since they have the same order, $E = H$.  \hfill $\square$ \\
 
         \item 
-        We note that from Claim 1 of $(a)$ that since all elements $\alpha$ in $G$ are $\alpha^{|G|} = e$, we have $o(\alpha) \mid m$. Let $N_d$ denote the number of elements in $G$ with exactly order $G$. We have: 
+        We note that from Claim 1 of $(a)$ that since all elements $\alpha$ in $G$ are $\alpha^{|G|} = e$, we have $o(\alpha) \mid m$. Let $N_d$ denote the number of elements in $G$ with exactly order $d$. We have: 
 
         $$\sum_{d \mid m} N_d = m$$
 
@@ -50,7 +49,7 @@
 
         $$\sum_{d \mid m} (N_d - \phi(d)) = 0$$
 
-        Since $N_d \leq \phi(d)$, if there exists a $N_d < \phi(d)$, the sum will be negative. Hence, we get that $N_d = \phi(d)$. Since $m \mid m$ and $\phi(m) \leq 1$, there exist an element $\beta$ where $o(\beta) = m$. We note that $\langle \beta \rangle$ has order $m$ and $G$ also has order $m$. Thus, $G = \langle \beta \rangle$. \hfill $\square$ 
+        Since $N_d \leq \phi(d)$, if there exists a $N_d < \phi(d)$, the sum will be negative. Hence, we get that $N_d = \phi(d)$. Since $m \mid m$ and $\phi(m) \ge 1$, there exist an element $\beta$ where $o(\beta) = m$. We note that $\langle \beta \rangle$ has order $m$ and $G$ also has order $m$. Thus, $G = \langle \beta \rangle$. \hfill $\square$ 
     \end{enumerate}
 
     \newpage 
@@ -58,13 +57,13 @@
     \item 
     \begin{enumerate}
         \item 
-        Yes because $2^5 = 32 = -1$ in $\mathbb{Z}/11\mathbb{Z}$, so $-1 \in \langle 2 \rangle$. \\
+        Yes because $2^5 = 32 \equiv -1 \pmod{11}$, so $-1 \in \langle 2 \rangle$. \\
 
         \item 
-        We assume that $-1 \in \langle 2 \rangle$. This implies that there exist a positive integer $k$ where $2^k \equiv -1 \pmod{23}$. Since $-1$ is not a square in $\mathbb{Z}/23\mathbb{Z}$, $(\frac{2^k}{23})$. However, $(\frac{2^k}{23}) = (\frac{2}{23}) \cdots (\frac{2}{23})$. By Theorem 11.4 (b), since $23 \equiv -1 \pmod 8$, $(\frac{2}{23}) = 1$, so $(\frac{2^k}{23}) = 1$, a contradiction. Hence, $-1 \not \in \langle 2 \rangle$.  \hfill $\square$  \\
+        We assume that $-1 \in \langle 2 \rangle$. This implies that there exist a positive integer $k$ where $2^k \equiv -1 \pmod{23}$. Since $-1$ is not a square in $\mathbb{Z}/23\mathbb{Z}$, $(\frac{-1}{23})  -1$. However, $(\frac{2^k}{23}) = (\frac{2}{23}) \cdots (\frac{2}{23})$. By Theorem 11.4 (b), since $23 \equiv -1 \pmod 8$, $(\frac{2}{23}) = 1$, so $(\frac{2^k}{23}) = (\frac{-1}{23}) =  (\frac{2}{23})^k = 1$, a contradiction. Hence, $-1 \not \in \langle 2 \rangle$.  \hfill $\square$  \\
 
         \item 
-        We note that $2^m + 2^n =  2^{m - n}(2^n + 1)$. Since $23\mid 2024$, $23 \mid 2^{m - n}(2^n + 1)$. By Euclid's Lemma, since $23 \nmid 2^{m - n}$, $23 \mid 2^n + 1$. This implies that $2^n \equiv -1 \pmod {23}$. However, this implies that $-1 \in \langle 2 \rangle$ in $(\mathbb{Z}/23\mathbb{Z})^{\times}$. This contradicts $(b)$, so there does not exist such $m$ and $n$.  \hfill $\square$ \\
+        We note that $2^m + 2^n =  2^n(2^{m - n} + 1)$. Since $23\mid 2024$, $23 \mid 2^n(2^{m - n} + 1)$. By Euclid's Lemma, since $23 \nmid 2^n$, $23 \mid 2^{m - n} + 1$. This implies that $2^{m - n} \equiv -1 \pmod {23}$. However, this implies that $-1 \in \langle 2 \rangle$ in $(\mathbb{Z}/23\mathbb{Z})^{\times}$. This contradicts $(b)$, so there does not exist such $m$ and $n$.  \hfill $\square$ \\
 
         \item 
         We first note that for any $2^m + 2^n + 2^r$, we can factor it into $2^r(2^{m-r} + 2^{n-r}+1)$. $2024$'s prime factorization is $2^3 \cdot 11 \cdot 23$. Hence, if we wish to make it divisible, we need to find $m$, $n$, $r$ where $2^r(2^{m-r} + 2^{n-r}+1)$ is divisible by $8, 11, 23$. The case for 8 is trivial as we simply set $r = 3$. For $11, 23$, $11, 23 \nmid 2^r$, so it must be that $11,23 \mid 2^{m-r} + 2^{n-r}+1$. Let $x = m-r$ and $y = n-r$. Finding a solution is equivalent to solving this congruence: 
@@ -111,7 +110,7 @@
             \end{array}$
         \end{center}
         
-        For $2^x + 2^y \equiv -1$, the sum of their congruence must be equal to 23. Hence, the solutions $(x, y)$ are $(6,2), (7,5), (9, 4)$. We take interest in the solution $(3,1)$ from mod $11$ and $(7,5)$ from mod $23$ as their differneces are both 2. From the table, we also learned that $o(2) = 10$ mod $11$ and $o(2) = 11$ mod $23$. Hence, we note that: 
+        For $2^x + 2^y \equiv -1$, the sum of their congruence must be equal to 22, which is -1. Hence, the solutions $(x, y)$ are $(6,2), (7,5), (9, 4)$. We take interest in the solution $(3,1)$ from mod $11$ and $(7,5)$ from mod $23$ as their differences are both 2. From the table, we also learned that $o(2) = 10$ mod $11$ and $o(2) = 11$ mod $23$. Hence, we note that: 
 
 
         $$2^{10a}(2^3 + 2^1) \equiv -1 \pmod {11}$$
@@ -131,21 +130,21 @@
     \item 
     \begin{enumerate}
         \item 
-        Let us assume $n$ is a Carmichael Number. Let $p_i^{k_i}$ be one of its prime power factor. Since $p_i$ is an odd prime, by Corollary 12.10, $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ is cyclic. Hence there exist a generator element $g_i$ where $\langle g_i \rangle = (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ and its order is $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i}) = p^{k_i - 1}(p_i - 1)$. By the Chinese Remainder Theorem, there exist an element $a$ where: 
+        Let us assume $n$ is a Carmichael Number. Let $p_i^{k_i}$ be one of its prime power factor. Since $p_i$ is an odd prime, by Corollary 12.10, $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ is cyclic. Hence there exist a generator element $g_i$ where $\langle g_i \rangle = (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ and its order is $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i}) = p_i^{k_i - 1}(p_i - 1)$. By the Chinese Remainder Theorem, there exist an element $a$ where: 
         \begin{align*}
             a &\equiv g_i \pmod {p_i^{k_i}} \\
             a &\equiv 1 \pmod {p_j^{k_j}} \text{ \ for $j \neq i$}
         \end{align*}
 
-        Because all the differnet prime power factors of $n$ are co-prime to each other. Since $g_i$ is co-prime to $p_i^{k_i}$, $a$ is co-prime to $p_i^{k_i}$ and all such $p_j^{k_j}$. Hence, $a$ must also be co-prime to $n$. This implies that $a \in  (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$, so $a^{n-1} \equiv g_i^{n-1} \equiv 1 \pmod {p_i^{k_i}}$. By Claim 1 of 1 (a), this implies that $o(g_i) = p^{k_i - 1}(p_i - 1) \mid n - 1$ as desired. \hfill $\square$  \\
+        Since $g_i$ is co-prime to $p_i^{k_i}$, $a$ is co-prime to $p_i^{k_i}$ and all such $p_j^{k_j}$. Hence, $a$ must also be co-prime to $n$. This implies that $a \in  (\mathbb{Z}/n\mathbb{Z})^{\times}$, so $a^{n-1} \equiv 1 \pmod n$. In particular $a^{n-1} \equiv g_i^{n-1} \equiv 1 \pmod {p_i^{k_i}}$. By Claim 1 of 1 (a), this implies that $o(g_i) = p_i^{k_i - 1}(p_i - 1) \mid n - 1$ as desired. \hfill $\square$  \\
 
-        For the converse, let us assume that $p^{k_i - 1}(p_i - 1) \mid n - 1$ for all $i$. Note that $p^{k_i - 1}(p_i - 1) = \phi(p_i^{k_i})$. Let $a \in (\mathbb{Z}/n\mathbb{Z})^{\times}$. This implies that $a$ is co-prime to $n$ thus $a$ is co-prime to any $p_i^{k_i}$. Hence, $a \in (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$. $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ forms a finite group, so by Corollary 12.4, since $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i})$, $a^{\phi(p_i^{k_i})} = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. Note that there exist exist an integer $m$ where $\phi(p_i^{k_i}) \cdot m = n - 1$, so $a^{\phi(p_i^{k_i}) \cdot m} \equiv 1^m = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. This implies that $a^{n-1} \equiv 1 \pmod {p_i^{k_i}}$ for all $i$. By Exercise 4.1, since all $p_i^{k_i}$ are all co-prime to one another, we get that the $lcm(p_1^{k_1}\cdots p_r^{k_r}) = n$. Hence, we get that $a^{n-1} \equiv 1 \pmod n$ as desired. \hfill $\square$  \\
-
-        \item 
-         We first note that the $pqr - 1$ expanded is $1296k^3 + 396k^2 + 36k$, which could be factorized into. $36k(36k^2 + 11k + 1)$. Notice that $6k + 1$, $12k + 1$, and $18k + 1$ are all distinct thus all the prime factors of $pqr$ have powers of 1. This meant that $pqr$ is in the form $p_1^{k_1}p_2^{k_2}p_3^{k_3}$ with $k_i = 1$ for all $i = 1,2,3$. For each $p_i$, $p_i^{k_i - 1}{p_i - 1} = p_i - 1$. We now note that $6k, 12k, 18k \mid 36k(36k^2 + 11k + 1)$. By (a), $pqr$ is a Carmichael number. \hfill $\square$  \\
+        For the converse, let us assume that $p_i^{k_i - 1}(p_i - 1) \mid n - 1$ for all $i$. Note that $p_i^{k_i - 1}(p_i - 1) = \phi(p_i^{k_i})$. Let $a \in (\mathbb{Z}/n\mathbb{Z})^{\times}$. This implies that $a$ is co-prime to $n$ thus $a$ is co-prime to any $p_i^{k_i}$. Hence, $a \in (\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$. $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}$ forms a finite group, so by Corollary 12.4, since $|(\mathbb{Z}/p_i^{k_i}\mathbb{Z})^{\times}| = \phi(p_i^{k_i})$, $a^{\phi(p_i^{k_i})} = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. Note that there exist exist an integer $m$ where $\phi(p_i^{k_i}) \cdot m = n - 1$, so $a^{\phi(p_i^{k_i}) \cdot m} \equiv 1^m = 1$ in $(\mathbb{Z}/p_i^{k_i}\mathbb{Z})$. This implies that $a^{n-1} \equiv 1 \pmod {p_i^{k_i}}$ for all $i$. Since all $p_i^{k_i}$ are all co-prime to one another, by the Chinese Remainder Theorem (or LCM property), we get that $a^{n-1} \equiv 1 \pmod n$ as desired. \hfill $\square$  \\
 
         \item 
-         Since $p ,q$ are distinct, let us assume $p > q$. We express $pq = p_1^{k_1}p_2^{k_2}$ where $k_i = 1$ for all $i = 1,2$. Let $p_1 = p$, so $p_1^{k_1 - 1}(p_1 - 1) = p-1$. We now show that $p-1 \nmid pq -1$. By contradiciton, we assume that $p - 1 \mid pq - 1$. Note that $pq - 1 = q(p - 1) + q - 1$. Since $p - 1 \mid q(p - 1)$, it implies that $p - 1 \mid q - 1$. However, $p - 1 > q - 1$, a contradiction. By (a), $pq$ is not a Carmichael number. \hfill $\square$ 
+         We first note that the $pqr - 1$ expanded is $1296k^3 + 396k^2 + 36k$, which could be factorized into $36k(36k^2 + 11k + 1)$. Notice that $6k + 1$, $12k + 1$, and $18k + 1$ are all distinct primes, so $pqr = p_1^1 p_2^1 p_3^1$ with $k_i = 1$ for all $i = 1,2,3$. For each $p_i$, $p_i^{k_i - 1}(p_i - 1) = p_i - 1$. We now note that $6k, 12k, 18k \mid 36k(36k^2 + 11k + 1)$. By (a), $pqr$ is a Carmichael number. \hfill $\square$  \\
+
+        \item 
+         Since $p ,q$ are distinct, let us assume $p > q$. We express $pq = p_1^{k_1}p_2^{k_2}$ where $k_i = 1$ for all $i = 1,2$. Let $p_1 = p$, so $p_1^{k_1 - 1}(p_1 - 1) = p-1$. We now show that $p-1 \nmid pq -1$. By contradiction, we assume that $p - 1 \mid pq - 1$. Note that $pq - 1 = q(p - 1) + q - 1$. Since $p - 1 \mid q(p - 1)$, it implies that $p - 1 \mid q - 1$. However, $p - 1 > q - 1$, a contradiction. By (a), $pq$ is not a Carmichael number. \hfill $\square$ 
      \end{enumerate}
 
     \newpage 
@@ -153,11 +152,13 @@
     \item 
     By contradiction, we assume $n$ is a composite number. Let $q$ be a prime factor of $n$. \\
 
-    \textbf{Claim 1: } Let $n$ be a composite number. There exist prime factors $p$ where $p \leq \sqrt{n}$. \\
+    \textbf{Claim 1: } Let $n$ be a composite number. There exist prime factors $r$ where $r \leq \sqrt{n}$. \\
 
-    By contradiction, there only exist prime factors where $p > \sqrt{n}$. Since $p \mid n$, there exist integer $q$ where $pq = n$. This implies that $n/q > \sqrt{n} \implies q/n < \sqrt{n}/n \implies q < \sqrt{n}$. Since $p \neq n$ as $n$ is not prime, $q \neq 1$. Let $\hat{p}$ be a prime factor of $q$, then $\hat{p} \mid q$ and $\hat{p} < \sqrt{n}$, a contradiction. \hfill $\square$  \\
+    By contradiction, there only exist prime factors where $r > \sqrt{n}$. Since $r \mid n$, there exist integer $k$ where $rk = n$. This implies that $n/k > \sqrt{n} \implies k/n < \sqrt{n}/n \implies k < \sqrt{n}$. Since $r \neq n$ as $n$ is not prime, $k \neq 1$. Let $\hat{p}$ be a prime factor of $k$, then $\hat{p} \mid k$ and $\hat{p} < \sqrt{n}$, a contradiction. \hfill $\square$  \\
 
-    By Claim 1, we may assume the existence of a $q$ where $q < \sqrt{n}$. Since $q \mid n$, we note that $a^{n-1} \equiv 1 \pmod q$. By Fermat's Little Theorem, we also get that $a^{q-1} \equiv 1 \pmod q$. We then note that $\gcd(a^{(n-1)/p}-1, q) = 1$, so $a^{(n-1)/p} \not \equiv 1 \pmod q$. This implies that $o_q(a) \nmid (n-1)/p$, but $o_q(a) \mid (n-1)$. \\
+    By Claim 1, we may assume the existence of a $q$ where $q < \sqrt{n}$. We must have $\gcd(a,q)=1$, otherwise if $q \mid a$ then $a^{n-1} \equiv 0 \pmod q$, contradicting $a^{n-1} \equiv 1 \pmod n$. Since $\gcd(a,q)=1$, by Fermat's Little Theorem, we get that $a^{q-1} \equiv 1 \pmod q$. 
+    
+    Since $p \mid n-1$, write $n-1 = pt$. We then note that $\gcd(a^{t}-1, q) = 1$ by condition (c), so $a^{t} \not \equiv 1 \pmod q$. This implies that $o_q(a) \nmid t = (n-1)/p$, but $o_q(a) \mid (n-1)$. \\
     
     \textbf{Claim 2: } Let $a, b, c$ be non-zero integers. If $a \mid bc$ but $a \nmid c$, then $\gcd(a, b) > 1$. \\
 
@@ -177,13 +178,13 @@
 
         \textbf{Claim: } $\theta_1 \cdot \theta_2 = 6$ \\
 
-        We first note that $S = \{2^0, 2^1, 2^8, 2^2, 2^9, 2^3, 2^5, 2^{10}, 2^7, 2^4, 2^6 \} = \langle 2 \rangle$ in $(\mathbb{F}_{23})^{\times}$. We then note that for any quadratic residue $s \in S$, $-s \in T$ because $(\frac{-s}{23}) = (\frac{-1}{23})(\frac{s}{23}) = -1$. Hence, $-s$ is a quadratic non-residue and we also note that each $-s$ is unique by Lemma 7.14 and $\mathbb{F}_{23}$ is a field. Hence, we get that $-S = {-s : s \in S}$ contains $11$ unqiue quadratic non-residue, so $-S = T$. Thus, all quadratic residue can be expressed as $2^k$ and non-residue can be expressed as $-2^k$ for $0 \leq k \leq 10$ in $\mathbb{F}_{23}$. \\
+        We first note that $S = \{2^0, 2^1, 2^8, 2^2, 2^9, 2^3, 2^5, 2^{10}, 2^7, 2^4, 2^6 \} = \langle 2 \rangle$ in $(\mathbb{F}_{23})^{\times}$. We then note that for any quadratic residue $s \in S$, $-s \in T$ because $(\frac{-s}{23}) = (\frac{-1}{23})(\frac{s}{23}) = -1$. Hence, $-s$ is a quadratic non-residue and we also note that each $-s$ is unique by Lemma 7.14 and $\mathbb{F}_{23}$ is a field. Hence, we get that $-S = \{-s : s \in S\}$ contains $11$ unique quadratic non-residue, so $-S = T$. Thus, all quadratic residue can be expressed as $2^k$ and non-residue can be expressed as $-2^k$ for $0 \leq k \leq 10$ in $\mathbb{F}_{23}$. \\
 
         We now return to product and we note that: 
 
         $$\theta_1 \cdot \theta_2 = \sum_{t \in T} (\zeta^t \cdot \sum_{s \in S} \zeta^s) = \sum_{s \in S \ t \in T} \zeta^{s + t}$$  
 
-        We now observe that addition of the powers of $\zeta$ behaves similarly to addition in $\mathbb{F}_{23}$ as $\zeta^{s + t} = \zeta^{(s + t) \% 23}$. Hence, we then note that for $11$ of the terms in the sum $-s = t$, so $s + t = 0$. Hence, $\zeta^{s + t} = \zeta^0 = 1$, and the sum of the 11 terms is equal to $11$. For the remaining $110$ terms, we first consider the number of possible pairs where $\zeta^{s + t} = \zeta^{1}$. We note that: 
+        We now observe that addition of the powers of $\zeta$ behaves similarly to addition in $\mathbb{F}_{23}$ as $\zeta^{s + t} = \zeta^{(s + t) \pmod{23}}$. Hence, we then note that for $11$ of the terms in the sum $-s = t$, so $s + t = 0$. Hence, $\zeta^{s + t} = \zeta^{23} = 1$, and the sum of the 11 terms is equal to $11$. For the remaining $110$ terms, we first consider the number of possible pairs where $\zeta^{s + t} = \zeta^{1}$. We note that: 
         \begin{align*}
             1 &= 13 + 11 = 2^7 - 2^{10}\\ 
             &= 9 + 15 = 2^5 - 2^3\\
@@ -192,16 +193,12 @@
             &= 2 + 22 = 2^1 - 2^0
         \end{align*}
 
-        There exist exactly $5$ pairs where $s + t = 1$. We then note that for any $s + t$, it can be translated into $2^d - 2^r$ where $0 \leq d, r \leq 10$. We then note that for any $\hat{s} \in S$, $\hat{s} = 2^k = 2^k (1)$. For each $2^d - 2^r = 1$, $\hat{s} = 2^{d + k} - 2^{r + k}$. Hence, there exist $5$ different $s + t = \hat{s}$. For each, $\hat{t} \in T$, $ = -2^k = -2^k \cdot 1$ and applying the same logic, there also exist $5$ different $s + t = \hat{t}$. Hence, for each $a \in S \cup T$, there exists $\zeta^a$ repeats itself $5$ times in the 110 terms. Hence, the sum of the 110 terms is equal to $5 \cdot (\zeta^1 + \zeta^2 + \cdots + \zeta^{22} ) = -5$. Thus, we sum it with the sum of the other $11$ terms to get that $\theta_1 \cdot \theta_2 = 11 - 5 = 6$.\hfill $\square$ \\
+        There exist exactly $5$ pairs where $s + t = 1$. We then note that for any $s + t$, it can be translated into $2^d - 2^r$ where $0 \leq d, r \leq 10$. We then note that for any $\hat{s} \in S$, $\hat{s} = 2^k = 2^k (1)$. For each $2^d - 2^r = 1$, $\hat{s} = 2^{d + k} - 2^{r + k}$. Hence, there exist $5$ different $s + t = \hat{s}$. For each, $\hat{t} \in T$, $ \hat{t} = -2^k = -2^k \cdot 1$ and applying the same logic, there also exist $5$ different $s + t = \hat{t}$. Hence, for each $a \in S \cup T$, $\zeta^a$ repeats itself $5$ times in the 110 terms. Hence, the sum of the 110 terms is equal to $5 \cdot (\zeta^1 + \zeta^2 + \cdots + \zeta^{22} ) = -5$. Thus, we sum it with the sum of the other $11$ terms to get that $\theta_1 \cdot \theta_2 = 11 - 5 = 6$.\hfill $\square$ \\
 
         \item 
-        By the Division Algorithmn for polynomails, since $\Phi_{23}(x)$ is a monic polynomial, $F(x) = \Phi_{23}(x)q(x) + r(x)$ for some polynomial $q(x), r(x) \in \mathbb{Z}[x]$. We then note that $F(\zeta) = \Phi_{23}(\zeta)q(\zeta) + r(\zeta) = r(\zeta)$. We reframe our focus to $r(x)$ and note that $\deg(r) \leq 21$. We now consider the polynomial of $g(x) = r(x) - r(\zeta)$. We note that $F(\zeta^n) = F(\zeta)\Phi_{23}(\zeta^n) + r(\zeta^n) = r(\zeta^n)$, so $\zeta^1 ,\cdots ,\zeta^{22}$ are zeroes of $g(x)$, so by Corollary 9.7, $(x - \zeta)\cdots(x - \zeta^{22}) \mid g(x)$. However, we note that $\deg(g) = \deg(r)$ and $22 > \deg(g)$. This leaves that $g(x) = 0$. In other words, $r(x) = r(\zeta)$, so it is a constant function. Since $r(x) \in \mathbb{Z}[x]$, it implies $r(\zeta) = F(\zeta) \in \mathbb{Z}$. \hfill $\square$ 
-
-
-
+        By the Division Algorithm for polynomials, since $\Phi_{23}(x)$ is a monic polynomial, $F(x) = \Phi_{23}(x)q(x) + r(x)$ for some polynomial $q(x), r(x) \in \mathbb{Z}[x]$. We then note that $F(\zeta^n) = \Phi_{23}(\zeta^n)q(\zeta^n) + r(\zeta^n) = r(\zeta^n)$ (since $\zeta^n$ is a root of $\Phi_{23}$). We reframe our focus to $r(x)$ and note that $\deg(r) \leq 21$. We now consider the polynomial of $g(x) = r(x) - r(\zeta)$. We note that $F(\zeta^n) = r(\zeta^n) = r(\zeta)$, so $\zeta^1 ,\cdots ,\zeta^{22}$ are zeroes of $g(x)$, so by Corollary 9.7, $(x - \zeta)\cdots(x - \zeta^{22}) \mid g(x)$. However, we note that $\deg(g) = \deg(r)$ and $22 > \deg(g)$. This leaves that $g(x) = 0$. In other words, $r(x) = r(\zeta)$, so it is a constant function. Since $r(x) \in \mathbb{Z}[x]$, it implies $r(\zeta) = F(\zeta) \in \mathbb{Z}$. \hfill $\square$ 
 
     \end{enumerate}
 
-
 \end{enumerate}
-\end{document}$
+\end{document}

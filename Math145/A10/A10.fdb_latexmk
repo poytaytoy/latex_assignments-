@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1764031397.67025 "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" "A10.pdf" "A10" 1764031397.98377 0
-  "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" 1764031397.42096 18117 d6d984f736811c072c28a2ae1d189d42 ""
+["pdflatex"] 1764117783.07311 "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" "A10.pdf" "A10" 1764117783.20775 0
+  "/home/poytaytoy/Documents/latex_assignments-/Math145/A10/A10.tex" 1764117782.91844 18015 08224dfe47637fa7c4410c46cfddec8c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -53,8 +53,8 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1754438400 40900 887e0dc8cac988a9e9c574af364cf837 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762475399.80331 293079 eb34fef57086acb79b142616bb11dc70 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762475397 6447588 157dee9ec5ee7cb8d2586bf10e541c88 ""
-  "A10.aux" 1764031397.91183 32 4d1825978335c8847f72f7c473f9edc8 "pdflatex"
-  "A10.tex" 1764031397.42096 18117 d6d984f736811c072c28a2ae1d189d42 ""
+  "A10.aux" 1764117783.17814 32 4d1825978335c8847f72f7c473f9edc8 "pdflatex"
+  "A10.tex" 1764117782.91844 18015 08224dfe47637fa7c4410c46cfddec8c ""
   (generated)
   "A10.aux"
   "A10.log"
