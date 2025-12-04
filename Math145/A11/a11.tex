@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{mathtools,amssymb,amsthm} % imports amsmath
+\usepackage{enumitem}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\newtheorem{remark}{Remark}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item 
+There exist an integer solution for $\frac{10x^2 - 4}{11}$. \\
+
+\textbf{False}. This is because it implies a $x \in \mathbb{N}$ where $10x^2 - 4 = 0$ in $\mathbb{F}_{11}$. In other words, $-x^2 = 4$ or $x^2 = -4 = 7$. However, $(\frac{7}{11}) = -(\frac{11}{7}) = - (\frac{2}{7})(\frac{2}{7}) = -1$. This contradicts $7$ being a non-quadratic residue in $\mathbb{F}_{11}$. \\
+
+\item 
+Assume that $8n + 3$ is prime and also assume there exist an $n \in \mathbb{Z}$ where $8n + 3 \mid 10x^2 - 4$. This implies that $8n + 3 \mid 5n - 2$. \\
+
+\textbf{True}. We note that $10x^2 - 4 = (5x + 2)(5x - 2)$. Meanwhile, $(8n + 3) \cdot (-5) + (5n + 2) \cdot 8 = -40n - 15 + 40n + 16 = 1$. Hence, for any $n \in \mathbb{Z}$, $\gcd(8n + 3, 5n + 2) = 1$. By Euclid Lemma, $8n + 3 \mid 5x - 2$. \\
+
+\item 
+For all primes $p$, if $\nu_p(n) = 1$, $\nu_p(L_n) = \nu_p(n!)$ where $L_n = lcm(1, \cdots, n)$. \\
+
+\textbf{False}. If $n = 14$, $\nu_7(14) = 1$ but $\nu_p(L_{14}) = 1$ and $\nu_p(14!) = 2$.\\
+
+\item 
+Let $p$ be a prime. $\Phi_p(a)$ is odd if and only if $a$ is even. \\
+
+\textbf{True}. We note that $\Phi_p(x) = \frac{x^{p} - 1}{x-1} = \sum^{p-1}_{i=1}x^i + 1$. Since $\Phi_p(a)$ is even, $\Phi_p(a) - 1 = \sum^{p-1}_{i=1}a^i$ is even. By contradiction, if we assume $a$ is odd, then $a^i$ is odd, and a sum of odd is odd, a contradiction. Hence, $a$ must be even. For the converse, if $a$ is even, all $a^i$ are even and the sum of evens are even. Hence, $\sum^{p-1}_{i=1}a^i$ is even and $\sum^{p-1}_{i=1}a^i + 1 = \Phi_p(a)$ is odd. \\
+
+\item
+There does not exist a ring $R$ where for all $n \in \mathbb{N}$, for $x \in R$, $f(x) = x^n$ is an isomorphism. \\
+
+\textbf{False}. Consider $\mathbb{F}_2$. For any $n \in \mathbb{N}$, $f(0) = 0$ and $f(1) = 1$. Hence, $f$ is an identity map thus is isomorphic in $\mathbb{F}_2$. \\ 
+
+\item 
+The ideal $(x, x + 1) = \{xa + (x+1)b: a, b \in \mathbb{Z}[x] \}$ of $\mathbb{Z}[x]$ is a prime ideal. \\
+
+\textbf{False.} Note that $x(-1) + (x+1)(1) = 1$. Hence, since $1 \in (x, x + 1)$, $(x, x + 1) = \mathbb{Z}[x]$. The ideal is not proper, so it cannot be a prime ideal. \\
+
+\item 
+Let $\mathbb{F}_{p}, \mathbb{F}_{p^{d}}$ be fields. If there exist an $f(x) \in \mathbb{F}_{p}[x]$ where $f(x)$ has a root $\alpha$ in $\mathbb{F}_{p^d}$, then $\deg(f) \mid d$. \\
+
+\textbf{True.} By Proposition 9.21, there exist a ring homomorphim of $\mathbb{F}_p[x]/f(x) \rightarrow \mathbb{F}_p^d[x]$. We note that $|\mathbb{F}_p[x]/f(x)| = p^{\deg(f)}$ by Lemma 9.18. By Theorem 10.1 (d), this homomorphim implies that $\deg(f) \mid d$.\\ 
+
+\item 
+Let $m \geq 3$. For all primes $m \mid p - 1$, there exist a root for $\Phi_m(x)$ in $\mathbb{F}_p$ \\
+
+\textbf{True}. Since $p \geq m$, $m \mid p - 1$ and there exist an element $a$ in $\mathbb{F}_p$ where $o(a) = m$ by Proof of Theorem 10.7. From HW7 3 (b), this implies that $\Phi_m(a) = 0$ in $\mathbb{F}_p$.\\
+
+\item 
+Consider a set with two elements $A = \{a, b, c\}$. Let $g$ be the identity map for $A$. Let be $f$ where $a \mapsto b$, $b \mapsto a$, $c \mapsto c$. If $\circ$ denotes function composite, then $(\{g, f\}, \circ)$ is a cyclic group. \\
+
+\textbf{True} We take notice that $f \circ f = f^2 = g$, so $\{g, f\} = \{f^2, f\} = \langle f \rangle$. \\
+
+\item 
+
+Let $n \in \mathbb{Z}$ be odd and $n - 1 = u\cdot 2^k$ where $u$ is odd and $k = \nu_2(n - 1)$. If $a \in (\mathbb{Z}/m\mathbb{Z}^{\times})$ yields $a^{u \cdot 2^d} = -1$ in $\mathbb{Z}/m\mathbb{Z}$ for $d \leq k - 1$, then $m$ is not prime. \\
+
+\textbf{False.} Since $d \leq k - 1$, we can square $a^{u \cdot 2^d}$ until we get $a^{u \cdot 2^k} = a^{n - 1} = 1$. This is simply Fermat's Little Theorem, and does not imply anything about whether $n$ is prime or not. Instead, what Miller Rabbin tests is if $a^{u \cdot 2^d} \neq -1$ and $-1$ implies $n$ is probably prime instead. 
+\end{enumerate}
+
+\end{document}
