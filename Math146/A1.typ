@@ -53,5 +53,60 @@
     \
     We proved $B'$ to be a spanning system and linearly independent for $P^(n-1)$. By a proposition in class, this implies it is a basis for $P^(n -1)$
     
+#pagebreak()
+
+4. Using the operations of addition and scalar multiplication provided, we aim to prove $V_C$ satisfies the 7 axioms for a vector space. Let $arrow(v_1) + i arrow(v_2), arrow(u_1) + i arrow(u_2), arrow(w_1) + i arrow(w_2) in V_C$ and define the scalars $alpha, beta, beta_1, beta_2 in CC$. Let $alpha = a + b i$ and $beta = c + d i$.
+
+  #v(1em)
+
+  1. *Communitivity:* Since addition in $V$ is commutative, we have:
+    $ (arrow(v_1) + i arrow(v_2)) + (arrow(u_1) + i arrow(u_2)) &= (arrow(v_1) + arrow(u_1)) + i(arrow(v_2) + arrow(u_2)) \  
+    &= (arrow(u_1) + arrow(v_1)) + i(arrow(u_2) + arrow(v_2)) \ 
+    &= (arrow(u_1) + i arrow(u_2)) + (arrow(v_1) + i arrow(v_2)) $
+
+  2. *Associativity:* Since addition in $V$ is associative, we have:
+    $ [(arrow(v_1) + i arrow(v_2)) + (arrow(u_1) + i arrow(u_2))] + (arrow(w_1) + i arrow(w_2))
+      &= [(arrow(v_1) + arrow(u_1)) + i(arrow(v_2) + arrow(u_2))] + (arrow(w_1) + i arrow(w_2)) \
+      &= [(arrow(v_1) + arrow(u_1)) + arrow(w_1)] + i[(arrow(v_2) + arrow(u_2)) + arrow(w_2)] \
+      &= [arrow(v_1) + (arrow(u_1) + arrow(w_1))] + i[arrow(v_2) + (arrow(u_2) + arrow(w_2))] \
+      &= (arrow(v_1) + i arrow(v_2)) + [(arrow(u_1) + arrow(w_1)) + i(arrow(u_2) + arrow(w_2))] \
+      &= (arrow(v_1) + i arrow(v_2)) + [(arrow(u_1) + i arrow(u_2)) + (arrow(w_1) + i arrow(w_2))] $
+
+  3. *Zero Vector:* We define the 0 to be from $0 in V$ as $0 + 0i in V_C$. We note that:
+    $ (arrow(v_1) + i arrow(v_2)) + (0 + i 0) &= (arrow(v_1) + 0) + i(arrow(v_2) + 0) \
+      &= arrow(v_1) + i arrow(v_2) $
+
+  4. *Additive Inverse:* We define the additive inverse for $arrow(v_1) + i arrow(v_2)$ as $(-arrow(v_1)) + i(-arrow(v_2))$:
+    $ (arrow(v_1) + i arrow(v_2)) + [(-arrow(v_1)) + i(-arrow(v_2))] &= (arrow(v_1) - arrow(v_1)) + i(arrow(v_2) - arrow(v_2)) \
+      &= 0 + i 0 $
+
+  5. *Multiplicative Identity:* Let $1 in CC$ be the complex scalar $1 + 0i$.
+    $ 1(arrow(v_1) + i arrow(v_2)) &= (1 + 0i)(arrow(v_1) + i arrow(v_2)) \
+      &= [1 arrow(v_1) - 0 arrow(v_2)] + i[1 arrow(v_2) + 0 arrow(v_1)] \
+      &= arrow(v_1) + i arrow(v_2) $
+
+  6 *Multiplicative Associativity:*
+    $ (beta_1 beta_2)(arrow(v_1) + i arrow(v_2)) &= [(a c - b d) + i(a d + b c)](arrow(v_1) + i arrow(v_2)) \
+      &= [(a c - b d) arrow(v_1) - (a d + b c) arrow(v_2)] + i[(a c - b d) arrow(v_2) + (a d + b c) arrow(v_1)] \
+      &= [a(c arrow(v_1) - d arrow(v_2)) - b(d arrow(v_1) + c arrow(v_2))] + i[a(d arrow(v_1) + c arrow(v_2)) + b(c arrow(v_1) - d arrow(v_2))] \
+      &= (a + b i) [(c arrow(v_1) - d arrow(v_2)) + i(c arrow(v_2) + d arrow(v_1))] \
+      &= beta_1 [beta_2 (arrow(v_1) + i arrow(v_2))] $
+
+  7. *Distributive Properties:*
+    $ (alpha + beta)(arrow(v_1) + i arrow(v_2)) &= [(a + c) + i(b + d)](arrow(v_1) + i arrow(v_2)) \
+      &= [(a + c)arrow(v_1) - (b + d)arrow(v_2)] + i[(a + c)arrow(v_2) + (b + d)arrow(v_1)] \
+      &= [(a arrow(v_1) - b arrow(v_2)) + (c arrow(v_1) - d arrow(v_2))] + i[(a arrow(v_2) + b arrow(v_1)) + (c arrow(v_2) + d arrow(v_1))] \
+      &= [(a arrow(v_1) - b arrow(v_2)) + i(a arrow(v_2) + b arrow(v_1))] + [(c arrow(v_1) - d arrow(v_2)) + i(c arrow(v_2) + d arrow(v_1))] \
+      &= alpha (arrow(v_1) + i arrow(v_2)) + beta (arrow(v_1) + i arrow(v_2)) $
+
+    $ alpha [(arrow(v_1) + i arrow(v_2)) + (arrow(u_1) + i arrow(u_2))] &= alpha [(arrow(v_1) + arrow(u_1)) + i(arrow(v_2) + arrow(u_2))] \
+      &= [a(arrow(v_1) + arrow(u_1)) - b(arrow(v_2) + arrow(u_2))] + i[a(arrow(v_2) + arrow(u_2)) + b(arrow(v_1) + arrow(u_1))] \
+      &= [(a arrow(v_1) - b arrow(v_2)) + (a arrow(u_1) - b arrow(u_2))] + i[(a arrow(v_2) + b arrow(v_1)) + (a arrow(u_2) + b arrow(u_1))] \
+      &= [(a arrow(v_1) - b arrow(v_2)) + i(a arrow(v_2) + b arrow(v_1))] + [(a arrow(u_1) - b arrow(u_2)) + i(a arrow(u_2) + b arrow(u_1))] \
+      &= alpha(arrow(v_1) + i arrow(v_2)) + alpha(arrow(u_1) + i arrow(u_2)) $
+
+  I hope I never have to do this again.
+
+      
 
 
