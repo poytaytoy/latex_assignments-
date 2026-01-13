@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.12)  30 OCT 2025 20:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/nixos.org) (preloaded format=pdflatex 1980.1.1)  4 JAN 2026 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/cleme/OneDrive/Documents/Waterloo/Assignments/Math145/A7/A7.tex
-(c:/Users/cleme/OneDrive/Documents/Waterloo/Assignments/Math145/A7/A7.tex
+**/home/poytaytoy/Documents/latex_assignments-/Math145/A7/A7.tex
+(/home/poytaytoy/Documents/latex_assignments-/Math145/A7/A7.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-09-02>
-(C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+L3 programming layer <2025-06-09>
+(/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+(/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/base/size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -23,7 +23,7 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \enitkv@toks@=\toks17
 \labelindent=\skip51
@@ -32,12 +32,12 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box53
 \enit@count@id=\count283
 \enitdp@description=\count284
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/tools/calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
 \calc@Acount=\count285
 \calc@Bcount=\count286
@@ -49,23 +49,23 @@ LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count287
 \calc@Cskip=\skip54
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip55
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen152
-)) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen153
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count288
@@ -127,31 +127,20 @@ LaTeX Info: Redefining \] on input line 2950.
 \l_MT_below_shortintertext_sep=\dimen167
 \xmathstrut@box=\box56
 \xmathstrut@dim=\dimen168
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
-\thm@preskip=\skip59
-\thm@postskip=\skip60
-\thm@headsep=\skip61
-\dth@everypar=\toks30
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+)) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count301
@@ -165,13 +154,13 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutheight=\dimen174
 \Gm@layouthoffset=\dimen175
 \Gm@layoutvoffset=\dimen176
-\Gm@dimlist=\toks31
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+\Gm@dimlist=\toks25
+)
 \c@remark=\count304
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count305
-) (A7.aux)
+) (./A7.aux)
 \openout1 = `A7.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -188,36 +177,36 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count306
 \scratchdimen=\dimen177
 \scratchbox=\box57
 \nofMPsegments=\count307
 \nofMParguments=\count308
-\everyMPshowfont=\toks32
+\everyMPshowfont=\toks26
 \MPscratchCnt=\count309
 \MPscratchDim=\dimen178
 \MPnumerator=\count310
 \makeMPintoPDFobject=\count311
-\everyMPtoPDFconversion=\toks33
-))) (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+\everyMPtoPDFconversion=\toks27
+))) (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \Gin@req@height=\dimen179
 \Gin@req@width=\dimen180
@@ -257,11 +246,11 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
-(C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+(/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
- (C:\Users\cleme\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+ (/nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -332,7 +321,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
 [1
 
-{C:/Users/cleme/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{/nix/store/kb1l145zi65pql8jdjc9wxqh52zpj87x-texlive-combined-full-2025.20250703/share/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
@@ -403,24 +392,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
 
 
-[4] (A7.aux)
+[4] (./A7.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-09-02>
+L3 programming layer <2025-06-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4126 strings out of 468130
- 64178 string characters out of 5430632
- 486308 words of memory out of 5000000
- 32723 multiletter control sequences out of 15000+600000
+ 4039 strings out of 467888
+ 65724 string characters out of 5405403
+ 482612 words of memory out of 5000000
+ 32577 multiletter control sequences out of 15000+600000
  628832 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 70i,13n,79p,855b,402s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/cleme/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on A7.pdf (4 pages, 127687 bytes).
+ 70i,13n,79p,845b,402s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmex10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmr10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmr7.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/symbols/msam10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></nix/store/v8dz5xyar6kbm6xscb44b18rmd80bci3-texlive-combined-full-2025.20250703-texmfdist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on A7.pdf (4 pages, 119593 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
